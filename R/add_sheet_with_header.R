@@ -1,21 +1,37 @@
-library(openxlsx)
-formatExcelsheet <- function (data, workbook, sheet, wrapHeadlineText = FALSE) {
+
+
+
+
+add_worksheet_with_header <- function (data, workbook, sheet, wrapHeadlineText = FALSE,
+                                       standards = NULL,
+                                       collabels = TRUE,
+                                       colwidths = TRUE) {
+  # Identify name of input data frame
+  dbsource <- deparse(substitute(data))
+
+  # Change colnames o labels
+  colnames(data) <- standardize_columns(data = data, dbsource = dbsource, property = "collabels")
+
+  # Include a new worksheet. The workbook must have been created previously
   addWorksheet(wb = workbook, sheetName = sheet)
+
+  # Wrte data to the worsheet
   writeData(wb = workbook, sheet = sheet, data, withFilter = TRUE)
+
+  # Formatting the headline
+  # Frozen headline
   freezePane(wb = workbook, sheet = sheet, firstRow = TRUE)
+  # Headline in bold, wrapline in accord with function input
   styleBold <- createStyle(textDecoration = "bold", wrapText = wrapHeadlineText)
   addStyle(wb = workbook, sheet = sheet, style = styleBold, rows = 1, cols = 1:dim(data)[2] )
+  # Set column widths
+  colclasses <- standardize_columns(data = data,
+                                  dbsource = dbsource,
+                                  property = "colwidths")
+  setColWidths(workbook, sheet, cols = c(1:dim(MTsak)[1]), widths = colwidths)
 }
 
-# colnames(MTsak) <- snakecase::to_any_case(colnames(MTsak), case="sentence", abbreviations = c("ID"))
-# colnames(MTsakprove) <- snakecase::to_any_case(colnames(MTsakprove), case="sentence", abbreviations = c("ID"))
-#
-# # MTExcelReport <- NULL
-# MTExcelReport <- createWorkbook()
-#
-# formatExcelsheet(MTsak, MTExcelReport, "Saker", wrapHeadlineText = TRUE)
-# # addWorksheet(wb = MTExcelReport, sheetName = "Saker")
-# # writeData(wb = MTExcelReport, sheet = "Saker", MTsak, withFilter = TRUE)
-#
-# setColWidths(MTExcelReport, "Saker", cols = c(1:dim(MTsak)[1]), widths = c(12,6,14,8,8,8,10,12,6,10,11,25,6,6,15,10,10,10,10,10,10,10))
+
+
+
 
