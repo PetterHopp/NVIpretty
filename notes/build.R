@@ -11,22 +11,22 @@ library(withr)
 # Should be run before git push when documentation for functions have been changed
 devtools::document()
 
-# Run tests included in ./tests. NVIdb use thestthat
-devtools::test()
+# Run tests included in ./tests. NVIpretty use thestthat
+# devtools::test()
 
 # Build the vignette
-devtools::build_vignettes()
+# devtools::build_vignettes()
 # vignetteRDS <- readRDS("./Meta/vignette.rds")
 
 # devtools::build_manual()
 
 # Build the package
-# system("R CMD build ../NVIdb")
+# system("R CMD build ../NVIpretty")
 devtools::build(binary = TRUE)
 # devtools::build(binary = TRUE, manual = TRUE, vignettes = TRUE)
 
 # Extensive checking of package. Is done after build. Creates PDF-manual
-system("R CMD check --ignore-vignettes ../NVIdb")
+system("R CMD check --ignore-vignettes ../NVIpretty")
 
 # Alternative for creating the PDF-manual. The manual is not put in the correct directory
 # system(paste(shQuote(file.path(R.home("bin"), "R")),
@@ -37,7 +37,7 @@ system("R CMD check --ignore-vignettes ../NVIdb")
 
 
 # Innstall rebuilt package
-detach("package:NVIdb", unload=TRUE)
+detach("package:NVIpretty", unload=TRUE)
 
 with_libpaths(paste0(Rlibrary,"/library"),
               install(sub("notes", "", dirname(rstudioapi::getSourceEditorContext()$path)),
@@ -54,6 +54,6 @@ with_libpaths(paste0(Rlibrary,"/library"),
 #                  type = "binary")
 
 
-help(package="NVIdb")
-library(NVIdb)
+help(package="NVIpretty")
+library(NVIpretty)
 
