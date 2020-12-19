@@ -8,7 +8,7 @@
 #'
 #'    \code{colwidths = TRUE} the column widths are given in accord with the column standards table, see \code{standardize_columns}.
 #'
-#'    \code{wrapHeadlineText = TRUE} theheadline text is alowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
+#'    \code{wrapHeadlineText = TRUE} theheadline text is allowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
 #'    nice depending on column labels and column widths.
 #'
 #'    \code{standards} is the name of the table with column standards. If no parameter is given, the columns_standards.csv is used.  column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
@@ -41,12 +41,10 @@ add_formatted_worksheet <- function (data, workbook, sheet,
                                        collabels = TRUE,
                                        colwidths = TRUE,
                                        standards = NULL,
-                                       dbsourde = NULL) {
-  # Identify name of input data frame
-  dbsource <- deparse(substitute(data))
+                                       dbsourde = deparse(substitute(data))) {
 
   # Change colnames o labels
-  colnames(data) <- NVIdb::standardize_columns(data = data, dbsource = dbsource, property = "collabels")
+  colnames(data) <- NVIdb::standardize_columns(data = data, dbsource = dbsource, standards = standards, property = "collabels")
 
   # Include a new worksheet. The workbook must have been created previously
   openxlsx::addWorksheet(wb = workbook, sheetName = sheet)
@@ -63,8 +61,9 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   # Set column widths
   colwidths <- NVIdb::standardize_columns(data = data,
                                   dbsource = dbsource,
-                                  property = "colwidths")
-  openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[1]), widths = colwidths)
+                                  standards = standards,
+                                  property = "colwidths_Excel")
+  openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths)
 }
 
 
