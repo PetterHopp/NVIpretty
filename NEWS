@@ -1,0 +1,6 @@
+NVIdb 0.1.0 - (2020-12-21)
+--------------------------
+
+First release:
+
+- add_formatted_worksheet is a wrapper around openxslx::addWorksheet that adds a worksheet header with bold text, changes column names to standard labels and includes standard column widths according to colnames. Standardization is based on NVIdb::standardize_columns.
