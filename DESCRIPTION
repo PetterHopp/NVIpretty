@@ -1,7 +1,7 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's design profile.
-Version: 0.1.0
-Date: 2020-12-21
+Version: 0.1.1
+Date: 2021-01-01
 Author: Petter Hopp <Petter.Hopp@vetinst.no>
 Maintainer: Petter Hopp <Petter.Hopp@vetinst.no>
 Description: Tools for styling output from R in accord with NVI's design profile. The package is under development.
@@ -13,6 +13,7 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     NVIdb (>= 0.3.0),
+    checkmate,
     openxlsx
 Suggests:
     remotes,
