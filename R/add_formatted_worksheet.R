@@ -16,16 +16,16 @@
 #'    \code{dbsource} is the dbsource in the column standards table making it possible to tailer the column laels and column widths per table.
 #'
 #' @param data the Data frame to export to the Excel sheet
-#' @param workbook The woorkbook object
+#' @param workbook The workbook object
 #' @param sheet The Excel sheet name
 #' @param wrapHeadlineText Should headline allow wrapping of text. TRUE / FALSE, standard is FALSE
 #' @param collabels Should headline be changed to standard labels, TRUE / FALSE, standard is TRUE
-#' @param colwidths Should defined standard colwidths be used. TRUE / FALSE, standard is TRUE
+#' @param colwidths Should defined standard column widths be used. TRUE / FALSE, standard is TRUE
 #' @param standards tables with column_standards
 #' @param dbsource database source of data in column standards table
 #'
 #'
-#' @return None. A new sheet with formatted headline is added to the workbook object with
+#' @return None. A new sheet with formatted headline is added to the workbook object
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -37,32 +37,47 @@
 #'
 
 add_formatted_worksheet <- function (data, workbook, sheet,
-                                       wrapHeadlineText = FALSE,
-                                       collabels = TRUE,
-                                       colwidths = TRUE,
-                                       standards = NULL,
-                                       dbsourde = deparse(substitute(data))) {
+                                     wrapHeadlineText = FALSE,
+                                     collabels = TRUE,
+                                     colwidths = TRUE,
+                                     standards = NULL,
+                                     dbsource = deparse(substitute(data))) {
 
-  # Change colnames o labels
+  # Argument checking
+  checks <- checkmate::makeAssertCollection()
+  checkmate::assert_data_frame(data, add = checks)
+  checkmate::assert_class(workbook, classes = "Workbook", add = checks)
+  checkmate::assert_character(sheet, add = checks)
+  checkmate::assert_logical(wrapHeadlineText, add = checks)
+  checkmate::assert_logical(collabels, add = checks)
+  checkmate::assert_logical(colwidths, add = checks)
+  checkmate::assert_data_frame(standards, add = checks, null.ok = TRUE)
+  checkmate::assert_character(dbsource, add = checks)
+  checkmate::reportAssertions(checks)
+
+  # The column widths must be set before changing headlines to labels
+  colwidths <- NVIdb::standardize_columns(data = data,
+                                          dbsource = dbsource,
+                                          standards = standards,
+                                          property = "colwidths_Excel")
+
+  # Change column names to labels
   colnames(data) <- NVIdb::standardize_columns(data = data, dbsource = dbsource, standards = standards, property = "collabels")
 
   # Include a new worksheet. The workbook must have been created previously
   openxlsx::addWorksheet(wb = workbook, sheetName = sheet)
 
-  # Wrte data to the worsheet
+  # Write data to the worksheet
   openxlsx::writeData(wb = workbook, sheet = sheet, data, withFilter = TRUE)
 
   # Formatting the headline
   # Frozen headline
   openxlsx::freezePane(wb = workbook, sheet = sheet, firstRow = TRUE)
-  # Headline in bold, wrapline in accord with function input
+  # Headline in bold, wrap line in accord with function input
   styleBold <- openxlsx::createStyle(textDecoration = "bold", wrapText = wrapHeadlineText)
   openxlsx::addStyle(wb = workbook, sheet = sheet, style = styleBold, rows = 1, cols = 1:dim(data)[2] )
+
   # Set column widths
-  colwidths <- NVIdb::standardize_columns(data = data,
-                                  dbsource = dbsource,
-                                  standards = standards,
-                                  property = "colwidths_Excel")
   openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths)
 }
 

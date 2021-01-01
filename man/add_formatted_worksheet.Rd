@@ -12,7 +12,7 @@ add_formatted_worksheet(
   collabels = TRUE,
   colwidths = TRUE,
   standards = NULL,
-  dbsourde = deparse(substitute(data))
+  dbsource = deparse(substitute(data))
 )
 }
 \arguments{
