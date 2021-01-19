@@ -31,8 +31,30 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' #
+#' # Attach packages and set up with temporary directory
+#' td <- tempdir()
+#' library(NVIpretty)
+#' library(openxlsx)
+
 #'
+#' # Generate Excel-sheet
+#' workbook <- createWorkbook()
+#'
+#' # Add a sheet to the workbook
+#' add_formatted_worksheet(iris,
+#'                         workbook,
+#'                         sheet = "iris",
+#'                         wrapHeadlineText = TRUE,
+#'                         collabels = TRUE,
+#'                         colwidths = FALSE,
+#'                         standards = NULL)
+#'
+#' #Save the workbook
+#' saveWorkbook(wb = workbook,
+#'              file = paste0(td, "/iris.xlsx"),
+#'                           overwrite = TRUE)
+#'
+#' print(paste("One I may examine the Excel workbook at", td))
 #' }
 #'
 
@@ -56,13 +78,17 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   checkmate::reportAssertions(checks)
 
   # The column widths must be set before changing headlines to labels
-  colwidths <- NVIdb::standardize_columns(data = data,
-                                          dbsource = dbsource,
-                                          standards = standards,
-                                          property = "colwidths_Excel")
+  if (colwidths == TRUE) {
+    colwidths_Excel <- NVIdb::standardize_columns(data = data,
+                                                  dbsource = dbsource,
+                                                  standards = standards,
+                                                  property = "colwidths_Excel")
+  }
 
   # Change column names to labels
-  colnames(data) <- NVIdb::standardize_columns(data = data, dbsource = dbsource, standards = standards, property = "collabels")
+  if (collabels == TRUE) {
+    colnames(data) <- NVIdb::standardize_columns(data = data, dbsource = dbsource, standards = standards, property = "collabels")
+  }
 
   # Include a new worksheet. The workbook must have been created previously
   openxlsx::addWorksheet(wb = workbook, sheetName = sheet)
@@ -78,7 +104,9 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   openxlsx::addStyle(wb = workbook, sheet = sheet, style = styleBold, rows = 1, cols = 1:dim(data)[2] )
 
   # Set column widths
-  openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths)
+  if (colwidths == TRUE) {
+    openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
+  }
 }
 
 
