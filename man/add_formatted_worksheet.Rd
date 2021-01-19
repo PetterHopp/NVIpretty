@@ -18,7 +18,7 @@ add_formatted_worksheet(
 \arguments{
 \item{data}{the Data frame to export to the Excel sheet}
 
-\item{workbook}{The woorkbook object}
+\item{workbook}{The workbook object}
 
 \item{sheet}{The Excel sheet name}
 
@@ -26,14 +26,14 @@ add_formatted_worksheet(
 
 \item{collabels}{Should headline be changed to standard labels, TRUE / FALSE, standard is TRUE}
 
-\item{colwidths}{Should defined standard colwidths be used. TRUE / FALSE, standard is TRUE}
+\item{colwidths}{Should defined standard column widths be used. TRUE / FALSE, standard is TRUE}
 
 \item{standards}{tables with column_standards}
 
 \item{dbsource}{database source of data in column standards table}
 }
 \value{
-None. A new sheet with formatted headline is added to the workbook object with
+None. A new sheet with formatted headline is added to the workbook object
 }
 \description{
 Add excel sheet with a header formatted with bold font, column labels and column width. The function is a wrapper for
@@ -55,8 +55,29 @@ nice depending on column labels and column widths.
 }
 \examples{
 \dontrun{
-#
+# Attach packages and set up with temporary directory
+td <- tempdir()
+library(NVIpretty)
+library(openxlsx)
 
+# Generate Excel-sheet
+workbook <- createWorkbook()
+
+# Add a sheet to the workbook
+add_formatted_worksheet(iris,
+                        workbook,
+                        sheet = "iris",
+                        wrapHeadlineText = TRUE,
+                        collabels = TRUE,
+                        colwidths = FALSE,
+                        standards = NULL)
+
+#Save the workbook
+saveWorkbook(wb = workbook,
+             file = paste0(td, "/iris.xlsx"),
+                          overwrite = TRUE)
+
+print(paste("One I may examine the Excel workbook at", td))
 }
 
 }
