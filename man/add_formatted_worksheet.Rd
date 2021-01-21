@@ -26,7 +26,7 @@ add_formatted_worksheet(
 
 \item{collabels}{Should headline be changed to standard labels, TRUE / FALSE, standard is TRUE}
 
-\item{colwidths}{Should defined standard column widths be used. TRUE / FALSE, standard is TRUE}
+\item{colwidths}{Should defined standard column widths be used. TRUE / FALSE or "auto", standard is TRUE}
 
 \item{standards}{tables with column_standards}
 
@@ -45,6 +45,8 @@ Add excel sheet with a formatted header. The header will be formatted with bold 
 \code{collabels = TRUE} the column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
 
 \code{colwidths = TRUE} the column widths are given in accord with the column standards table, see \code{standardize_columns}.
+
+\code{colwidths = "auto"} the column widths are given automatic column width. This is not recommend for large tables.
 
 \code{wrapHeadlineText = TRUE} theheadline text is allowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
 nice depending on column labels and column widths.
