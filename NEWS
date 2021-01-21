@@ -1,4 +1,12 @@
-NVIdb 0.1.2.9000 - (2021-0#-##)
+NVIdb 0.1.3 - (2021-01-21)
+--------------------------
+
+New features:
+
+- add_formatted_worksheet: the parameter colwidths accepts the parameter "auto" for automatic sizing of column width.
+
+
+NVIdb 0.1.2 - (2021-01-19)
 --------------------------
 
 Bug fixes:
