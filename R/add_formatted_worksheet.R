@@ -8,6 +8,8 @@
 #'
 #'    \code{colwidths = TRUE} the column widths are given in accord with the column standards table, see \code{standardize_columns}.
 #'
+#'    \code{colwidths = "auto"} the column widths are given automatic column width. This is not recommend for large tables.
+#'
 #'    \code{wrapHeadlineText = TRUE} theheadline text is allowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
 #'    nice depending on column labels and column widths.
 #'
@@ -20,7 +22,7 @@
 #' @param sheet The Excel sheet name
 #' @param wrapHeadlineText Should headline allow wrapping of text. TRUE / FALSE, standard is FALSE
 #' @param collabels Should headline be changed to standard labels, TRUE / FALSE, standard is TRUE
-#' @param colwidths Should defined standard column widths be used. TRUE / FALSE, standard is TRUE
+#' @param colwidths Should defined standard column widths be used. TRUE / FALSE or "auto", standard is TRUE
 #' @param standards tables with column_standards
 #' @param dbsource database source of data in column standards table
 #'
@@ -69,20 +71,24 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   checks <- checkmate::makeAssertCollection()
   checkmate::assert_data_frame(data, add = checks)
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
-  checkmate::assert_character(sheet, add = checks)
+  checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
   checkmate::assert_logical(wrapHeadlineText, add = checks)
   checkmate::assert_logical(collabels, add = checks)
-  checkmate::assert_logical(colwidths, add = checks)
   checkmate::assert_data_frame(standards, add = checks, null.ok = TRUE)
   checkmate::assert_character(dbsource, add = checks)
   checkmate::reportAssertions(checks)
 
+  checkmate::assert(checkmate::check_logical(colwidths),
+                    checkmate::check_choice(colwidths, choices = "auto"))
   # The column widths must be set before changing headlines to labels
   if (colwidths == TRUE) {
     colwidths_Excel <- NVIdb::standardize_columns(data = data,
                                                   dbsource = dbsource,
                                                   standards = standards,
                                                   property = "colwidths_Excel")
+  }
+  if (colwidths == "auto") {
+    colwidths_Excel <- colwidths
   }
 
   # Change column names to labels
@@ -104,7 +110,7 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   openxlsx::addStyle(wb = workbook, sheet = sheet, style = styleBold, rows = 1, cols = 1:dim(data)[2] )
 
   # Set column widths
-  if (colwidths == TRUE) {
+  if (colwidths == TRUE | colwidths == "auto") {
     openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
   }
 }
