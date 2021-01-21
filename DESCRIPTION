@@ -1,7 +1,7 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's design profile.
-Version: 0.1.3
-Date: 2021-01-21
+Version: 0.1.3.9000
+Date: 2021-01-##
 Author: Petter Hopp <Petter.Hopp@vetinst.no>
 Maintainer: Petter Hopp <Petter.Hopp@vetinst.no>
 Description: Tools for styling output from R in accord with NVI's design profile. The package is under development.
