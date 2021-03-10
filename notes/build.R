@@ -53,6 +53,11 @@ with_libpaths(paste0(Rlibrary,"/library"),
 #                  repos = NULL,
 #                  type = "binary")
 
+remotes::install_github("NorwegianVeterinaryInstitute/NVIpretty",
+                        upgrade = FALSE,
+                        build = TRUE,
+                        build_manual = TRUE)
+
 
 help(package="NVIpretty")
 library(NVIpretty)

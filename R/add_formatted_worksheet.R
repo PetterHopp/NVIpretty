@@ -69,7 +69,7 @@ add_formatted_worksheet <- function (data, workbook, sheet,
 
   # Argument checking
   checks <- checkmate::makeAssertCollection()
-  checkmate::assert_data_frame(data, add = checks)
+  checkmate::assert_data_frame(data, max.rows = (1048576 - 1), max.cols = 16384, add = checks)
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
   checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
   checkmate::assert_logical(wrapHeadlineText, add = checks)
@@ -110,9 +110,18 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   openxlsx::addStyle(wb = workbook, sheet = sheet, style = styleBold, rows = 1, cols = 1:dim(data)[2] )
 
   # Set column widths
-  if (colwidths == TRUE | colwidths == "auto") {
+  # TO DO: Fix of standardize_columns to avoid NULL in colwidths_Excel
+    if (is.null(colwidths_Excel) | colwidths == FALSE) {colwidths_Excel <- 10.89}
     openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
-  }
+
+  # if (colwidths == TRUE | colwidths == "auto") {
+  #   if (is.null(colwidths_Excel) ) {colwidths_Excel <- 10.78} # Until fix of standardize_columns to avoid NULL
+  #   openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
+  # }
+  # if (colwidths == FALSE) {
+  #   colwidths_Excel <- 10.78
+  #   openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
+  # }
 }
 
 
