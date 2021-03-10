@@ -111,7 +111,7 @@ add_formatted_worksheet <- function (data, workbook, sheet,
 
   # Set column widths
   # TO DO: Fix of standardize_columns to avoid NULL in colwidths_Excel
-    if (is.null(colwidths_Excel) | colwidths == FALSE) {colwidths_Excel <- 10.78}
+    if (is.null(colwidths_Excel) | colwidths == FALSE) {colwidths_Excel <- 10.89}
     openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
 
   # if (colwidths == TRUE | colwidths == "auto") {
