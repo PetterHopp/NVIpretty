@@ -1,3 +1,14 @@
+NVIpretty 0.1.5 - (2021-04-08)
+--------------------------
+
+Bug fixes:
+
+- corrected difficulties installing NVIpretty due to missing information on imported package NVIdb.
+
+Other changes:
+- Corrected copyright holder to Norwegian Veterinary Institute.
+
+
 NVIpretty 0.1.4 - (2021-03-10)
 --------------------------
 
