@@ -81,11 +81,16 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   checkmate::assert(checkmate::check_logical(colwidths),
                     checkmate::check_choice(colwidths, choices = "auto"))
   # The column widths must be set before changing headlines to labels
+  # Ensure that colwidths_Excel always has a value, set standard Excel column width +0.01 as standard value (will be reduced to 10.88)
+  colwidths_Excel <- 10.89
   if (colwidths == TRUE) {
     colwidths_Excel <- NVIdb::standardize_columns(data = data,
                                                   dbsource = dbsource,
                                                   standards = standards,
                                                   property = "colwidths_Excel")
+    # TO DO: Fix of standardize_columns to avoid NULL in colwidths_Excel
+      if (is.null(colwidths_Excel)) {colwidths_Excel <- 10.89}
+
   }
   if (colwidths == "auto") {
     colwidths_Excel <- colwidths
@@ -110,8 +115,6 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   openxlsx::addStyle(wb = workbook, sheet = sheet, style = styleBold, rows = 1, cols = 1:dim(data)[2] )
 
   # Set column widths
-  # TO DO: Fix of standardize_columns to avoid NULL in colwidths_Excel
-    if (is.null(colwidths_Excel) | colwidths == FALSE) {colwidths_Excel <- 10.89}
     openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
 
   # if (colwidths == TRUE | colwidths == "auto") {
