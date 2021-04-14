@@ -1,3 +1,11 @@
+NVIpretty 0.1.6 - (2021-04-14)
+--------------------------
+
+Bug fixes:
+
+- fixed error if colwidths = FALSE.
+
+
 NVIpretty 0.1.5 - (2021-04-08)
 --------------------------
 
