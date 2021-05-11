@@ -1,9 +1,12 @@
-NVIpretty 0.1.6 - (2021-04-14)
+NVIpretty 0.1.6 - (2021-05-11)
 --------------------------
 
 Bug fixes:
 
 - fixed error if colwidths = FALSE.
+
+Other changes:
+- Standard column width changed to 10.71
 
 
 NVIpretty 0.1.5 - (2021-04-08)
