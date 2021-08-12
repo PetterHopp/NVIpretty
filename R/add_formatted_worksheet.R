@@ -69,6 +69,7 @@ add_formatted_worksheet <- function (data, workbook, sheet,
 
   # Argument checking
   checks <- checkmate::makeAssertCollection()
+
   checkmate::assert_data_frame(data, max.rows = (1048576 - 1), max.cols = 16384, add = checks)
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
   checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
@@ -76,10 +77,13 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   checkmate::assert_logical(collabels, add = checks)
   checkmate::assert_data_frame(standards, add = checks, null.ok = TRUE)
   checkmate::assert_character(dbsource, add = checks)
+  NVIcheckmate::assert(checkmate::check_logical(colwidths),
+                    checkmate::check_choice(colwidths, choices = "auto"),
+                    combine = "or",
+                    add = checks)
+
   checkmate::reportAssertions(checks)
 
-  checkmate::assert(checkmate::check_logical(colwidths),
-                    checkmate::check_choice(colwidths, choices = "auto"))
   # The column widths must be set before changing headlines to labels
   # Ensure that colwidths_Excel always has a value, set standard Excel column width +0.01 as standard value (will be reduced to 10.88)
   colwidths_Excel <- 10.71
