@@ -19,13 +19,18 @@ LazyData: true
 Imports: 
     NVIdb (>= 0.3.0),
     checkmate,
-    openxlsx
+    openxlsx,
+    NVIcheckmate
 Suggests:
+    knitr,
     remotes,
     testthat,
     roxygen2,
     devtools
-Remotes: NorwegianVeterinaryInstitute/NVIdb
+Remotes: 
+    NorwegianVeterinaryInstitute/NVIdb
+    NorwegianVeterinaryInstitute/NVIcheckmate
+VignetteBuilder: knitr
+Language: en-GB
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Language: en-GB
