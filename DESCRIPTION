@@ -28,7 +28,7 @@ Suggests:
     roxygen2,
     devtools
 Remotes: 
-    NorwegianVeterinaryInstitute/NVIdb
+    NorwegianVeterinaryInstitute/NVIdb,
     NorwegianVeterinaryInstitute/NVIcheckmate
 VignetteBuilder: knitr
 Language: en-GB
