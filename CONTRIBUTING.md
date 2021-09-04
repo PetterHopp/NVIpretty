@@ -1,4 +1,5 @@
 # Contribute to NVIpretty
+<!-- CONTRIBUTING.md is generated from ./vignettes/Contribute_to_NVIpretty.Rmd. Please edit that file -->
 
 Thank you for considering contributing to `NVIpretty`.
 
