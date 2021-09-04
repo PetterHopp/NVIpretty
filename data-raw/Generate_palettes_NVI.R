@@ -43,8 +43,8 @@ usethis::use_data(name = palette_table_blue, overwrite = TRUE, internal = FALSE)
 # The hex codes are used to generate the palette. The cmyk codes are not in agreement with the hex codes.
 # black 70% (cmyk) is chosen for bodytext
 palette_graph <- c("#6fb2d3", "#579e65", "#c4796d", "#aeafb2", "#5c92bf",
-                         "#dac266", "#df94be", "#a8ba6c", "#d28e32", "#5a6b9a", 
-                         "#886b9a", "#98a762", "#cd692c")
+                   "#dac266", "#df94be", "#a8ba6c", "#d28e32", "#5a6b9a", 
+                   "#886b9a", "#98a762", "#cd692c")
 
 # Save palette 
 usethis::use_data(name = palette_graph, overwrite = TRUE, internal = FALSE)
