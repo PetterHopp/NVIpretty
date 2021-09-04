@@ -1,9 +1,14 @@
 NVIpretty 0.1.6.9000 - (2021-0#-##)
 --------------------------
 
-Bug fixes:
+New features:
 
--
+- add_formatted_worksheet includes the argument FUN
+
+- style_background_per_column styles the background in one or several columns. The background is chosen in accord with the palette that are linked to column name.
+
+- added palettes in accord with the graphical profile, i.e. palette_NVI_profile, palette_table_blue, palette_table_grey and palette_graph.
+
 
 Other changes:
 
