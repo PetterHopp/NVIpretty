@@ -25,7 +25,8 @@
 #' @param colwidths Should defined standard column widths be used. TRUE / FALSE or "auto", standard is TRUE
 #' @param standards tables with column_standards
 #' @param dbsource database source of data in column standards table
-#'
+#' @param FUN function for additional formatting of the worksheet. Either predefined functions in this package or self made. 
+#' @param \dots	Other arguments to be passed to FUN.
 #'
 #' @return None. A new sheet with formatted headline is added to the workbook object
 #'
@@ -65,11 +66,15 @@ add_formatted_worksheet <- function (data, workbook, sheet,
                                      collabels = TRUE,
                                      colwidths = TRUE,
                                      standards = NULL,
-                                     dbsource = deparse(substitute(data))) {
-
+                                     dbsource = deparse(substitute(data)), 
+                                     FUN = NULL, 
+                                     ...) {
+  
+  if (!is.null(FUN)) {FUN = match.fun(FUN)}
+  
   # Argument checking
   checks <- checkmate::makeAssertCollection()
-
+  
   checkmate::assert_data_frame(data, max.rows = (1048576 - 1), max.cols = 16384, add = checks)
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
   checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
@@ -78,12 +83,17 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   checkmate::assert_data_frame(standards, add = checks, null.ok = TRUE)
   checkmate::assert_character(dbsource, add = checks)
   NVIcheckmate::assert(checkmate::check_logical(colwidths),
-                    checkmate::check_choice(colwidths, choices = "auto"),
-                    combine = "or",
-                    add = checks)
-
+                       checkmate::check_choice(colwidths, choices = "auto"),
+                       combine = "or",
+                       add = checks)
+  
   checkmate::reportAssertions(checks)
-
+  
+  # Gather colnames and nrows from input data
+  # These can be used to run functions based on original colnames even after colnames has been changed
+  colnames_in_data <- colnames(data)
+  nrows_in_data <- nrow(data)
+  
   # The column widths must be set before changing headlines to labels
   # Ensure that colwidths_Excel always has a value, set standard Excel column width +0.01 as standard value (will be reduced to 10.88)
   colwidths_Excel <- 10.71
@@ -93,34 +103,37 @@ add_formatted_worksheet <- function (data, workbook, sheet,
                                                   standards = standards,
                                                   property = "colwidths_Excel")
     # TO DO: Fix of standardize_columns to avoid NULL in colwidths_Excel
-      if (is.null(colwidths_Excel)) {colwidths_Excel <- 10.71}
-
+    if (is.null(colwidths_Excel)) {colwidths_Excel <- 10.71}
+    
   }
   if (colwidths == "auto") {
     colwidths_Excel <- colwidths
   }
-
+  
   # Change column names to labels
   if (collabels == TRUE) {
     colnames(data) <- NVIdb::standardize_columns(data = data, dbsource = dbsource, standards = standards, property = "collabels")
   }
-
+  
   # Include a new worksheet. The workbook must have been created previously
   openxlsx::addWorksheet(wb = workbook, sheetName = sheet)
-
+  
   # Write data to the worksheet
   openxlsx::writeData(wb = workbook, sheet = sheet, data, withFilter = TRUE)
-
+  
   # Formatting the headline
   # Frozen headline
   openxlsx::freezePane(wb = workbook, sheet = sheet, firstRow = TRUE)
   # Headline in bold, wrap line in accord with function input
   styleBold <- openxlsx::createStyle(textDecoration = "bold", wrapText = wrapHeadlineText)
   openxlsx::addStyle(wb = workbook, sheet = sheet, style = styleBold, rows = 1, cols = 1:dim(data)[2] )
-
+  
   # Set column widths
-    openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
-
+  openxlsx::setColWidths(wb = workbook, sheet = sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)
+  
+  if (!is.null(FUN)) {
+    FUN(workbook = workbook, sheet = sheet, nrows_in_data = nrows_in_data, colnames_in_data = colnames_in_data, ...) 
+  }
   # if (colwidths == TRUE | colwidths == "auto") {
   #   if (is.null(colwidths_Excel) ) {colwidths_Excel <- 10.78} # Until fix of standardize_columns to avoid NULL
   #   openxlsx::setColWidths(workbook, sheet, cols = c(1:dim(data)[2]), widths = colwidths_Excel)

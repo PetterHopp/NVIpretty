@@ -12,7 +12,9 @@ add_formatted_worksheet(
   collabels = TRUE,
   colwidths = TRUE,
   standards = NULL,
-  dbsource = deparse(substitute(data))
+  dbsource = deparse(substitute(data)),
+  FUN = NULL,
+  ...
 )
 }
 \arguments{
@@ -31,6 +33,10 @@ add_formatted_worksheet(
 \item{standards}{tables with column_standards}
 
 \item{dbsource}{database source of data in column standards table}
+
+\item{FUN}{function for additional formatting of the worksheet. Either predefined functions in this package or self made.}
+
+\item{\dots}{Other arguments to be passed to FUN.}
 }
 \value{
 None. A new sheet with formatted headline is added to the workbook object
