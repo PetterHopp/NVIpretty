@@ -43,6 +43,7 @@ style_background_per_column <- function(workbook = workbook,
                                         colname,
                                         palette) {
   
+  # MANAGE INPUT ARGUMENTS BEFORE CHECKING ----
   # Gather colnames and nrows from data
   if (is.null(colnames_in_data)) {colnames_in_data <- colnames(data)}
   if (is.null(nrows_in_data)) {nrows_in_data <- nrow(data)}
@@ -52,6 +53,28 @@ style_background_per_column <- function(workbook = workbook,
   colours <- cbind(names(colname), unname(palette[colname]))
   colnames(colours) <- c("colname", "colour") 
   
+  # ARGUMENT CHECKING ----
+  # Object to store check-results
+  checks <- checkmate::makeAssertCollection()
+  
+  # Perform checks
+  checkmate::assert_class(workbook, classes = "Workbook", add = checks)
+  checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
+  checkmate::assert_data_frame(data, null.ok = TRUE, add = checks)
+  # checkmate::assert_character(colnames_in_data, add = checks)
+  # checkmate::assert_integerish(nrows_in_data, max.rows = (1048576 - 1), max.cols = 16384, add = checks)
+  # checkmate::assert_character(rule, add = checks)
+  # checkmate::assert_character(colname, add = checks)
+  # checkmate::assert_character(palette, add = checks)
+  # NVIcheckmate::assert(checkmate::check_logical(colwidths),
+  #                      checkmate::check_choice(colwidths, choices = "auto"),
+  #                      combine = "or",
+  #                      add = checks)
+  
+  # Report check-results
+  checkmate::reportAssertions(checks)
+  
+  # RUNNING SCRIPT ----
   # Style each column with colname
   # i <- 1
   for (i in 1:nrow(colours)) {
