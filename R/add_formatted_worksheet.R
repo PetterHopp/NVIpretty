@@ -72,9 +72,11 @@ add_formatted_worksheet <- function (data, workbook, sheet,
   
   if (!is.null(FUN)) {FUN = match.fun(FUN)}
   
-  # Argument checking
+  # ARGUMENT CHECKING ----
+  # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   
+  # Perform checks
   checkmate::assert_data_frame(data, max.rows = (1048576 - 1), max.cols = 16384, add = checks)
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
   checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
@@ -87,8 +89,10 @@ add_formatted_worksheet <- function (data, workbook, sheet,
                        combine = "or",
                        add = checks)
   
+  # Report check-results
   checkmate::reportAssertions(checks)
   
+  # RUNNING SCRIPT ----
   # Gather colnames and nrows from input data
   # These can be used to run functions based on original colnames even after colnames has been changed
   colnames_in_data <- colnames(data)
