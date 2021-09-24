@@ -22,7 +22,7 @@ functions that standardizes output to Excel and palettes with colour
 codes for the NVI colours. [Contributions](#contributing) to enhance the
 package is highly appreciated.
 
-`NVIpretty` as part of `NVIverse`, a collection of R-packages with tools
+`NVIpretty` is part of `NVIverse`, a collection of R-packages with tools
 to facilitate data management and data reporting at the Norwegian
 Veterinary Institute (NVI).
 

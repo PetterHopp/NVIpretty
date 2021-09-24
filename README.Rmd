@@ -34,7 +34,7 @@ knitr::opts_chunk$set(
 
 The package is under development. Currently the package comprises functions that standardizes output to Excel and palettes with colour codes for the NVI colours. [Contributions](#contributing) to enhance the package is highly appreciated.  
 
-`r NVIpkg_inline` as part of `NVIverse`, a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI).  
+`r NVIpkg_inline` is part of `NVIverse`, a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI).  
 
 ####  Table 1. NVIverse packages
 ```{r echo = FALSE, resuls = 'asis'}
