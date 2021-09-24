@@ -26,7 +26,7 @@ test_that("format worksheet", {
                               sheet = "iris",
                               data = iris,
                               rule = "> 4",
-                              colname = c("Sepal.Width" = "PCR-positiv"),
+                              colname = c("PCR-positiv" = "Sepal.Width"),
                               palette = c("PCR-positiv" = "red", "Seropositiv" = "orange", "Tvilsom" = "yellow", "Negativ" = "green"))
   
   #Save the workbook
@@ -50,8 +50,8 @@ test_that("include function in add_formatted_worksheet", {
   workbook <- openxlsx::createWorkbook()
   
   # Add a sheet to the workbook
-  add_formatted_worksheet(iris,
-                          workbook,
+  add_formatted_worksheet(data = iris,
+                          workbook = workbook,
                           sheet = "iris",
                           wrapHeadlineText = TRUE,
                           collabels = TRUE,
@@ -59,7 +59,7 @@ test_that("include function in add_formatted_worksheet", {
                           standards = NULL,
                           FUN = style_background_per_column,
                           rule = "> 4",
-                              colname = c("Sepal.Width" = "PCR-positiv"),
+                              colname = c("PCR-positiv" = "Sepal.Width"),
                               palette = c("PCR-positiv" = "red", "Seropositiv" = "orange", "Tvilsom" = "yellow", "Negativ" = "green"))
   
   
