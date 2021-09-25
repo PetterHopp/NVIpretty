@@ -9,8 +9,8 @@
 #'     name of the colour in the palette, the vector of column names can be named
 #'     with the corresponding colour name, see example. 
 #'
-#' @param workbook The workbook object
-#' @param sheet The Excel sheet name
+#' @param workbook The workbook object. 
+#' @param sheet The Excel sheet name. 
 #' @param data The data frame that have been exported to the Excel sheet. Used to 
 #'     find column number and number of rows in the workbook that should be styled.
 #'     Can be \code{NULL} if both \code{colnames_in_data} and \code{nrows_in_data}
@@ -29,7 +29,7 @@
 #'     in the data frame.
 #' @param palette Palette with named colours.
 #'
-#' @return None. One or more columns in the workbook object is styled
+#' @return None. One or more columns in the workbook object is styled. 
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
