@@ -16,9 +16,9 @@ style_background_per_column(
 )
 }
 \arguments{
-\item{workbook}{The workbook object}
+\item{workbook}{The workbook object.}
 
-\item{sheet}{The Excel sheet name}
+\item{sheet}{The Excel sheet name.}
 
 \item{data}{The data frame that have been exported to the Excel sheet. Used to
 find column number and number of rows in the workbook that should be styled.
@@ -44,7 +44,7 @@ in the data frame.}
 \item{palette}{Palette with named colours.}
 }
 \value{
-None. One or more columns in the workbook object is styled
+None. One or more columns in the workbook object is styled.
 }
 \description{
 Style the cell background with different colours. The background
@@ -81,13 +81,15 @@ add_formatted_worksheet(iris,
                              sheet = sheet,
                              data = iris,
                              rule = "> 3",
-                             colname = c("bluegrey" = "Sepal.Length", "bluegrey" = "Sepal.Width", "green" = "Petal.Length"),
+                             colname = c("bluegrey" = "Sepal.Length", 
+                                         "bluegrey" = "Sepal.Width", 
+                                         "green" = "Petal.Length"),
                              palette = c("bluegrey" = "#6fb2d3", "green" = "#579e65"))                       
                         
 #Save the workbook
 saveWorkbook(wb = workbook, file = paste0(td, "/iris.xlsx"), overwrite = TRUE)
 
-print(paste("You may examine the Excel workbook at", normalizePath(td, win)))
+print(paste("You may examine the Excel workbook at", normalizePath(td, winslash = "/")))
 }
 }
 \author{

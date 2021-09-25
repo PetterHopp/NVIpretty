@@ -12,7 +12,7 @@ A vector with named colours:
 \item{blue3}{Background colour for sub-heading.}
 \item{blue4}{Background colour for table text.}
 \item{blue5}{Preferred background colour for table text.}
-\item{bodytext}{Black 70\%  font colourfor use in body text.}
+\item{bodytext}{Black 70\% font colour for use in body text.}
 \item{heading}{White font colour for headings.}
 }
 }
@@ -26,7 +26,7 @@ palette_table_blue
 A vector with the hex values for a table with blue background.
 }
 \details{
-The colour codes are based on the hex values except for the body text where the cmyk value is used.
+The colour codes are based on the hex values in the Graphical profil handbook except for the body text where the cmyk value is used.
 There is not agreement between the hex and cmyk values, but hex seem to give the most correct colour.\preformatted{The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
 }
 }

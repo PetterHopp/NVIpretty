@@ -18,48 +18,61 @@ add_formatted_worksheet(
 )
 }
 \arguments{
-\item{data}{the Data frame to export to the Excel sheet}
+\item{data}{The data frame to export to the Excel sheet.}
 
-\item{workbook}{The workbook object}
+\item{workbook}{The workbook object.}
 
-\item{sheet}{The Excel sheet name}
+\item{sheet}{The Excel sheet name.}
 
-\item{wrapHeadlineText}{Should headline allow wrapping of text. TRUE / FALSE, standard is FALSE}
+\item{wrapHeadlineText}{Should headline allow wrapping of text.
+[\code{logical(1)}]\, defaults to \code{FALSE}.}
 
-\item{collabels}{Should headline be changed to standard labels, TRUE / FALSE, standard is TRUE}
+\item{collabels}{Should headline be changed to standard labels,
+[\code{logical(1)}]\, defaults to \code{TRUE}.}
 
-\item{colwidths}{Should defined standard column widths be used. TRUE / FALSE or "auto", standard is TRUE}
+\item{colwidths}{Should defined standard column widths be used.
+[\code{logical(1)}]\ or \code{"auto"}, defaults to \code{TRUE}.}
 
-\item{standards}{tables with column_standards}
+\item{standards}{Tables with column_standards.}
 
-\item{dbsource}{database source of data in column standards table}
+\item{dbsource}{Database source of data in column standards table.}
 
-\item{FUN}{function for additional formatting of the worksheet. Either predefined functions in this package or self made.}
+\item{FUN}{Function for additional formatting of the worksheet. Either
+predefined functions in this package or self made.}
 
 \item{\dots}{Other arguments to be passed to FUN.}
 }
 \value{
-None. A new sheet with formatted headline is added to the workbook object
+None. A new sheet with formatted headline is added to the workbook object.
 }
 \description{
-Add excel sheet with a header formatted with bold font, column labels and column width. The function is a wrapper for
-\code{openxlsx::addWorksheet} and are using \code{NVIdb::standardize_columns} to standardize columns.
+Add excel sheet with a header formatted with bold font, column
+labels and column width. The function is a wrapper for \code{openxlsx::addWorksheet}
+and are using \code{NVIdb::standardize_columns} to standardize columns.
 }
 \details{
-Add excel sheet with a formatted header. The header will be formatted with bold text.
+Add excel sheet with a formatted header. The header will be formatted
+with bold text.\preformatted{\code{collabels = TRUE} the column names are translated to column labels 
+in accord with the column standards table, see \code{standardize_columns}.
 
-\code{collabels = TRUE} the column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
+\code{colwidths = TRUE} the column widths are given in accord with the 
+column standards table, see \code{standardize_columns}.
 
-\code{colwidths = TRUE} the column widths are given in accord with the column standards table, see \code{standardize_columns}.
+\code{colwidths = "auto"} the column widths are given automatic column 
+width. This is not recommend for large tables.
 
-\code{colwidths = "auto"} the column widths are given automatic column width. This is not recommend for large tables.
-
-\code{wrapHeadlineText = TRUE} theheadline text is allowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
+\code{wrapHeadlineText = TRUE} the headline text is allowed to wrap on 
+two or more lines. The parameter should be chosen in accord with what looks
 nice depending on column labels and column widths.
 
-\code{standards} is the name of the table with column standards. If no parameter is given, the columns_standards.csv is used.  column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
+\code{standards} is the name of the table with column standards. If no 
+parameter is given, the columns_standards.csv is used. Column names are 
+translated to column labels in accord with the column standards table, 
+see \code{standardize_columns}.
 
-\code{dbsource} is the dbsource in the column standards table making it possible to tailer the column laels and column widths per table.
+\code{dbsource} is the dbsource in the column standards table making it 
+possible to tailer the column labels and column widths per table.
+}
 }
 \examples{
 \dontrun{
@@ -85,7 +98,7 @@ saveWorkbook(wb = workbook,
              file = paste0(td, "/iris.xlsx"),
                           overwrite = TRUE)
 
-print(paste("One I may examine the Excel workbook at", td))
+print(paste("One may examine the Excel workbook at", normalizepath(td, ))) 
 }
 
 }
