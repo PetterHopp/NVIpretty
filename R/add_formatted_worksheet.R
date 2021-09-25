@@ -1,31 +1,45 @@
 #' @title Add excel sheet with a formatted header
-#' @description Add excel sheet with a header formatted with bold font, column labels and column width. The function is a wrapper for
-#'     \code{openxlsx::addWorksheet} and are using \code{NVIdb::standardize_columns} to standardize columns.
+#' @description Add excel sheet with a header formatted with bold font, column 
+#'     labels and column width. The function is a wrapper for \code{openxlsx::addWorksheet} 
+#'     and are using \code{NVIdb::standardize_columns} to standardize columns.
 #'
-#' @details Add excel sheet with a formatted header. The header will be formatted with bold text.
+#' @details Add excel sheet with a formatted header. The header will be formatted 
+#'     with bold text.
 #'
-#'    \code{collabels = TRUE} the column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
+#'     \code{collabels = TRUE} the column names are translated to column labels 
+#'     in accord with the column standards table, see \code{standardize_columns}.
 #'
-#'    \code{colwidths = TRUE} the column widths are given in accord with the column standards table, see \code{standardize_columns}.
+#'     \code{colwidths = TRUE} the column widths are given in accord with the 
+#'     column standards table, see \code{standardize_columns}.
 #'
-#'    \code{colwidths = "auto"} the column widths are given automatic column width. This is not recommend for large tables.
+#'     \code{colwidths = "auto"} the column widths are given automatic column 
+#'     width. This is not recommend for large tables.
 #'
-#'    \code{wrapHeadlineText = TRUE} the headline text is allowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
-#'    nice depending on column labels and column widths.
+#'     \code{wrapHeadlineText = TRUE} the headline text is allowed to wrap on 
+#'     two or more lines. The parameter should be chosen in accord with what looks
+#'     nice depending on column labels and column widths.
 #'
-#'    \code{standards} is the name of the table with column standards. If no parameter is given, the columns_standards.csv is used. Column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
+#'     \code{standards} is the name of the table with column standards. If no 
+#'     parameter is given, the columns_standards.csv is used. Column names are 
+#'     translated to column labels in accord with the column standards table, 
+#'     see \code{standardize_columns}.
 #'
-#'    \code{dbsource} is the dbsource in the column standards table making it possible to tailer the column labels and column widths per table.
+#'     \code{dbsource} is the dbsource in the column standards table making it 
+#'     possible to tailer the column labels and column widths per table.
 #'
 #' @param data The data frame to export to the Excel sheet. 
 #' @param workbook The workbook object. 
 #' @param sheet The Excel sheet name. 
-#' @param wrapHeadlineText Should headline allow wrapping of text. \[\code{logical(1)}\]\, defaults to \code{FALSE}. 
-#' @param collabels Should headline be changed to standard labels, \[\code{logical(1)}\]\, defaults to \code{TRUE}. 
-#' @param colwidths Should defined standard column widths be used. \[\code{logical(1)}\]\ or \code{"auto"}, defaults to \code{TRUE}. 
+#' @param wrapHeadlineText Should headline allow wrapping of text. 
+#'     \[\code{logical(1)}\]\, defaults to \code{FALSE}. 
+#' @param collabels Should headline be changed to standard labels, 
+#'     \[\code{logical(1)}\]\, defaults to \code{TRUE}. 
+#' @param colwidths Should defined standard column widths be used. 
+#'     \[\code{logical(1)}\]\ or \code{"auto"}, defaults to \code{TRUE}. 
 #' @param standards Tables with column_standards.
 #' @param dbsource Database source of data in column standards table. 
-#' @param FUN Function for additional formatting of the worksheet. Either predefined functions in this package or self made. 
+#' @param FUN Function for additional formatting of the worksheet. Either 
+#'     predefined functions in this package or self made. 
 #' @param \dots	Other arguments to be passed to FUN.
 #'
 #' @return None. A new sheet with formatted headline is added to the workbook object. 
