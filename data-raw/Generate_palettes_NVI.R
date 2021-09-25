@@ -20,7 +20,7 @@ usethis::use_data(name = palette_NVI_profile, overwrite = TRUE, internal = FALSE
 # The cmyk codes are used to generate the palette. 
 palette_table_grey <- c("black1" = "#191919", "black2" = "#4d4d4d", "black3" = "#808080",
                         "black4" = "#b3b3b3", "black5" = "#e6e6e6",
-                        "bodytext" = "#383838", "heading" = "ffffff")
+                        "bodytext" = "#383838", "heading" = "#ffffff")
 
 # Save palette 
 usethis::use_data(name = palette_table_grey, overwrite = TRUE, internal = FALSE)
@@ -33,7 +33,7 @@ usethis::use_data(name = palette_table_grey, overwrite = TRUE, internal = FALSE)
 # black 70% (cmyk) is chosen for bodytext
 palette_table_blue <- c("blue1" = "#4b7c95", "blue2" = "#6a9cb6", "blue3" = "#8eb6cc",
                         "blue4" = "#b3d1e2", "blue5" = "#dae9f1",
-                        "bodytext" = "#4d4d4d", "heading" = "ffffff")
+                        "bodytext" = "#4d4d4d", "heading" = "#ffffff")
 
 # Save palette 
 usethis::use_data(name = palette_table_blue, overwrite = TRUE, internal = FALSE)
