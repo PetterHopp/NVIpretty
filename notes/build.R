@@ -43,7 +43,7 @@ devtools::test()
 # devtools::build(binary = TRUE)
 devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
 
-version <- packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
+version <- utils::packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
 devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args = c("--no-tests"), manual = TRUE)
 
 # Extensive checking of package. Is done after build. Creates PDF-manual
