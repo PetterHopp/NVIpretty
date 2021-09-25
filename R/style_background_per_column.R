@@ -87,7 +87,7 @@ style_background_per_column <- function(workbook = workbook,
   # ARGUMENT CHECKING ----
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
-
+  
   # Perform checks
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
   checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
@@ -102,7 +102,7 @@ style_background_per_column <- function(workbook = workbook,
   NVIcheckmate::assert_character(x = intersect(names(colname), names(palette)), min.len = 1,
                                  comment = "At least one column must be associated with a colour in the palette",
                                  add = checks)
-
+  
   # Report check-results
   checkmate::reportAssertions(checks)
   
