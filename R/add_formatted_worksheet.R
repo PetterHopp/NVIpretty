@@ -20,10 +20,10 @@
 #' @param data The data frame to export to the Excel sheet. 
 #' @param workbook The workbook object. 
 #' @param sheet The Excel sheet name. 
-#' @param wrapHeadlineText Should headline allow wrapping of text. TRUE / FALSE, defaults to FALSE. 
-#' @param collabels Should headline be changed to standard labels, TRUE / FALSE, defaults to TRUE. 
-#' @param colwidths Should defined standard column widths be used. TRUE / FALSE or "auto", defaults to TRUE. 
-#' @param standards Tables with column_standards. 
+#' @param wrapHeadlineText Should headline allow wrapping of text. \[\code{logical(1)}\]\, defaults to \code{FALSE}. 
+#' @param collabels Should headline be changed to standard labels, \[\code{logical(1)}\]\, defaults to \code{TRUE}. 
+#' @param colwidths Should defined standard column widths be used. \[\code{logical(1)}\]\ or \code{"auto"}, defaults to \code{TRUE}. 
+#' @param standards Tables with column_standards.
 #' @param dbsource Database source of data in column standards table. 
 #' @param FUN Function for additional formatting of the worksheet. Either predefined functions in this package or self made. 
 #' @param \dots	Other arguments to be passed to FUN.
