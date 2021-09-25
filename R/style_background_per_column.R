@@ -56,13 +56,15 @@
 #'                              sheet = sheet,
 #'                              data = iris,
 #'                              rule = "> 3",
-#'                              colname = c("bluegrey" = "Sepal.Length", "bluegrey" = "Sepal.Width", "green" = "Petal.Length"),
+#'                              colname = c("bluegrey" = "Sepal.Length", 
+#'                                          "bluegrey" = "Sepal.Width", 
+#'                                          "green" = "Petal.Length"),
 #'                              palette = c("bluegrey" = "#6fb2d3", "green" = "#579e65"))                       
 #'                         
 #' #Save the workbook
 #' saveWorkbook(wb = workbook, file = paste0(td, "/iris.xlsx"), overwrite = TRUE)
 #'
-#' print(paste("You may examine the Excel workbook at", normalizePath(td, win)))
+#' print(paste("You may examine the Excel workbook at", normalizePath(td, winslash = "/")))
 #' }
 
 style_background_per_column <- function(workbook = workbook, 
@@ -80,7 +82,7 @@ style_background_per_column <- function(workbook = workbook,
   if (is.null(nrows_in_data)) {nrows_in_data <- nrow(data)}
   
   # make table with colour and columnname
-  colname <- NVIpretty:::set_name_vector(colname)
+  colname <- set_name_vector(colname)
   colours <- cbind(unname(colname), unname(palette[names(colname)]))
   colnames(colours) <- c("colname", "colour") 
   
