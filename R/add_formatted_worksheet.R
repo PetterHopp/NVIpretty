@@ -10,25 +10,25 @@
 #'
 #'    \code{colwidths = "auto"} the column widths are given automatic column width. This is not recommend for large tables.
 #'
-#'    \code{wrapHeadlineText = TRUE} theheadline text is allowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
+#'    \code{wrapHeadlineText = TRUE} the headline text is allowed to wrap on two or more lines. The parameter should be chosen in accord with what looks
 #'    nice depending on column labels and column widths.
 #'
-#'    \code{standards} is the name of the table with column standards. If no parameter is given, the columns_standards.csv is used.  column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
+#'    \code{standards} is the name of the table with column standards. If no parameter is given, the columns_standards.csv is used. Column names are translated to column labels in accord with the column standards table, see \code{standardize_columns}.
 #'
-#'    \code{dbsource} is the dbsource in the column standards table making it possible to tailer the column laels and column widths per table.
+#'    \code{dbsource} is the dbsource in the column standards table making it possible to tailer the column labels and column widths per table.
 #'
-#' @param data the Data frame to export to the Excel sheet
-#' @param workbook The workbook object
-#' @param sheet The Excel sheet name
-#' @param wrapHeadlineText Should headline allow wrapping of text. TRUE / FALSE, standard is FALSE
-#' @param collabels Should headline be changed to standard labels, TRUE / FALSE, standard is TRUE
-#' @param colwidths Should defined standard column widths be used. TRUE / FALSE or "auto", standard is TRUE
-#' @param standards tables with column_standards
-#' @param dbsource database source of data in column standards table
-#' @param FUN function for additional formatting of the worksheet. Either predefined functions in this package or self made. 
+#' @param data The data frame to export to the Excel sheet. 
+#' @param workbook The workbook object. 
+#' @param sheet The Excel sheet name. 
+#' @param wrapHeadlineText Should headline allow wrapping of text. TRUE / FALSE, defaults to FALSE. 
+#' @param collabels Should headline be changed to standard labels, TRUE / FALSE, defaults to TRUE. 
+#' @param colwidths Should defined standard column widths be used. TRUE / FALSE or "auto", defaults to TRUE. 
+#' @param standards Tables with column_standards. 
+#' @param dbsource Database source of data in column standards table. 
+#' @param FUN Function for additional formatting of the worksheet. Either predefined functions in this package or self made. 
 #' @param \dots	Other arguments to be passed to FUN.
 #'
-#' @return None. A new sheet with formatted headline is added to the workbook object
+#' @return None. A new sheet with formatted headline is added to the workbook object. 
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
@@ -57,7 +57,7 @@
 #'              file = paste0(td, "/iris.xlsx"),
 #'                           overwrite = TRUE)
 #'
-#' print(paste("One I may examine the Excel workbook at", td))
+#' print(paste("One may examine the Excel workbook at", normalizepath(td, ))) 
 #' }
 #'
 
