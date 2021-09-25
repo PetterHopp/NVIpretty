@@ -18,11 +18,12 @@ if(pkg %in% (.packages())){
 
 # INSTALL PACKAGE ----
 # Install from working directory
-with_libpaths(paste0(Rlibrary,"/library"),
-              devtools::install(sub("notes", "", dirname(rstudioapi::getSourceEditorContext()$path)),
-                                dependencies = c("Depends", "Imports", "LinkingTo"),
-                                upgrade=FALSE,
-                                build_vignettes = TRUE)
+withr::with_libpaths(paste0(Rlibrary,"/library"),
+                     devtools::install(getwd(),
+                                       # devtools::install(sub("notes", "", dirname(rstudioapi::getSourceEditorContext()$path)),
+                                       dependencies = c("Depends", "Imports", "LinkingTo"),
+                                       upgrade=FALSE,
+                                       build_vignettes = TRUE)
 )
 
 # Install from NorwegianVeterinaryInstitute at GitHub
@@ -42,9 +43,9 @@ remotes::install_github(paste0("PetterHopp/", pkg),
 
 
 # # Install from source file in catalog "NVIverse"
-install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Arkiv/", pkg, "_", version, ".tar.gz"),
-                 repos = NULL,
-                 type = "source")
+utils::install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Arkiv/", pkg, "_", version, ".tar.gz"),
+                        repos = NULL,
+                        type = "source")
 #
 # # Install from binary file in catalog "NVIverse"
 # install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Arkiv/", pkg, "_", version, ".zip"),
@@ -52,7 +53,7 @@ install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Ark
 #                  type = "binary")
 
 # ATTACH PACKAGE ----
-help(package = (pkg))
+utils::help(package = (pkg))
 
 library(package = pkg, character.only = TRUE)
 
