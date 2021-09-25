@@ -1,81 +1,151 @@
-# NVIpretty
-================
+NVIpretty: Tools to make R-output pretty in accord with NVI’s graphical profile
+===============================================================================
 
-  - [Overview](#overview)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Copyright and license](#copyright-and-license)
-  - [Contributing](#contributing)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Overview
+-   [Overview](#overview)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Copyright and license](#copyright-and-license)
+-   [Contributing](#contributing)
 
-Tools for making R-output pretty in accord with NVI graphical profile. For products that are not described in the graphical profile, the tools should help standardizing the output and aid in increasing readability and use.  
+Overview
+========
 
-The package is under development. Currently the only function is add_formatted_worksheet() that standardizes output to Excel, see [Usage](#usage). [Contributions](#contributing) to enhance the package is highly appreciated.
+`NVIpretty` provide tools to make R-output pretty in accord with
+Norwegian Veterinary Institute’s (NVI) graphical profile. For products
+that are not described in the graphical profile, the tools should help
+standardizing the output and aid in increasing readability and use.
 
-# Installation
+The package is under development. Currently the package comprises
+functions that standardizes output to Excel and palettes with colour
+codes for the NVI colours. [Contributions](#contributing) to enhance the
+package is highly appreciated.
 
-`NVIpretty` is publicly available at https://github.com/NorwegianVeterinaryInstitute. To install `NVIpretty` 
-you will need:
-  - R version > 4.0.2
-  - R package `devtools`
-  - Rtools 4.0
+`NVIpretty` is part of `NVIverse`, a collection of R-packages with tools
+to facilitate data management and data reporting at the Norwegian
+Veterinary Institute (NVI).
 
-This requires first to install and attach the `devtools` package.  
+#### Table 1. NVIverse packages
 
-``` r
-install.packages("devtools")
-library(devtools)
-```
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Package</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NVIconfig</td>
+<td style="text-align: left;">Private</td>
+<td style="text-align: left;">Configuration information necessary for some NVIverse functions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVIdb</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the use of NVI’s databases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVIpretty</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to make R-output pretty in accord with NVI’s graphical profile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVIbatch</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the running of R-scripts in batch mode at NVI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVIcheckmate</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Extension of checkmate with argument checking adapted for NVIverse</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OKplan</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the planning of surveillance programmes for the NFSA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OKcheck</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate checking of data from national surveillance programmes</td>
+</tr>
+</tbody>
+</table>
 
-In order to install (or update) the `NVIpretty` package, run the following code:
+Installation
+============
 
-``` r
-remotes::install_github("NorwegianVeterinaryInstitute/NVIpretty", 
-	upgrade = FALSE, 
-	build = TRUE,
-	build_manual = TRUE)
-```
+`NVIpretty` is available at
+[GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
+`NVIpretty` you will need:
 
-# Usage
+-   R version &gt; 4.0.0
+-   R package `devtools`
+-   Rtools 4.0
 
+First install and attach the `devtools` package.
 
-``` r
-# Attach packages and set up with temporary directory
-library(NVIpretty)
-library(openxlsx)
-td <- tempdir()
+    install.packages("devtools")
+    library(devtools)
 
-# Generate Excel-sheet
-workbook <- createWorkbook()
+To install (or update) the `NVIpretty` package, run the following code:
 
-# Add a sheet to the workbook
-add_formatted_worksheet(iris,
-                        workbook,
-                        sheet = "iris",
-                        wrapHeadlineText = TRUE,
-                        collabels = TRUE,
-                        colwidths = FALSE,
-                        standards = NULL)
+    remotes::install_github(NorwegianVeterinaryInstitute/NVIpretty)
+        upgrade = FALSE,
+        build = TRUE,
+        build_manual = TRUE)
 
-#Save the workbook
-saveWorkbook(wb = workbook,
-             file = paste0(td, "/iris.xlsx"),
-                          overwrite = TRUE)
-```
+Usage
+=====
 
-# Copyright and license
-Copyright 2021 Norwegian Veterinary Institute
+    # Attach packages and set up with temporary directory
+    library(NVIpretty)
+    library(openxlsx)
+    td <- tempdir()
 
-Licensed under the BSD 3-Clause License (the "License"); 
-you may use `NVIdb` in compliance with the [License](https://github.com/NorwegianVeterinaryInstitute/NVIdb/blob/main/LICENSE).
+    # Generate Excel-sheet
+    workbook <- createWorkbook()
 
-# Contributing
+    # Add a sheet to the workbook
+    add_formatted_worksheet(iris,
+                            workbook,
+                            sheet = "iris",
+                            wrapHeadlineText = TRUE,
+                            collabels = TRUE,
+                            colwidths = FALSE,
+                            standards = NULL)
 
-There are several ways you can contribute to the development of `NVIpretty`: reporting a bug, fixing documentation errors, contributing new code, or commenting on issues/pull requests. Contributions to extend the package use for NVI is highly appreciated. 
+    #Save the workbook
+    saveWorkbook(wb = workbook,
+                 file = paste0(td, "/iris.xlsx"),
+                              overwrite = TRUE)
 
+Copyright and license
+=====================
 
------
+Copyright (c) 2021 Norwegian Veterinary Institute.  
+Licensed under the BSD 3-Clause
+[License](https://github.com/NorwegianVeterinaryInstitute/NVIpretty/blob/main/LICENSE).
 
-Please note that this project is released with a [Contributor Code of  Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). 
-By participating to this project, you agree to abide by its terms.
+Contributing
+============
+
+Contributions to develop `NVIpretty` is highly appreciated. There are
+several ways you can contribute to this project: ask a question, propose
+an idea, report a bug, improve the documentation, or contribute code.
+The vignette “Contribute to NVIpretty” gives more information.
+
+------------------------------------------------------------------------
+
+Please note that the NVIpretty project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

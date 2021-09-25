@@ -1,3 +1,20 @@
+NVIpretty 0.2.0- (2021-09-25)
+--------------------------
+
+New features:
+
+- add_formatted_worksheet includes the argument FUN
+
+- style_background_per_column styles cell background in Excel sheet based on column name. The rule decide which columns to style. 
+
+- added palettes with colours in accord with the graphical profile, i.e. palette_NVI_profile, palette_table_blue, palette_table_grey and palette_graph.
+
+
+Other changes:
+
+- Vignette: Contribute to NVIpretty
+
+
 NVIpretty 0.1.6 - (2021-05-11)
 --------------------------
 

@@ -1,7 +1,7 @@
 Package: NVIpretty
-Title: Tools for making R-output pretty in accord with NVI's design profile.
-Version: 0.1.6
-Date: 2021-05-11
+Title: Tools for making R-output pretty in accord with NVI's graphical profile
+Version: 0.2.0
+Date: 2021-09-25
 Authors@R: 
   c(person(given = "Petter",
            family = "Hopp",
@@ -9,23 +9,29 @@ Authors@R:
            email = "Petter.Hopp@vetinst.no"),
     person(given = "Norwegian Veterinary Institute",
            role = "cph"))
-Description: Tools for styling output from R in accord with NVI's design profile. The package is under development.
+Description: Tools for styling output from R in accord with NVI's graphical profile. The package is under development.
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIpretty
 BugReports: https://github.com/NorwegianVeterinaryInstitute/NVIpretty/issues
-Depends: R (>= 4.0.2)
+Depends: R (>= 4.0.0)
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
     NVIdb (>= 0.3.0),
     checkmate,
-    openxlsx
+    openxlsx,
+    NVIcheckmate
 Suggests:
+    knitr,
     remotes,
-    testthat,
+    testthat (>= 3.0.0),
     roxygen2,
     devtools
-Remotes: NorwegianVeterinaryInstitute/NVIdb
+Remotes: 
+    NorwegianVeterinaryInstitute/NVIdb,
+    NorwegianVeterinaryInstitute/NVIcheckmate
+VignetteBuilder: knitr
+Language: en-GB
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Language: en-GB
+Config/testthat/edition: 3
