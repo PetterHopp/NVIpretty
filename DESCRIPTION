@@ -20,7 +20,7 @@ Imports:
     NVIdb (>= 0.3.0),
     checkmate,
     openxlsx,
-    NVIcheckmate
+    NVIcheckmate (>= 0.3.0)
 Suggests:
     knitr,
     remotes,
