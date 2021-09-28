@@ -76,16 +76,16 @@ add_formatted_worksheet(iris,
                         collabels = TRUE,
                         colwidths = FALSE,
                         standards = NULL)
-                        
- style_background_per_column(workbook = workbook, 
+
+ style_background_per_column(workbook = workbook,
                              sheet = sheet,
                              data = iris,
                              rule = "> 3",
-                             colname = c("bluegrey" = "Sepal.Length", 
-                                         "bluegrey" = "Sepal.Width", 
+                             colname = c("bluegrey" = "Sepal.Length",
+                                         "bluegrey" = "Sepal.Width",
                                          "green" = "Petal.Length"),
-                             palette = c("bluegrey" = "#6fb2d3", "green" = "#579e65"))                       
-                        
+                             palette = c("bluegrey" = "#6fb2d3", "green" = "#579e65"))
+
 #Save the workbook
 saveWorkbook(wb = workbook, file = paste0(td, "/iris.xlsx"), overwrite = TRUE)
 
