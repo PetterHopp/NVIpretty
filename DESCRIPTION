@@ -24,6 +24,7 @@ Imports:
 Suggests:
     knitr,
     remotes,
+    rmarkdown,
     testthat (>= 3.0.0),
     roxygen2,
     devtools
