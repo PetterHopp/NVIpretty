@@ -98,7 +98,7 @@ First install and attach the `devtools` package.
 
 To install (or update) the `NVIpretty` package, run the following code:
 
-    remotes::install_github(NorwegianVeterinaryInstitute/NVIpretty)
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIpretty")
         upgrade = FALSE,
         build = TRUE,
         build_manual = TRUE)
