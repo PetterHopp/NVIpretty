@@ -2,3 +2,5 @@
 
 export(add_formatted_worksheet)
 export(style_background_per_column)
+export(theme_NVI)
+importFrom(ggplot2,"%+replace%")
