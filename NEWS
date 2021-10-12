@@ -1,3 +1,11 @@
+NVIpretty 0.3.0 - (2021-10-13)
+--------------------------
+
+New features:
+
+- theme_NVI for use with ggplot2 is included. The theme is in accord with NVI's graphical profile.
+
+
 NVIpretty 0.2.2- (2021-10-01)
 --------------------------
 
