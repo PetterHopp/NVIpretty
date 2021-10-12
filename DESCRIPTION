@@ -1,7 +1,7 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's graphical profile
-Version: 0.2.2
-Date: 2021-10-01
+Version: 0.3.0
+Date: 2021-10-12
 Authors@R: 
   c(person(given = "Petter",
            family = "Hopp",
@@ -19,6 +19,7 @@ LazyData: true
 Imports: 
     NVIdb (>= 0.3.0),
     checkmate,
+    ggplot2,
     openxlsx,
     NVIcheckmate (>= 0.3.0)
 Suggests:
