@@ -1,0 +1,75 @@
+---
+title: "Create_graphs_for_NVI"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Create_graphs_for_NVI}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+You can create graphs and plots in accord with NVI's graphical profile when using ggplot2 with the theme_NVI and the palette_NVI.
+
+First attach the packages and load the theme.
+
+```{r setup}
+library(ggplot2)
+library(NVIpretty)
+set_theme(theme_NVI())
+```
+
+```{r echo = FALSE}
+library(ggplot2)
+library(NVIpretty)
+set_theme(theme_NVI())
+```
+
+Example with mtcars and ggplot2 
+https://rpubs.com/chrisbrunsdon/spacetime_1a
+
+Make a bar graph with number of observations per species in iris. 
+```{r} 
+ggplot(mtcars, aes(x = cyl, fill = am)) +
+  geom_bar(position="dodge") +
+scale_fill_manual(values=palette_NVI)
+```
+
+Make a scatter plot with distribution of spetal_length per iris species. 
+```{r} 
+ggplot(mtcars, aes(x=hp, y=mpg, color=cyl, shape=cyl)) +
+    geom_point(size=3))
+
+ggplot(mtcars, aes(x = wt, y = mpg, col = cyl)) +
+  geom_point()  # Fill in using instructions Plot 1
+```
+Make a pie chart with percent of observations per species in iris. 
+```{r} 
+# Basic piechart
+ggplot(data, aes(x="", y=value, fill=group)) +
+  geom_bar(stat="identity", width=1, color="white") +
+  coord_polar("y", start=0) 
+  
+
+library(ggplot2)
+mtcars$cyl <- factor(mtcars$cyl) # converts to a categorical variable
+mtcars$gear <- factor(mtcars$gear) # converts to a categorical variable
+
+p <- ggplot(data=mtcars, aes(x=factor(1), stat="bin", fill=cyl)) + geom_bar(position="fill") # Stacked bar chart
+p <- p + ggtitle("Cylinders by Gears") + xlab("") + ylab("Gears") # Adds titles
+p <- p + facet_grid(facets=. ~ gear) # Side by side bar chart
+p <- p + coord_polar(theta="y") # side by side pie chart
+p
+```
+
+Box plot
+```{r} 
+ggplot(data = mtcars) +
+  geom_boxplot(mapping = aes(x = cyl, y = mpg, fill=cyl)) +
+  scale_fill_brewer(palette="Set1")
+```
