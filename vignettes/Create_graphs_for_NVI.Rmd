@@ -27,7 +27,7 @@ set_theme(theme_NVI())
 ```{r echo = FALSE}
 library(ggplot2)
 library(NVIpretty)
-set_theme(theme_NVI())
+theme_set(theme_NVI())
 ```
 
 Example with mtcars and ggplot2 
@@ -43,7 +43,7 @@ scale_fill_manual(values=palette_NVI)
 Make a scatter plot with distribution of spetal_length per iris species. 
 ```{r} 
 ggplot(mtcars, aes(x=hp, y=mpg, color=cyl, shape=cyl)) +
-    geom_point(size=3))
+    geom_point(size=3)
 
 ggplot(mtcars, aes(x = wt, y = mpg, col = cyl)) +
   geom_point()  # Fill in using instructions Plot 1
