@@ -14,21 +14,49 @@ knitr::opts_chunk$set(
 )
 ```
 
-You can create graphs and plots in accord with NVI's graphical profile when using ggplot2 with the theme_NVI and the palette_NVI.
-
-First attach the packages and load the theme.
+You can create graphs and plots in accord with NVI's graphical profile when using ggplot2 with the theme_NVI and the palette_NVI. Here we use the built in data set iris
 
 ```{r setup}
-library(ggplot2)
-library(NVIpretty)
-set_theme(theme_NVI())
 ```
 
-```{r echo = FALSE}
+Make a scatter plot with distribution of spetal_length per iris species. First we use the default theme in ggplot2, which is theme_grey.
+```{r} 
 library(ggplot2)
+# Scatter plot
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point(aes(color = Species)) +
+  theme(legend.position = "right") 
+```
+
+Then we would like to make the scatter plot in accord with the graphical profile. We use the theme_NVI and palette_graph that is in the package NVIpretty. First attach the package.
+
+```{r echo = FALSE}
 library(NVIpretty)
+```
+
+You can add theme_NVI in the ggplot function as another statement. theme_NVI removes the background, set the colour for the axis marks and the horizontal support lines. Using palette_graph sets the colours to the colours in the graphical profile.
+```{r} 
+# Scatter plot
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point(aes(color = Species)) +
+  theme(legend.position = "right")  +
+  theme_NVI() +
+  scale_colour_manual(values = palette_graph)
+```
+
+Instead of setting the theme in all the code, you may change the default theme for the session to theme_NVI.  
+```{r}
 theme_set(theme_NVI())
 ```
+
+Box plot
+```{r} 
+ggplot(iris, aes(Species, Sepal.Length)) +
+  geom_boxplot(aes(fill = Species)) +
+  theme(legend.position = "right") + 
+  scale_fill_manual(values = palette_graph)
+```
+
 
 Example with mtcars and ggplot2 
 https://rpubs.com/chrisbrunsdon/spacetime_1a
@@ -73,6 +101,13 @@ p <- p + facet_grid(facets=. ~ gear) # Side by side bar chart
 p <- p + coord_polar(theta="y") # side by side pie chart
 p
 ```
+
+```{r setup}
+library(NVIpretty)
+# set_theme(theme_NVI())
+```
+
+
 
 Box plot
 ```{r} 
