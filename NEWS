@@ -1,3 +1,16 @@
+NVIpretty 0.3.1 - (2021-11-01)
+--------------------------
+
+Bug fixes:
+
+- theme_NVI has got a thinner horizontal line.
+
+
+Other changes:
+
+- Vignette: Create graphs for NVI
+
+
 NVIpretty 0.3.0 - (2021-10-12)
 --------------------------
 
