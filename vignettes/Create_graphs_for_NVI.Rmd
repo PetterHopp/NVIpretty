@@ -1,0 +1,78 @@
+---
+title: "Create graphs for NVI"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Create graphs for NVI}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The graphical profile for NVI is given in "Grafisk profil for Veterinærinstituttet". The colours to be used in graphs are given at p. 51 and the lay out of graphs are given at p. 52.  
+
+You can create graphs and plots in accord with NVI's graphical profile when using `ggplot2` with the `theme_NVI` and the `palette_NVI`. In all the examples below, the built in data set `iris` is used. Use `help(iris)` to get more information on the data set.
+
+## Scatter plot with the default ggplot2 theme  
+First we make a scatter plot with distribution of spetal_length per iris species. We use the default theme in `ggplot2`, which is `theme_grey`.
+
+```{r fig.width = 5} 
+library(ggplot2)
+# Scatter plot
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point(aes(color = Species)) +
+  theme(legend.position = "right") 
+```
+
+## Scatter plot in accord with NVI's graphical profile  
+Then we would like to make the scatter plot in accord with NVI's graphical profile. We use the `theme_NVI` that governs the lay out of the graph and `palette_graph` for the NVI's coulors. First attach the package `NVIpretty`.
+
+```{r echo = FALSE}
+library(NVIpretty)
+```
+
+`theme_NVI` removes the background of the graph and the legend, set the colour for the axis marks, and the colour and width of the horizontal support lines. Here the theme is added in the `ggplot`-function as another statement. 
+
+`palette_graph` sets the colours to the NVI-colours in the graphical profile.
+```{r fig.width = 5} 
+# Scatter plot
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point(aes(color = Species)) +
+  theme(legend.position = "right")  +
+  theme_NVI() +
+  scale_colour_manual(values = palette_graph)
+```
+
+Instead of adding the theme as a statement within the `ggplot`-function, you may change the default theme for the session to `theme_NVI`. 
+```{r}
+theme_set(theme_NVI())
+```
+
+## Box plot in accord with NVI's graphical profile  
+The default them is now `theme_NVI` and there is no need to specify the theme within `ggplot`.
+```{r fig.width = 5} 
+ggplot(iris, aes(Species, Sepal.Length)) +
+  geom_boxplot(aes(fill = Species)) +
+  theme(legend.position = "right") + 
+  scale_fill_manual(values = palette_graph)
+```
+
+## Histogram in accord with NVI's graphical profile  
+In this example we have chosen one colour per bin. By having 13 bins, we can display all the clours in the palette.
+
+```{r fig.width = 5} 
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_histogram(bins=13, fill=palette_graph ) +
+  theme(legend.position = "right")
+```
+
+## Restoring default theme  
+The following will restore the default `ggplot2`-theme
+```{r}
+theme_set(theme_grey())
+```

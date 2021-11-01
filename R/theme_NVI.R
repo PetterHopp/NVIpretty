@@ -72,7 +72,7 @@ theme_NVI <- function(base_size = 11, base_family = "",
                    panel.border       = ggplot2::element_blank(),
                    strip.background   = ggplot2::element_blank(),
                    plot.background    = ggplot2::element_blank(),
-                   panel.grid.major.y = ggplot2::element_line(color = "gray85", size = 0.75),
+                   panel.grid.major.y = ggplot2::element_line(color = "gray85", size = 0.2),
                    panel.grid.major.x = ggplot2::element_blank(),
                    panel.grid.minor   = ggplot2::element_blank(),
 
