@@ -13,26 +13,25 @@
 #' @importFrom ggplot2 %+replace%
 #'
 #' @examples
-#' mtcars2 <- within(mtcars, {
-#'   vs <- factor(vs, labels = c("V-shaped", "Straight"))
-#'   am <- factor(am, labels = c("Automatic", "Manual"))
-#'   cyl  <- factor(cyl)
-#'   gear <- factor(gear)
-#' })
+#' library(ggplot2)
+#' library(NVIpretty)
 #'
-#' p1 <- ggplot2::ggplot(mtcars2) +
-#'   ggplot2::geom_point(ggplot2::aes(x = wt, y = mpg, colour = gear)) +
-#'   ggplot2::labs(
-#'     title = "Fuel economy declines as weight increases",
-#'     subtitle = "(1973-74)",
-#'     caption = "Data from the 1974 Motor Trend US magazine.",
-#'     tag = "Figure 1",
-#'     x = "Weight (1000 lbs)",
-#'     y = "Fuel economy (mpg)",
-#'     colour = "Gears"
-#'   )
+#' # Scatter plot
+#' ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+#'   geom_point(aes(color = Species)) +
+#'   theme(legend.position = "right")  +
+#'   theme_NVI() +
+#'   scale_colour_manual(values = palette_graph)
 #'
-#'   p1 + theme_NVI()
+#' # Changing default theme for the whole session
+#' theme_set(theme_NVI())
+#'
+#' # The default them is now "theme_NVI" and there is no need to specify the theme within "ggplot".
+#' # Box plot in accord with NVI's graphical profile
+#' ggplot(iris, aes(Species, Sepal.Length)) +
+#'   geom_boxplot(aes(fill = Species)) +
+#'   theme(legend.position = "right") +
+#'   scale_fill_manual(values = palette_graph)
 #'
 #' @export
 
@@ -47,19 +46,19 @@ theme_NVI <- function(base_size = 11, base_family = "",
     base_line_size = base_line_size,
     base_rect_size = base_rect_size
   ) %+replace%
-    ggplot2::theme(line = ggplot2::element_line(colour = "grey15",
+    ggplot2::theme(line = ggplot2::element_line(colour = "grey35",
                                                 size = base_line_size,
                                                 linetype = 1,
                                                 lineend = "butt"),
 
                    rect = ggplot2::element_rect(fill = "white",
-                                                colour = "grey15",
+                                                colour = "grey35",
                                                 size = base_rect_size,
                                                 linetype = 1),
 
                    text = ggplot2::element_text(family = base_family,
                                                 face = "plain",
-                                                colour = "grey15",
+                                                colour = "grey35",
                                                 size = base_size,
                                                 lineheight = 0.9, hjust = 0.5, vjust = 0.5, angle = 0,
                                                 margin = ggplot2::margin(),
