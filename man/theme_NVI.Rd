@@ -29,25 +29,24 @@ The NVI theme without background for plot and legend, light grey horizontal supp
 lines and dark grey axis' marks.
 }
 \examples{
-mtcars2 <- within(mtcars, {
-  vs <- factor(vs, labels = c("V-shaped", "Straight"))
-  am <- factor(am, labels = c("Automatic", "Manual"))
-  cyl  <- factor(cyl)
-  gear <- factor(gear)
-})
+library(ggplot2)
+library(NVIpretty)
 
-p1 <- ggplot2::ggplot(mtcars2) +
-  ggplot2::geom_point(ggplot2::aes(x = wt, y = mpg, colour = gear)) +
-  ggplot2::labs(
-    title = "Fuel economy declines as weight increases",
-    subtitle = "(1973-74)",
-    caption = "Data from the 1974 Motor Trend US magazine.",
-    tag = "Figure 1",
-    x = "Weight (1000 lbs)",
-    y = "Fuel economy (mpg)",
-    colour = "Gears"
-  )
+# Scatter plot
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point(aes(color = Species)) +
+  theme(legend.position = "right")  +
+  theme_NVI() +
+  scale_colour_manual(values = palette_graph)
 
-  p1 + theme_NVI()
+# Changing default theme for the whole session
+theme_set(theme_NVI())
+
+# The default them is now "theme_NVI" and there is no need to specify the theme within "ggplot".
+# Box plot in accord with NVI's graphical profile
+ggplot(iris, aes(Species, Sepal.Length)) +
+  geom_boxplot(aes(fill = Species)) +
+  theme(legend.position = "right") +
+  scale_fill_manual(values = palette_graph)
 
 }
