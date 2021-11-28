@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-`r NVIpkg`: Tools to make R-output pretty in accord with NVI's graphical profile
+`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"))`
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -30,6 +30,16 @@ knitr::opts_chunk$set(
   - [Contributing](#contributing)
 
 # Overview
+```{r, include = FALSE}
+description <- desc::desc_get_field(key = "Description")
+```
+`r paste0(NVIpkg_inline, 
+   "", 
+   sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
+
+```{r child=system.file('templates', "README_NVIverse.Rmd", package = "NVIpackager")}
+```
+
 `r NVIpkg_inline` provide tools to make R-output pretty in accord with Norwegian Veterinary Institute's (NVI) graphical profile. For products that are not described in the graphical profile, the tools should help standardizing the output and aid in increasing readability and use.  
 
 The package is under development. Currently the package comprises functions that standardizes output to Excel and palettes with colour codes for the NVI colours. [Contributions](#contributing) to enhance the package is highly appreciated.  
@@ -57,6 +67,9 @@ knitr::kable(x = NVIverse)
 ```
 
 # Installation
+```{r child=system.file('templates', "README_installation.Rmd", package = "NVIpackager")}
+```
+
 `r NVIpkg_inline`  is available at [GitHub](https://github.com/NorwegianVeterinaryInstitute). 
 To install `r NVIpkg_inline` you will need:
 
@@ -82,6 +95,8 @@ cat(text, sep="", fill = TRUE)
 ```
 
 # Usage
+```{r child=system.file('templates', "README_usage_attach.Rmd", package = "NVIpackager")}
+```
 
 ``` r
 # Attach packages and set up with temporary directory
@@ -107,8 +122,13 @@ saveWorkbook(wb = workbook,
                           overwrite = TRUE)
 ```
 
+```{r child=system.file('templates', "README_usage_help.Rmd", package = "NVIpackager")}
+```
+
 
 # Copyright and license
+```{r child=system.file('templates', "README_copyright_and_license.Rmd", package = "NVIpackager")}
+```
 
 Copyright (c) 2021 Norwegian Veterinary Institute.  
 Licensed under the BSD 3-Clause [License](`r  paste0("https://github.com/NorwegianVeterinaryInstitute/", NVIpkg, "/blob/main/LICENSE")` ).
@@ -116,12 +136,10 @@ Licensed under the BSD 3-Clause [License](`r  paste0("https://github.com/Norwegi
 
 # Contributing
 
-Contributions to develop `r NVIpkg_inline` is highly appreciated. There are several 
-ways you can contribute to this project: ask a question, propose an idea, report 
-a bug, improve the documentation, or contribute code. The vignette 
-"Contribute to `r NVIpkg`" gives more information.
+```{r child=system.file('templates', "README_contributing.Rmd", package = "NVIpackager")}
+```
 
+<!-- Code of conduct -->
 -----
-
-Please note that the `r NVIpkg` project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By 
-contributing to this project, you agree to abide by its terms.
+```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
+```
