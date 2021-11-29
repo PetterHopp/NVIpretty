@@ -44,59 +44,18 @@ description <- desc::desc_get_field(key = "Description")
 
 The package is under development. Currently the package comprises functions that standardizes output to Excel and palettes with colour codes for the NVI colours. [Contributions](#contributing) to enhance the package is highly appreciated.  
 
-`r NVIpkg_inline` is part of `NVIverse`, a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI).  
-
-####  Table 1. NVIverse packages
-```{r echo = FALSE, resuls = 'asis'}
-NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
-                                  "Configuration information necessary for some NVIverse functions"),
-                                c("NVIdb", "Public",
-                                  "Tools to facilitate the use of NVI's databases"),
-                                c("NVIpretty",  "Public",
-                                  "Tools to make R-output pretty in accord with NVI's graphical profile"),
-                                c("NVIbatch",  "Public",
-                                  "Tools to facilitate the running of R-scripts in batch mode at NVI"),
-                                c("NVIcheckmate",  "Public",
-                                  "Extension of checkmate with argument checking adapted for NVIverse"),
-                                c("OKplan",  "Public",
-                                  "Tools to facilitate the planning of surveillance programmes for the NFSA"),
-                                c("OKcheck",  "Public",
-                                  "Tools to facilitate checking of data from national surveillance programmes")))
-colnames(NVIverse) <- c("Package", "Status", "Description")
-knitr::kable(x = NVIverse)
-```
-
 # Installation
 ```{r child=system.file('templates', "README_installation.Rmd", package = "NVIpackager")}
 ```
 
-`r NVIpkg_inline`  is available at [GitHub](https://github.com/NorwegianVeterinaryInstitute). 
-To install `r NVIpkg_inline` you will need:
-
-- R version > 4.0.0
-- R package `devtools`
-- Rtools 4.0
-
-First install and attach the `devtools` package.  
-
-``` {r, eval = FALSE} 
-install.packages("devtools")
-library(devtools)
-```
-
-To install (or update) the `r NVIpkg_inline` package, run the following code:
-
-``` {r text, message=FALSE, warnings=FALSE, echo=FALSE, prompt = FALSE, comment = ""} 
-text <- paste(paste0('remotes::install_github("NorwegianVeterinaryInstitute/', NVIpkg, '")'), 
-	'    upgrade = FALSE,', 
-	'    build = TRUE,',
-	'    build_manual = TRUE)', sep = '\n')
-cat(text, sep="", fill = TRUE)
-```
 
 # Usage
 ```{r child=system.file('templates', "README_usage_attach.Rmd", package = "NVIpackager")}
 ```
+
+For information on using the colour palettes and the NVI_theme in ggplot2, please have look at the vignette 'Create graphs for NVI'. 
+
+NVIpretty can also be used to style an Excel sheet as in the example below. 
 
 ``` r
 # Attach packages and set up with temporary directory
@@ -129,10 +88,6 @@ saveWorkbook(wb = workbook,
 # Copyright and license
 ```{r child=system.file('templates', "README_copyright_and_license.Rmd", package = "NVIpackager")}
 ```
-
-Copyright (c) 2021 Norwegian Veterinary Institute.  
-Licensed under the BSD 3-Clause [License](`r  paste0("https://github.com/NorwegianVeterinaryInstitute/", NVIpkg, "/blob/main/LICENSE")` ).
-  
 
 # Contributing
 
