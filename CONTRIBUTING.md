@@ -1,5 +1,8 @@
 # Contribute to NVIpretty
-<!-- CONTRIBUTING.md is generated from ./vignettes/Contribute_to_NVIpretty.Rmd. Please edit that file -->
+
+<!-- CONTRIBUTING.md and ./vignettes/Contribute_to_NVIpkg.Rmd. are generated 
+     from ./templates/Contribute_to_NVIpkg.Rmd in NVIpackager. 
+     Please edit that file -->
 
 Thank you for considering contributing to `NVIpretty`.
 
@@ -12,9 +15,9 @@ management and data reporting at the Norwegian Veterinary Institute
 
 <table>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 6%" />
-<col style="width: 82%" />
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 78%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -45,19 +48,24 @@ management and data reporting at the Norwegian Veterinary Institute
 <td style="text-align: left;">Tools to facilitate the running of R-scripts in batch mode at NVI</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">NVIcheckmate</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Extension of checkmate with additional functions for argument checking for use in NVIverse functions</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">OKplan</td>
 <td style="text-align: left;">Public</td>
 <td style="text-align: left;">Tools to facilitate the planning of surveillance programmes for the NFSA</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">OKcheck</td>
 <td style="text-align: left;">Public</td>
 <td style="text-align: left;">Tools to facilitate checking of data from national surveillance programmes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVIcheckmate</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Extension of checkmate with argument checking adapted for NVIverse</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVIpackager</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the development of NVIverse packages</td>
 </tr>
 </tbody>
 </table>
