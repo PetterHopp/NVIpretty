@@ -6,6 +6,7 @@ output:
   
 params:
   NVIpkg: "NVIpretty"
+  first_copyright_year: "2020"
 ---
 
 ```{r, include = FALSE}
