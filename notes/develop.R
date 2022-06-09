@@ -1,76 +1,67 @@
-# TEST, DOCUMENT AND BUILD NVIdb PACKAGE
+# CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
+
+# Update this file with the template in NVIpackager
+# NVIpackager::update_develop()
 
 # SET UP ENVIRONMENT ----
-# rm(list = ls())    # Benyttes for å tømme R-environment ved behov
+# rm(list = ls())    # Use this to empty the environment
 
 # Attach packages
-# library(devtools)
-# library(roxygen2)
 library(NVIpackager)
-library(spelling)
+# library(spelling)
 
 # Global variables
-pkg <- stringi::stri_extract_last_words(usethis::proj_path())
 pkg_path = usethis::proj_path()
-# Rlibrary <- R.home()
+pkg <- stringi::stri_extract_last_words(pkg_path)
 
+
+# CREATE PACKAGE SKELETON ----
 # create_NVIpkg_skeleton(license_keyword = "CC BY 4.0")
 
+
 # DOCUMENTATION AND STYLING ----
+# update_loge should be run if a logo has been created (or updated). Thereafter use "readme = TRUE"
+# update_logo(pkg = pkg, pkg_path = pkg_path)
+
 # Creates new help files
 # Should be run before git push when documentation for functions have been changed
-NVIpackager::document_NVIpkg(style = FALSE,
-                             contributing = FALSE,
+NVIpackager::document_NVIpkg(pkg = pkg,
+                             pkg_path = pkg_path,
+                             style = TRUE,
+                             contributing = TRUE,
                              readme = TRUE,
+                             manual = "update",
                              scope = c("spaces", "line_breaks"))
-
 
 # spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
 
-
-# Alternative for creating the PDF-manual. The manual is not put in the correct directory
-# system(paste(shQuote(file.path(R.home("bin"), "R")),
-#              "CMD",
-#              "Rd2pdf",
-#              paste0("../", pkg)))
-# file.copy(from = paste0(pkg, ".pdf"), to = "./vignettes", overwrite = TRUE)
-# file.remove(".Rd2pdf16372")
-# file.remove("NVIdb.pdf")
-# check .install_extras
 
 # TEST PACKAGE ----
 # Run tests included in ./tests.
 devtools::test()
 
 # Test package coverage
-# DETACH PACKAGE
 # The package must be detached to install it.
 if(pkg %in% (.packages())){
   pkgname <- paste0("package:", pkg)
   detach(pkgname, unload=TRUE, character.only = TRUE)
 }
+# Test and print package coverage
 code_coverage <- covr::package_coverage(path = ".", group = "functions")
 print(x = code_coverage, group = "functions")
 
-# devtools::build_manual(pkg = "../NVIpackager", path = "./vignettes")
-
-# Build the package
-devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
-# Test built package.
+# Build the package and thereafter check
 # Thereby, no problems with files in .Rbuildignore.
-# version <- packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
-version <- packageVersion(pkg, lib.loc = paste0(pkg_path,"/.."))
-
+devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
+version <- utils::packageVersion(pkg, lib.loc = paste0(pkg_path,"/.."))
+# Test built package
 devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args = c("--no-tests"), manual = TRUE)
-
-# Extensive checking of package. Is done after build. Creates PDF-manual
-# system("R CMD check --ignore-vignettes ../NVIdb")
 
 
 # INSTALL PACKAGE ----
-
+# From local version
 NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
-
+# From GitHub
 # NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "PetterHopp")
 #
 # NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "NorwegianVeterinaryInstitute")
