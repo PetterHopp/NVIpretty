@@ -77,7 +77,7 @@ add_formatted_worksheet(iris,
                         colwidths = FALSE,
                         standards = NULL)
 
- style_background_per_column(workbook = workbook,
+style_background_per_column(workbook = workbook,
                              sheet = sheet,
                              data = iris,
                              rule = "> 3",
@@ -86,11 +86,12 @@ add_formatted_worksheet(iris,
                                          "green" = "Petal.Length"),
                              palette = c("bluegrey" = "#6fb2d3", "green" = "#579e65"))
 
-#Save the workbook
+# Save the workbook
 saveWorkbook(wb = workbook, file = paste0(td, "/iris.xlsx"), overwrite = TRUE)
 
 print(paste("You may examine the Excel workbook at", normalizePath(td, winslash = "/")))
 }
+
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no

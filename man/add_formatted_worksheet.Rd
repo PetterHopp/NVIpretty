@@ -52,25 +52,25 @@ and are using \code{NVIdb::standardize_columns} to standardize columns.
 }
 \details{
 Add excel sheet with a formatted header. The header will be formatted
-with bold text.\preformatted{\code{collabels = TRUE} the column names are translated to column labels 
+with bold text.\preformatted{\code{collabels = TRUE} the column names are translated to column labels
 in accord with the column standards table, see \code{standardize_columns}.
 
-\code{colwidths = TRUE} the column widths are given in accord with the 
+\code{colwidths = TRUE} the column widths are given in accord with the
 column standards table, see \code{standardize_columns}.
 
-\code{colwidths = "auto"} the column widths are given automatic column 
+\code{colwidths = "auto"} the column widths are given automatic column
 width. This is not recommend for large tables.
 
-\code{wrapHeadlineText = TRUE} the headline text is allowed to wrap on 
+\code{wrapHeadlineText = TRUE} the headline text is allowed to wrap on
 two or more lines. The parameter should be chosen in accord with what looks
 nice depending on column labels and column widths.
 
-\code{standards} is the name of the table with column standards. If no 
-parameter is given, the columns_standards.csv is used. Column names are 
-translated to column labels in accord with the column standards table, 
+\code{standards} is the name of the table with column standards. If no
+parameter is given, the columns_standards.csv is used. Column names are
+translated to column labels in accord with the column standards table,
 see \code{standardize_columns}.
 
-\code{dbsource} is the dbsource in the column standards table making it 
+\code{dbsource} is the dbsource in the column standards table making it
 possible to tailer the column labels and column widths per table.
 }
 }
@@ -80,6 +80,7 @@ possible to tailer the column labels and column widths per table.
 td <- tempdir()
 library(NVIpretty)
 library(openxlsx)
+
 
 # Generate Excel-sheet
 workbook <- createWorkbook()
@@ -93,12 +94,12 @@ add_formatted_worksheet(iris,
                         colwidths = FALSE,
                         standards = NULL)
 
-#Save the workbook
+# Save the workbook
 saveWorkbook(wb = workbook,
              file = paste0(td, "/iris.xlsx"),
                           overwrite = TRUE)
 
-print(paste("One may examine the Excel workbook at", normalizepath(td, ))) 
+print(paste("One may examine the Excel workbook at", normalizepath(td, )))
 }
 
 }

@@ -35,7 +35,7 @@ library(NVIpretty)
 # Scatter plot
 ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
   geom_point(aes(color = Species)) +
-  theme(legend.position = "right")  +
+  theme(legend.position = "right") +
   theme_NVI() +
   scale_colour_manual(values = palette_graph)
 
@@ -48,5 +48,4 @@ ggplot(iris, aes(Species, Sepal.Length)) +
   geom_boxplot(aes(fill = Species)) +
   theme(legend.position = "right") +
   scale_fill_manual(values = palette_graph)
-
 }
