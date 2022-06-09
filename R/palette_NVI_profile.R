@@ -3,10 +3,10 @@
 #' @title Palette with NVI's profile colours
 #'
 #' @description A vector with the hex values for NVI's profile colours.
-#' 
+#'
 #' @details The colour codes are based on the hex values except for the body text where the cmyk value is used.
 #'     There is not agrement between the hex and cmyk values, but hex seem to give the most correct colour.
-#'     
+#'
 #'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
 #'
 #' @format A vector with named colours:
@@ -18,19 +18,19 @@
 #'   \item{headingblue}{Blue alternative for use in headings.}
 #'   \item{background}{Background colour for large areas as on stands.}
 #' }
-#' 
+#'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
-#' 
+#'
 "palette_NVI_profile"
-#' 
-#' 
-#' @title Palette with colours for table with blue background 
+#'
+#'
+#' @title Palette with colours for table with blue background
 #'
 #' @description A vector with the hex values for a table with blue background.
-#' 
+#'
 #' @details The colour codes are based on the hex values in the Graphical profil handbook except for the body text where the cmyk value is used.
 #'     There is not agreement between the hex and cmyk values, but hex seem to give the most correct colour.
-#'     
+#'
 #'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
 #'
 #' @format A vector with named colours:
@@ -43,18 +43,18 @@
 #'   \item{bodytext}{Black 70% font colour for use in body text.}
 #'   \item{heading}{White font colour for headings.}
 #' }
-#' 
+#'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
-#' 
+#'
 "palette_table_blue"
-#' 
-#' 
-#' @title Palette with colours for table with grey background 
+#'
+#'
+#' @title Palette with colours for table with grey background
 #'
 #' @description A vector with the hex values for a table with grey background.
-#' 
-#' @details The colour codes are based on the cmyk values in the Graphical profil handbook. 
-#'     
+#'
+#' @details The colour codes are based on the cmyk values in the Graphical profil handbook.
+#'
 #'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
 #'
 #' @format A vector with named colours:
@@ -67,26 +67,26 @@
 #'   \item{bodytext}{Black 85% font colour for use in body text.}
 #'   \item{heading}{White font colour for headings.}
 #' }
-#' 
+#'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
-#' 
+#'
 "palette_table_grey"
-#' 
-#' 
+#'
+#'
 #' @title Palette with colours for graphs
 #'
 #' @description A vector with the hex values for colours to be used in graphs.
-#' 
+#'
 #' @details The colour codes are based on the hex values in the Graphical profil handbook except for the body text where the cmyk value is used.
 #'     There is not agreement between the hex and cmyk values, but hex seem to give the most correct colour.
-#'     
+#'
 #'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
 #'
 #' @format A vector with named colours:
 #' \describe{
 #'   \item{colours}{13 different colours}
 #' }
-#' 
+#'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
-#' 
+#'
 "palette_graph"
