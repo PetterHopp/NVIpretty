@@ -29,7 +29,7 @@ test_that("format worksheet", {
                               colname = c("PCR-positiv" = "Sepal.Width"),
                               palette = c("PCR-positiv" = "red", "Seropositiv" = "orange", "Tvilsom" = "yellow", "Negativ" = "green"))
 
-  #Save the workbook
+  # Save the workbook
   # openxlsx::saveWorkbook(wb = workbook,
   #              file = paste0(td, "/iris.xlsx"),
   #              overwrite = TRUE)
@@ -64,7 +64,7 @@ test_that("include function in add_formatted_worksheet", {
 
 
 
-  #Save the workbook
+  # Save the workbook
   # openxlsx::saveWorkbook(wb = workbook,
   #              file = paste0(td, "/iris.xlsx"),
   #              overwrite = TRUE)
@@ -75,5 +75,3 @@ test_that("include function in add_formatted_worksheet", {
 
   # print(paste("One I may examine the Excel workbook at", normalizePath(td, winslash = "/")))
 })
-
-
