@@ -52,7 +52,9 @@ and are using \code{NVIdb::standardize_columns} to standardize columns.
 }
 \details{
 Add excel sheet with a formatted header. The header will be formatted
-with bold text.\preformatted{\code{collabels = TRUE} the column names are translated to column labels
+with bold text.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{\code{collabels = TRUE} the column names are translated to column labels
 in accord with the column standards table, see \code{standardize_columns}.
 
 \code{colwidths = TRUE} the column widths are given in accord with the
@@ -72,7 +74,7 @@ see \code{standardize_columns}.
 
 \code{dbsource} is the dbsource in the column standards table making it
 possible to tailer the column labels and column widths per table.
-}
+}\if{html}{\out{</div>}}
 }
 \examples{
 \dontrun{
