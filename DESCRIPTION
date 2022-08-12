@@ -19,10 +19,10 @@ License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    checkmate,
+    checkmate (>= 2.1.0),
     ggplot2,
     openxlsx,
-    NVIcheckmate (>= 0.3.0),
+    NVIcheckmate (>= 0.5.0),
     NVIdb (>= 0.3.0)
 Suggests:
     datasets,
@@ -40,5 +40,5 @@ Remotes:
 VignetteBuilder: knitr
 Language: en-GB
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Config/testthat/edition: 3
