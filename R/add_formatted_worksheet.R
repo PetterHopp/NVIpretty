@@ -75,13 +75,13 @@
 #' }
 #'
 add_formatted_worksheet <- function(data, workbook, sheet,
-                                     wrapHeadlineText = FALSE,
-                                     collabels = TRUE,
-                                     colwidths = TRUE,
-                                     standards = NULL,
-                                     dbsource = deparse(substitute(data)),
-                                     FUN = NULL,
-                                     ...) {
+                                    wrapHeadlineText = FALSE,
+                                    collabels = TRUE,
+                                    colwidths = TRUE,
+                                    standards = NULL,
+                                    dbsource = deparse(substitute(data)),
+                                    FUN = NULL,
+                                    ...) {
 
   if (!is.null(FUN)) {FUN = match.fun(FUN)}
 
@@ -92,7 +92,9 @@ add_formatted_worksheet <- function(data, workbook, sheet,
   # Perform checks
   checkmate::assert_data_frame(data, max.rows = (1048576 - 1), max.cols = 16384, add = checks)
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
-  checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
+  NVIcheckmate::assert_character(sheet, len = 1, min.chars = 1, max.chars = 31,
+                                 comment = "Remark that sheet names can be at most 31 characters",
+                                 add = checks)
   checkmate::assert_logical(wrapHeadlineText, add = checks)
   checkmate::assert_logical(collabels, add = checks)
   checkmate::assert_data_frame(standards, add = checks, null.ok = TRUE)
