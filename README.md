@@ -17,9 +17,9 @@ ggplot2 as well as tools to format and style output in Excel.
 `NVIpretty` is part of `NVIverse`, a collection of R-packages with tools
 to facilitate data management and data reporting at the Norwegian
 Veterinary Institute (NVI). The NVIverse consists of the following
-packages: NVIconfig, NVIdb, NVIpretty, NVIbatch, OKplan, OKcheck,
-NVIcheckmate, NVIpackager, NVIrpackages. See the vignette “Contribute to
-NVIpretty” for more information.
+packages: NVIconfig, NVIdb, NVIspatial, NVIpretty, NVIbatch, OKplan,
+OKcheck, NVIcheckmate, NVIpackager, NVIrpackages. See the vignette
+“Contribute to NVIpretty” for more information.
 
 `NVIpretty` provide tools to make R-output pretty in accord with
 Norwegian Veterinary Institute’s (NVI) graphical profile. For products
