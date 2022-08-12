@@ -92,7 +92,9 @@ style_background_per_column <- function(workbook = workbook,
 
   # Perform checks
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
-  checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
+  NVIcheckmate::assert_character(sheet, len = 1, min.chars = 1, max.chars = 31,
+                                 comment = "Remark that sheet names can be at most 31 characters",
+                                 add = checks)
   checkmate::assert_data_frame(data, null.ok = TRUE, add = checks)
   checkmate::assert_character(colnames_in_data, min.len = 1, null.ok = TRUE, add = checks)
   checkmate::assert_integerish(nrows_in_data, lower = 2, len = 1, null.ok = TRUE, add = checks)
