@@ -5,6 +5,8 @@ Other changes:
 
 - Updated documentation (README and CONTRIBUTING).
 
+- Improved argument checking of functions formatting Excel workbooks.
+
 
 NVIpretty 0.3.2 - (2021-11-05)
 --------------------------
