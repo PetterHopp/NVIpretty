@@ -30,17 +30,17 @@
 #' @param data The data frame to export to the Excel sheet.
 #' @param workbook The workbook object.
 #' @param sheet The Excel sheet name.
-#' @param wrapHeadlineText Should headline allow wrapping of text.
-#'     \[\code{logical(1)}\]\, defaults to \code{FALSE}.
-#' @param collabels Should headline be changed to standard labels,
-#'     \[\code{logical(1)}\]\, defaults to \code{TRUE}.
-#' @param colwidths Should defined standard column widths be used.
-#'     \[\code{logical(1)}\]\ or \code{"auto"}, defaults to \code{TRUE}.
+#' @param wrapHeadlineText [\code{logical(1)}]\cr
+#'     Should headline allow wrapping of text. Defaults to \code{FALSE}.
+#' @param collabels [\code{logical(1)}]\cr
+#'     Should headline be changed to standard labels. Defaults to \code{TRUE}.
+#' @param colwidths [\code{logical(1)}] or \code{"auto"}\cr
+#'     Should defined standard column widths be used. Defaults to \code{TRUE}.
 #' @param standards Tables with column_standards.
 #' @param dbsource Database source of data in column standards table.
 #' @param FUN Function for additional formatting of the worksheet. Either
 #'     predefined functions in this package or self made.
-#' @param \dots	Other arguments to be passed to FUN.
+#' @param \dots	Other arguments to be passed to \code{FUN}.
 #'
 #' @return None. A new sheet with formatted headline is added to the workbook object.
 #'
