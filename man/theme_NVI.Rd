@@ -22,11 +22,11 @@ theme_NVI(
 }
 \description{
 A complete ggplot2 theme in accord with NVI's graphical profile.
-The theme control all non-data display.
+    The theme control all non-data display.
 }
 \details{
 The NVI theme without background for plot and legend, light grey horizontal support
-lines and dark grey axis' marks.
+    lines and dark grey axis' marks.
 }
 \examples{
 library(ggplot2)
