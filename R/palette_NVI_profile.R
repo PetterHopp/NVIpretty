@@ -1,13 +1,15 @@
 # Generate help for palettes in accord with NVI's profile
 #
+#' @md
 #' @title Palette with NVI's profile colours
 #'
 #' @description A vector with the hex values for NVI's profile colours.
 #'
-#' @details The colour codes are based on the hex values except for the body text where the cmyk value is used.
-#'     There is not agrement between the hex and cmyk values, but hex seem to give the most correct colour.
+#' @details The colour codes are based on the hex values except for the body text
+#'     where the cmyk value is used. There is not agreement between the hex and
+#'     cmyk values, but hex seem to give the most correct colour.
 #'
-#'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -24,14 +26,15 @@
 "palette_NVI_profile"
 #'
 #'
+#' @md
 #' @title Palette with colours for table with blue background
 #'
 #' @description A vector with the hex values for a table with blue background.
 #'
-#' @details The colour codes are based on the hex values in the Graphical profil handbook except for the body text where the cmyk value is used.
+#' @details The colour codes are based on the hex values in the Graphical profile handbook except for the body text where the cmyk value is used.
 #'     There is not agreement between the hex and cmyk values, but hex seem to give the most correct colour.
 #'
-#'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -49,13 +52,14 @@
 "palette_table_blue"
 #'
 #'
+#' @md
 #' @title Palette with colours for table with grey background
 #'
 #' @description A vector with the hex values for a table with grey background.
 #'
-#' @details The colour codes are based on the cmyk values in the Graphical profil handbook.
+#' @details The colour codes are based on the cmyk values in the Graphical profile handbook.
 #'
-#'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -77,10 +81,12 @@
 #'
 #' @description A vector with the hex values for colours to be used in graphs.
 #'
-#' @details The colour codes are based on the hex values in the Graphical profil handbook except for the body text where the cmyk value is used.
-#'     There is not agreement between the hex and cmyk values, but hex seem to give the most correct colour.
+#' @details The colour codes are based on the hex values in the Graphical profile
+#'     handbook except for the body text where the cmyk value is used. There is
+#'     not agreement between the hex and cmyk values, but hex seem to give the
+#'     most correct colour.
 #'
-#'     The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
