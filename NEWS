@@ -3,7 +3,7 @@ NVIpretty 0.3.2.9000 - (2022-##-##)
 
 Other changes:
 
-- Updated documentation (README and CONTRIBUTING).
+- Updated documentation (help, README and CONTRIBUTING).
 
 - Improved argument checking of functions formatting Excel workbooks.
 
