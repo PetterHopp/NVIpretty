@@ -16,10 +16,12 @@ ggplot2 as well as tools to format and style output in Excel.
 
 `NVIpretty` is part of `NVIverse`, a collection of R-packages with tools
 to facilitate data management and data reporting at the Norwegian
-Veterinary Institute (NVI). The NVIverse consists of the following
-packages: NVIconfig, NVIdb, NVIspatial, NVIpretty, NVIbatch, OKplan,
-OKcheck, NVIcheckmate, NVIpackager, NVIrpackages. See the vignette
-“Contribute to NVIpretty” for more information.
+Veterinary Institute (NVI). The `NVIverse` consists of the following
+packages: `NVIconfig`, `NVIdb`, `NVIspatial`, `NVIpretty`, `NVIbatch`,
+`OKplan`, `OKcheck`, `NVIcheckmate`, `NVIpackager`, `NVIrpackages`. See
+[Contribute to
+NVIpretty](https://github.com/NorwegianVeterinaryInstitute/NVIpretty/blob/main/CONTRIBUTING.md)
+for more information.
 
 `NVIpretty` provide tools to make R-output pretty in accord with
 Norwegian Veterinary Institute’s (NVI) graphical profile. For products
@@ -39,7 +41,7 @@ package is highly appreciated.
 
 -   R version > 4.0.0
 -   R package `remotes`
--   Rtools 4.0
+-   Rtools 4.0 or Rtools 4.2 depending on R version
 
 First install and attach the `remotes` package.
 
@@ -51,7 +53,7 @@ To install (or update) the `NVIpretty` package, run the following code:
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpretty",
         upgrade = FALSE,
         build = TRUE,
-        build_manual = TRUE)
+        build_vignettes = TRUE)
 
 # Usage
 
@@ -107,7 +109,9 @@ for details.
 Contributions to develop `NVIpretty` is highly appreciated. There are
 several ways you can contribute to this project: ask a question, propose
 an idea, report a bug, improve the documentation, or contribute code.
-The vignette “Contribute to NVIpretty” gives more information.
+See [Contribute to
+NVIpretty](https://github.com/NorwegianVeterinaryInstitute/NVIpretty/blob/main/CONTRIBUTING.md)
+for more information.
 
 ## <!-- Code of conduct -->
 
