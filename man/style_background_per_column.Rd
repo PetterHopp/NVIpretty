@@ -48,15 +48,15 @@ None. One or more columns in the workbook object is styled.
 }
 \description{
 Style the cell background with different colours. The background
-colours are chosen based on the column names, for example "paavist" or
-"tvilsom". In each column, all cells that are following the given
-rule, will get the same background colour.
+    colours are chosen based on the column names, for example "paavist" or
+    "tvilsom". In each column, all cells that are following the given
+    rule, will get the same background colour.
 }
 \details{
 The columns will be styled with the colour in the palette that have
-the same name as the column. If the column name is not the same as the
-name of the colour in the palette, the vector of column names can be named
-with the corresponding colour name, see example.
+    the same name as the column. If the column name is not the same as the
+    name of the colour in the palette, the vector of column names can be named
+    with the corresponding colour name, see example.
 }
 \examples{
 \dontrun{
