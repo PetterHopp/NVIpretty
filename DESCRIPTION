@@ -21,22 +21,24 @@ LazyData: true
 Imports: 
     checkmate (>= 2.1.0),
     ggplot2,
+    knitr,
     openxlsx,
+    rmarkdown,
     NVIcheckmate (>= 0.5.0),
-    NVIdb (>= 0.3.0)
+    NVIdb (>= 0.3.0),
+    NVIrpackages
 Suggests:
     datasets,
     devtools,
-    knitr,
     remotes,
-    rmarkdown,
     roxygen2,
     testthat (>= 3.0.0),
     NVIpackager
 Remotes: 
     NorwegianVeterinaryInstitute/NVIcheckmate,
     NorwegianVeterinaryInstitute/NVIdb,
-    NorwegianVeterinaryInstitute/NVIpackager
+    NorwegianVeterinaryInstitute/NVIpackager,
+    NorwegianVeterinaryInstitute/NVIrpackages
 VignetteBuilder: knitr
 Language: en-GB
 Roxygen: list(markdown = FALSE)
