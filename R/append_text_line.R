@@ -27,7 +27,7 @@ append_text_line <- function(data, text, empty_rows = 0) {
   # Perform checks
   checkmate::assert_data_frame(data, add = checks)
   checkmate::assert_character(text, add = checks)
-  checkmate::assert_character(empty_rows, add = checks)
+  checkmate::assert_integerish(empty_rows, lower = 0, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 
@@ -35,9 +35,7 @@ append_text_line <- function(data, text, empty_rows = 0) {
   data <- as.data.frame(data)
 
   # Includes n_rows_ahead empty rows at end of data frame
-  if (empty_rows > 0) {
-    data[(dim(data)[1] + 1):(dim(data)[1] + empty_rows), ] <- NA
-  }
+  data[(dim(data)[1] + 1):(dim(data)[1] + empty_rows + 1), ] <- NA
 
   # input text
   data[dim(data)[1], 1] <- text
