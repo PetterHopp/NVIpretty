@@ -1,6 +1,6 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's graphical profile
-Version: 0.3.2.9000
+Version: 0.3.2.9001
 Date: 2022-##-##
 Authors@R: 
   c(person(given = "Petter",
