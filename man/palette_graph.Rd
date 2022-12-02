@@ -7,7 +7,7 @@
 \format{
 A vector with named colours:
 \describe{
-\item{colours}{13 different colours}
+  \item{colours}{13 different colours}
 }
 }
 \source{
@@ -20,8 +20,11 @@ palette_graph
 A vector with the hex values for colours to be used in graphs.
 }
 \details{
-The colour codes are based on the hex values in the Graphical profil handbook except for the body text where the cmyk value is used.
-There is not agreement between the hex and cmyk values, but hex seem to give the most correct colour.\preformatted{The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
-}
+The colour codes are based on the hex values in the Graphical profile
+    handbook except for the body text where the cmyk value is used. There is
+    not agreement between the hex and cmyk values, but hex seem to give the
+    most correct colour.
+
+The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 }
 \keyword{datasets}

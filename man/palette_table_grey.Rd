@@ -26,7 +26,8 @@ palette_table_grey
 A vector with the hex values for a table with grey background.
 }
 \details{
-The colour codes are based on the cmyk values in the Graphical profil handbook.\preformatted{The script for preparing the palette is given in \code{./data-raw/generate_NVI_palettes.R}.
-}
+The colour codes are based on the cmyk values in the Graphical profile handbook.
+
+The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 }
 \keyword{datasets}

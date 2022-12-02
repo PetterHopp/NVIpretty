@@ -22,11 +22,11 @@ theme_NVI(
 }
 \description{
 A complete ggplot2 theme in accord with NVI's graphical profile.
-The theme control all non-data display.
+    The theme control all non-data display.
 }
 \details{
 The NVI theme without background for plot and legend, light grey horizontal support
-lines and dark grey axis' marks.
+    lines and dark grey axis' marks.
 }
 \examples{
 library(ggplot2)
@@ -35,7 +35,7 @@ library(NVIpretty)
 # Scatter plot
 ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
   geom_point(aes(color = Species)) +
-  theme(legend.position = "right")  +
+  theme(legend.position = "right") +
   theme_NVI() +
   scale_colour_manual(values = palette_graph)
 
@@ -48,5 +48,4 @@ ggplot(iris, aes(Species, Sepal.Length)) +
   geom_boxplot(aes(fill = Species)) +
   theme(legend.position = "right") +
   scale_fill_manual(values = palette_graph)
-
 }

@@ -1,3 +1,20 @@
+NVIpretty 0.4.0 - (2022-12-02)
+--------------------------
+
+New features:
+
+- Created append_text_line for appending a line with explanatory text to a data frame before writing it to Excel.
+
+- Created style_text_line to style a line in an Excel sheet based on text content in one cell.
+
+
+Other changes:
+
+- Updated documentation (help, README and CONTRIBUTING).
+
+- Improved argument checking of functions formatting Excel workbooks.
+
+
 NVIpretty 0.3.2 - (2021-11-05)
 --------------------------
 

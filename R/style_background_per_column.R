@@ -52,7 +52,7 @@
 #'                         colwidths = FALSE,
 #'                         standards = NULL)
 #'
-#'  style_background_per_column(workbook = workbook,
+#' style_background_per_column(workbook = workbook,
 #'                              sheet = sheet,
 #'                              data = iris,
 #'                              rule = "> 3",
@@ -61,12 +61,12 @@
 #'                                          "green" = "Petal.Length"),
 #'                              palette = c("bluegrey" = "#6fb2d3", "green" = "#579e65"))
 #'
-#' #Save the workbook
+#' # Save the workbook
 #' saveWorkbook(wb = workbook, file = paste0(td, "/iris.xlsx"), overwrite = TRUE)
 #'
 #' print(paste("You may examine the Excel workbook at", normalizePath(td, winslash = "/")))
 #' }
-
+#'
 style_background_per_column <- function(workbook = workbook,
                                         sheet = sheet,
                                         data = NULL,
@@ -92,7 +92,9 @@ style_background_per_column <- function(workbook = workbook,
 
   # Perform checks
   checkmate::assert_class(workbook, classes = "Workbook", add = checks)
-  checkmate::assert_character(sheet, len = 1, min.chars = 1, add = checks)
+  NVIcheckmate::assert_character(sheet, len = 1, min.chars = 1, max.chars = 31,
+                                 comment = "Remark that sheet names can be at most 31 characters",
+                                 add = checks)
   checkmate::assert_data_frame(data, null.ok = TRUE, add = checks)
   checkmate::assert_character(colnames_in_data, min.len = 1, null.ok = TRUE, add = checks)
   checkmate::assert_integerish(nrows_in_data, lower = 2, len = 1, null.ok = TRUE, add = checks)
@@ -122,4 +124,3 @@ style_background_per_column <- function(workbook = workbook,
   }
 
 }
-

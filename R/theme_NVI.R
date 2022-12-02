@@ -19,7 +19,7 @@
 #' # Scatter plot
 #' ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
 #'   geom_point(aes(color = Species)) +
-#'   theme(legend.position = "right")  +
+#'   theme(legend.position = "right") +
 #'   theme_NVI() +
 #'   scale_colour_manual(values = palette_graph)
 #'
@@ -32,7 +32,6 @@
 #'   geom_boxplot(aes(fill = Species)) +
 #'   theme(legend.position = "right") +
 #'   scale_fill_manual(values = palette_graph)
-#'
 #' @export
 
 
@@ -64,16 +63,16 @@ theme_NVI <- function(base_size = 11, base_family = "",
                                                 margin = ggplot2::margin(),
                                                 debug = FALSE),
 
-                   axis.ticks         = ggplot2::element_blank(),
-                   legend.background  = ggplot2::element_blank(),
-                   legend.key         = ggplot2::element_blank(),
-                   panel.background   = ggplot2::element_blank(),
-                   panel.border       = ggplot2::element_blank(),
-                   strip.background   = ggplot2::element_blank(),
-                   plot.background    = ggplot2::element_blank(),
+                   axis.ticks = ggplot2::element_blank(),
+                   legend.background = ggplot2::element_blank(),
+                   legend.key = ggplot2::element_blank(),
+                   panel.background = ggplot2::element_blank(),
+                   panel.border = ggplot2::element_blank(),
+                   strip.background = ggplot2::element_blank(),
+                   plot.background = ggplot2::element_blank(),
                    panel.grid.major.y = ggplot2::element_line(color = "gray85", size = 0.2),
                    panel.grid.major.x = ggplot2::element_blank(),
-                   panel.grid.minor   = ggplot2::element_blank(),
+                   panel.grid.minor = ggplot2::element_blank(),
 
                    complete = TRUE
     )

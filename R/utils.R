@@ -48,4 +48,3 @@ set_name_vector <- function(colname_vector) {
 
   return(stats::setNames(colname_vector, name))
 }
-
