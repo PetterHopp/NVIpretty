@@ -30,11 +30,11 @@ test_that("format worksheet", {
                               palette = c("PCR-positiv" = "red", "Seropositiv" = "orange", "Tvilsom" = "yellow", "Negativ" = "green"))
 
   # Save the workbook
-  # openxlsx::saveWorkbook(wb = workbook,
-  #              file = paste0(td, "/iris.xlsx"),
-  #              overwrite = TRUE)
+  openxlsx::saveWorkbook(wb = workbook,
+               file = paste0(td, "/iris.xlsx"),
+               overwrite = TRUE)
 
-  expect_identical(colnames(openxlsx::read.xlsx(xlsxFile = workbook, sheet = "iris", rows = 1, sep.names = " ")),
+  expect_identical(colnames(openxlsx::read.xlsx(xlsxFile = paste0(td, "/iris.xlsx"), sheet = "iris", rows = 1, sep.names = " ")),
                    c("Sepal length", "Sepal width", "Petal length", "Petal width", "Species"))
 
 
@@ -65,11 +65,11 @@ test_that("include function in add_formatted_worksheet", {
 
 
   # Save the workbook
-  # openxlsx::saveWorkbook(wb = workbook,
-  #              file = paste0(td, "/iris.xlsx"),
-  #              overwrite = TRUE)
+  openxlsx::saveWorkbook(wb = workbook,
+               file = paste0(td, "/iris.xlsx"),
+               overwrite = TRUE)
 
-  expect_identical(colnames(openxlsx::read.xlsx(xlsxFile = workbook, sheet = "iris", rows = 1, sep.names = " ")),
+  expect_identical(colnames(openxlsx::read.xlsx(xlsxFile = paste0(td, "/iris.xlsx"), sheet = "iris", rows = 1, sep.names = " ")),
                    c("Sepal length", "Sepal width", "Petal length", "Petal width", "Species"))
 
 
