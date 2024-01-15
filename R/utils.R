@@ -23,7 +23,7 @@
 #' @examples
 #' \dontrun{
 #' new_columns <- c("name11" = "column1", "name2" = "column2", "column3")
-#'   new_columns <- set_name_vector(new_columns)
+#' new_columns <- set_name_vector(new_columns)
 #' }
 #' @noRd
 

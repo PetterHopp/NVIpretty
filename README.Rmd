@@ -6,6 +6,7 @@ output:
   
 params:
   NVIpkg: "NVIpretty"
+  pkg_path: !r  usethis::proj_path()
   first_copyright_year: "2020"
 ---
 

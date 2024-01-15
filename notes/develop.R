@@ -16,12 +16,19 @@ pkg <- stringi::stri_extract_last_words(pkg_path)
 
 
 # CREATE PACKAGE SKELETON ----
-# create_NVIpkg_skeleton(license_keyword = "CC BY 4.0")
+# create_NVIpkg_skeleton(license_keyword = "BSD_3_clause") # BSD_3_clause # CC BY 4.0
 
 # INCREASE PACKAGE VERSION IN DESCRIPTION AND NEWS ----
 # NVIpackager::increase_NVIpkg_version(pkg = pkg,
 #                                   pkg_path = pkg_path,
-#                                   type = "develop")
+#                                   type = "develop",
+#                                   document = FALSE)
+
+# UPDATE LICENSE
+# NVIpackager::update_license(pkg = pkg,
+#                             pkg_path = pkg_path,
+#                             copyright_owner = "Norwegian Veterinary Institute")
+
 
 # DOCUMENTATION AND STYLING ----
 # update_logo should be run if a logo has been created (or updated). Thereafter run "document_NVIpkg" with "readme = TRUE".
@@ -36,6 +43,8 @@ NVIpackager::document_NVIpkg(pkg = pkg,
                              readme = FALSE,
                              manual = "update",
                              scope = c("spaces", "line_breaks"))
+# filename <- "xxxx.R"
+# styler::style_file(path = file.path(pkg_path, "R", filename), scope = I(c("spaces")))
 
 # spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
 
@@ -85,4 +94,23 @@ utils::help(package = (pkg))
 
 library(package = pkg, character.only = TRUE)
 
+
+# MANUAL CHECK OF SCRIPTS ----
+# Search for string
+txt <- "\\.data\\$"
+files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
+files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
+package <- rep(pkg, dim(files_with_pattern)[1])
+files_with_pattern <- cbind(package, files_with_pattern)
+
+wb <- openxlsx::createWorkbook()
+# Replace with openxlsx::addWorksheet()
+NVIpretty::add_formatted_worksheet(data = files_with_pattern,
+                                   workbook = wb,
+                                   sheet = make.names(paste0(pkg, txt)))
+openxlsx::saveWorkbook(wb,
+                       file = file.path("../", paste0(pkg, "_", "files_with_pattern.xlsx")),
+                       overwrite = TRUE)
+
+# Replace all occurrences of string in scripts
 
