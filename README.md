@@ -1,4 +1,4 @@
-# NVIpretty: Tools for making R-output pretty in accord with NVI’s graphical profile
+# NVIpretty: Tools for making R-output pretty in accord with NVI’s graphical profile <img src="man/figures/NVIpretty_logo.png" align="right" height="138" />
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
