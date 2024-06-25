@@ -4,7 +4,7 @@ subtitle: "Undertittel"
 author: "Navn/tittel/avdeling"
 format: 
   pptx:
-    reference-doc: "C:/Program Files/R/R-4.3.1/library/NVIpretty/PP_templates/VI_rod_m_logo_16_9.pptx"
+    reference-doc: "C:/Users/13hopp/Documents/GitHub/NVIpretty/inst/PP_templates/VI_mork_u_logo_16_9.potx"
 editor: visual
 ---
 
