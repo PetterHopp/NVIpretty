@@ -32,7 +32,7 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
 ## Scatter plot in accord with NVI's graphical profile  
 Then we would like to make the scatter plot in accord with NVI's graphical profile. We use the `theme_NVI` that governs the lay out of the graph and `palette_graph` for the NVI's coulors. First attach the package `NVIpretty`.
 
-```{r echo = FALSE}
+```{r}
 library(NVIpretty)
 ```
 
@@ -63,7 +63,7 @@ ggplot(iris, aes(Species, Sepal.Length)) +
 ```
 
 ## Histogram in accord with NVI's graphical profile  
-In this example we have chosen one colour per bin. By having 13 bins, we can display all the clours in the palette.
+In this example we have chosen to have 13 bins. Thereby, we can display all the colours in the palette.
 
 ```{r fig.width = 5} 
 ggplot(iris, aes(x = Sepal.Length)) +
