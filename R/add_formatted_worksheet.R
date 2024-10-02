@@ -1,16 +1,21 @@
 #' @title Add excel sheet with a formatted header
 #' @description Add excel sheet with a header formatted with bold font, column
-#'     labels and column width. The function is a wrapper for \code{openxlsx::addWorksheet}
-#'     and are using \code{NVIdb::standardize_columns} to standardize columns.
+#'     labels and column width. The function is a wrapper for
+#'     \ifelse{html}{\code{\link[openxlsx:addWorksheet]{openxlsx::addWorksheet}}}{\code{openxlsx::addWorksheet}}
+#'     and are using
+#'     \ifelse{html}{\code{\link[NVIdb:standardize_columns]{NVIdb::standardize_columns}}}{\code{NVIdb::standardize_columns}}
+#'     to standardize columns.
 #'
 #' @details Add excel sheet with a formatted header. The header will be formatted
 #'     with bold text.
 #'
 #'     \code{collabels = TRUE} the column names are translated to column labels
-#'     in accord with the column standards table, see \code{standardize_columns}.
+#'     in accord with the column standards table, see
+#'     \ifelse{html}{\code{\link[NVIdb:standardize_columns]{NVIdb::standardize_columns}}}{\code{NVIdb::standardize_columns}}.
 #'
 #'     \code{colwidths = TRUE} the column widths are given in accord with the
-#'     column standards table, see \code{standardize_columns}.
+#'     column standards table, see
+#'     \ifelse{html}{\code{\link[NVIdb:standardize_columns]{NVIdb::standardize_columns}}}{\code{NVIdb::standardize_columns}}.
 #'
 #'     \code{colwidths = "auto"} the column widths are given automatic column
 #'     width. This is not recommend for large tables.
@@ -27,18 +32,25 @@
 #'     \code{dbsource} is the dbsource in the column standards table making it
 #'     possible to tailer the column labels and column widths per table.
 #'
-#' @param data The data frame to export to the Excel sheet.
-#' @param workbook The workbook object.
-#' @param sheet The Excel sheet name.
+#' @param data [\code{data.frame}]\cr
+#'     The data to export to the Excel sheet.
+#' @param workbook [\code{work book object}]\cr
+#'     The workbook object used to create the Excel workbook.
+#' @param sheet [\code{character(1)}]\cr
+#'     The Excel sheet name.
 #' @param wrapHeadlineText [\code{logical(1)}]\cr
 #'     Should headline allow wrapping of text. Defaults to \code{FALSE}.
 #' @param collabels [\code{logical(1)}]\cr
 #'     Should headline be changed to standard labels. Defaults to \code{TRUE}.
 #' @param colwidths [\code{logical(1)}] or \code{"auto"}\cr
 #'     Should defined standard column widths be used. Defaults to \code{TRUE}.
-#' @param standards Tables with column_standards.
-#' @param dbsource Database source of data in column standards table.
-#' @param FUN Function for additional formatting of the worksheet. Either
+#' @param standards [\code{data.frame}]\cr
+#'     Tables with column_standards.
+#' @param dbsource [\code{character(1)}]\cr
+#'     Database source of data in column standards table. Defaults to name
+#'     of input data.
+#' @param FUN [\code{function}]\cr
+#'     Function for additional formatting of the worksheet. Either
 #'     predefined functions in this package or self made.
 #' @param \dots	Other arguments to be passed to \code{FUN}.
 #'

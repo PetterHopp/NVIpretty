@@ -5,10 +5,14 @@
 #' @details The NVI theme without background for plot and legend, light grey horizontal support
 #'     lines and dark grey axis' marks.
 #'
-#' @param base_size base font size, given in pts.
-#' @param base_family base font family.
-#' @param base_line_size base size for line elements.
-#' @param base_rect_size base size for rectangular elements.
+#' @param base_size [\code{numeric(1)}]\cr
+#'     Base font size, given in pts. Defaults to 11.
+#' @param base_family [\code{character(1)}]\cr
+#'     Base font family. Defaults to "".
+#' @param base_line_size [\code{numeric(1)}]\cr
+#'     Base size for line elements. Defaults to `base_size` / 22.
+#' @param base_rect_size [\code{numeric(1)}]\cr
+#'     Base size for rectangular elements. Defaults to `base_size` / 22.
 #'
 #' @importFrom ggplot2 %+replace%
 #'

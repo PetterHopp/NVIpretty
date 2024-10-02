@@ -34,7 +34,7 @@ test_that("Error testing of append_text_line", {
                fixed = TRUE)
 
   expect_error(append_text_line(data = mtcars, text = NULL, empty_rows = 0),
-               regexp = "Variable 'text': Must be of type 'character', not 'NULL'",
+               regexp = "Variable 'text': Must be of type 'string', not 'NULL'",
                fixed = TRUE)
 
   expect_error(append_text_line(data = mtcars, text = "text", empty_rows = -1),

@@ -12,13 +12,17 @@ theme_NVI(
 )
 }
 \arguments{
-\item{base_size}{base font size, given in pts.}
+\item{base_size}{[\code{numeric(1)}]\cr
+Base font size, given in pts. Defaults to 11.}
 
-\item{base_family}{base font family.}
+\item{base_family}{[\code{character(1)}]\cr
+Base font family. Defaults to "".}
 
-\item{base_line_size}{base size for line elements.}
+\item{base_line_size}{[\code{numeric(1)}]\cr
+Base size for line elements. Defaults to `base_size` / 22.}
 
-\item{base_rect_size}{base size for rectangular elements.}
+\item{base_rect_size}{[\code{numeric(1)}]\cr
+Base size for rectangular elements. Defaults to `base_size` / 22.}
 }
 \description{
 A complete ggplot2 theme in accord with NVI's graphical profile.

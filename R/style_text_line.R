@@ -5,27 +5,38 @@
 #'
 #' @details The whole line will be styled.
 #'
-#'     \code{openxlxs::createStyle} is used for formatting the row. Use
+#'     \ifelse{html}{\code{\link[openxlsx:createStyle]{openxlsx::createStyle}}}{\code{openxlsx::createStyle}}
+#'     is used for formatting the row. Use
 #'     \code{text_decoration = "bold"} to format the row with bold font.
 #'     Use \code{wrap_text = TRUE} and  \code{merge_cells = TRUE} if you
 #'     want a footnote to span all cells under the table and potentially
 #'     span more lines. If the text spans more than one line, the height
 #'     of the row can be adjusted by setting \code{heights = }.
 #'
-#' @param workbook The workbook object.
-#' @param sheet The Excel sheet name.
-#' @param data The data frame that have been exported to the Excel sheet. Used to
+#' @param workbook [\code{work book object}]\cr
+#'     The workbook object used to create the Excel workbook. Defaults to `workbook`.
+#' @param sheet [\code{character(1)}]\cr
+#'     The Excel sheet name. Defaults to `sheet`.
+#' @param data [\code{data.frame}]\cr
+#'     The data that have been exported to the Excel sheet. Used to
 #'     find column number and row number for the pretext for which the row should be styled.
-#' @param text The text in the cell for which the row should be styled.
-#' @param text_decoration The text decoration style that should be used,
-#'     see \code{openxlsx::createStyle}. Defaults to \code{NULL}.
-#' @param merge_cells Should the cells in the row spanning the table be merged?
+#' @param text [\code{character(1)}]\cr
+#'     The text in the cell for which the row should be styled.
+#' @param text_decoration [\code{character(1)}]\cr
+#'     The text decoration style that should be used. Should be one of
+#'     c("bold", "strikeout", "italic", "underline", "underline2"), see
+#'     \ifelse{html}{\code{\link[openxlsx:createStyle]{openxlsx::createStyle}}}{\code{openxlsx::createStyle}}.
+#'     Defaults to \code{NULL}.
+#' @param merge_cells [\code{logical(1)}]\cr
+#'     Should the cells in the row spanning the table be merged?
 #'     Defaults to \code{FALSE}.
-#' @param wrap_text Should the text in the cell be wrapped to fit in the column.
+#' @param wrap_text [\code{logical(1)}]\cr
+#'     Should the text in the cell be wrapped to fit in the column.
 #'     Defaults to \code{FALSE}.
-#' @param heights The row height for the formatted row. Defaults to \code{NULL}.
-#' @param \dots	Other arguments to be passed to \code{openxlsx::createStyle}.
-#'
+#' @param heights [\code{integer}]\cr
+#'     The row height for the formatted row. Defaults to \code{NULL}.
+#' @param \dots	Other arguments to be passed to
+#'     \ifelse{html}{\code{\link[openxlsx:createStyle]{openxlsx::createStyle}}}{\code{openxlsx::createStyle}}.
 #'
 #' @return None. One row in the workbook object is styled.
 #'
