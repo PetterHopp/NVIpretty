@@ -12,16 +12,16 @@ theme_NVI(
 )
 }
 \arguments{
-\item{base_size}{[\code{integer(1)}]\cr
+\item{base_size}{[\code{numeric(1)}]\cr
 Base font size, given in pts. Defaults to 11.}
 
 \item{base_family}{[\code{character(1)}]\cr
 Base font family. Defaults to "".}
 
-\item{base_line_size}{[\code{integer(1)}]\cr
+\item{base_line_size}{[\code{numeric(1)}]\cr
 Base size for line elements. Defaults to `base_size` / 22.}
 
-\item{base_rect_size}{[\code{integer(1)}]\cr
+\item{base_rect_size}{[\code{numeric(1)}]\cr
 Base size for rectangular elements. Defaults to `base_size` / 22.}
 }
 \description{
