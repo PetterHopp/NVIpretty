@@ -16,32 +16,42 @@ style_background_per_column(
 )
 }
 \arguments{
-\item{workbook}{The workbook object.}
+\item{workbook}{[\code{work book object}]\cr
+The workbook object used to create the Excel workbook. Defaults to `workbook`.}
 
-\item{sheet}{The Excel sheet name.}
+\item{sheet}{[\code{character(1)}]\cr
+The Excel sheet name. Defaults to `sheet`.}
 
-\item{data}{The data frame that have been exported to the Excel sheet. Used to
+\item{data}{[\code{data.frame}]\cr
+The data that have been exported to the Excel sheet. Used to
 find column number and number of rows in the workbook that should be styled.
 Can be \code{NULL} if both \code{colnames_in_data} and \code{nrows_in_data}
-are different from \code{NULL}.}
+are different from \code{NULL}. Defaults to \code{NULL}.}
 
-\item{colnames_in_data}{The column names of the data frame that has been exported to
-Excel, i.e. \code{colnames(data)}. Can be \code{NULL} if \code{data} has a non-NULL
-argument. Values in \code{colnames_in_data} have preference for values in \code{data}.}
+\item{colnames_in_data}{[\code{character}]\cr
+The column names of the data frame that has been exported to Excel, i.e.
+\code{colnames(data)}. Can be \code{NULL} if \code{data} has a non-NULL
+argument. Values in \code{colnames_in_data} have preference for values in
+\code{data}. Defaults to \code{NULL}.}
 
-\item{nrows_in_data}{The number of rows of the data frame that has been exported to
+\item{nrows_in_data}{[\code{integer(1)}]\cr
+The number of rows of the data frame that has been exported to
 Excel, i.e. \code{nrow(data)}. Can be \code{NULL} if \code{data} has a non-NULL
-argument. Values in \code{nrows_in_data} have preference for values in \code{data}.}
+argument. Values in \code{nrows_in_data} have preference for values in
+\code{data}. Defaults to \code{NULL}.}
 
-\item{rule}{Rule that should be sourced to \code{openxlsx::conditionalFormatting}.
-Defaults to "!= 0".}
+\item{rule}{[\code{integer(1)}]\cr
+Rule that should be sourced to
+\ifelse{html}{\code{\link[openxlsx:conditionalFormatting]{openxlsx::conditionalFormatting}}}{\code{openxlsx::conditionalFormatting}}.}
 
-\item{colname}{Vector with colour names from the palette that should be used
+\item{colname}{[\code{character}]\cr
+Vector with colour names from the palette that should be used
 for styling the columns. If the column name is not the same as the colour
 name in the palette, the colour name should be named with the column name
 in the data frame.}
 
-\item{palette}{Palette with named colours.}
+\item{palette}{[\code{character}]\cr
+Palette with named colours.}
 }
 \value{
 None. One or more columns in the workbook object is styled.
