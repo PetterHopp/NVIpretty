@@ -1,4 +1,4 @@
-# NVIpretty 0.4.0.9001 - (2024-##-##)
+# NVIpretty 0.4.0.9002 - (2024-##-##)
 
 ## New features:
 
