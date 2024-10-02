@@ -14,6 +14,8 @@
 
 - Updated README including installation guide.
 
+- standardised help for all functions. 
+
 
 ## BREAKING CHANGES:
 
