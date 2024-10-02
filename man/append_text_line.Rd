@@ -7,11 +7,14 @@
 append_text_line(data, text, empty_rows = 0)
 }
 \arguments{
-\item{data}{Data frame with data that should get new row with the text.}
+\item{data}{[\code{data.frame}]\cr
+The data that should get a new row with the text.}
 
-\item{text}{The text that should be appended.}
+\item{text}{[\code{character(1)}]\cr
+The text that should be appended.}
 
-\item{empty_rows}{Number of empty rows between the data and the text.}
+\item{empty_rows}{[\code{integer(1)}]\cr
+Number of empty rows between the data and the text.}
 }
 \value{
 A data frame with two more rows, one empty and one with generated data in the first column.
