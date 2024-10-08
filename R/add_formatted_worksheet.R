@@ -118,6 +118,12 @@ add_formatted_worksheet <- function(data, workbook, sheet,
 
   # Report check-results
   checkmate::reportAssertions(checks)
+  
+  # REMOVE CHARACTERS THAT MAKES THE EXCEL-FILE UNREADABLE
+  # remove hexadecimal code for record separator and unit separator
+  data[] <- lapply(data, function(y) gsub("\u001F|\u001E", "", y)) # include u001C and u001D?
+  # remove octal code for record separator and unit separator
+  data[] <- lapply(data, function(y) gsub("\036|\037", "", y)) # include 034, 035?
 
   # RUNNING SCRIPT ----
   # Gather colnames and nrows from input data
