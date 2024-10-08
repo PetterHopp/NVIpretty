@@ -45,13 +45,14 @@
 #' @param colwidths [\code{logical(1)}] or \code{"auto"}\cr
 #'     Should defined standard column widths be used. Defaults to \code{TRUE}.
 #' @param standards [\code{data.frame}]\cr
-#'     Tables with column_standards.
+#'     Tables with column_standards. Defaults to \code{NULL}. 
 #' @param dbsource [\code{character(1)}]\cr
 #'     Database source of data in column standards table. Defaults to name
 #'     of input data.
 #' @param FUN [\code{function}]\cr
 #'     Function for additional formatting of the worksheet. Either
-#'     predefined functions in this package or self made.
+#'     predefined functions in this package or self made. Defaults to
+#'     \code{NULL}.
 #' @param \dots	Other arguments to be passed to \code{FUN}.
 #'
 #' @return None. A new sheet with formatted headline is added to the workbook object.
