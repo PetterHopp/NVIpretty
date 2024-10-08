@@ -7,7 +7,7 @@
 
 ## Bug fixes:
 
--
+- `add_formatted_worksheet` now removes hexadecimal and octal code for record separator and unit separator. If these are included into the Excel sheet, the file cannot be read properly. 
 
 
 ## Other changes:
