@@ -10,7 +10,7 @@
 #' @param text [\code{character(1)}]\cr
 #'     The text that should be appended.
 #' @param empty_rows [\code{integer(1)}]\cr
-#'     Number of empty rows between the data and the text.
+#'     Number of empty rows between the data and the text. Defaults to 0.
 #'
 #' @return A data frame with two more rows, one empty and one with generated data in the first column.
 #'
