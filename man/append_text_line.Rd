@@ -14,7 +14,7 @@ The data that should get a new row with the text.}
 The text that should be appended.}
 
 \item{empty_rows}{[\code{integer(1)}]\cr
-Number of empty rows between the data and the text.}
+Number of empty rows between the data and the text. Defaults to 0.}
 }
 \value{
 A data frame with two more rows, one empty and one with generated data in the first column.
