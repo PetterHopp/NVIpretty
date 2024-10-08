@@ -45,7 +45,7 @@
 #' @param colwidths [\code{logical(1)}] or \code{"auto"}\cr
 #'     Should defined standard column widths be used. Defaults to \code{TRUE}.
 #' @param standards [\code{data.frame}]\cr
-#'     Tables with column_standards. Defaults to \code{NULL}. 
+#'     Tables with column_standards. Defaults to \code{NULL}.
 #' @param dbsource [\code{character(1)}]\cr
 #'     Database source of data in column standards table. Defaults to name
 #'     of input data.
@@ -119,7 +119,7 @@ add_formatted_worksheet <- function(data, workbook, sheet,
 
   # Report check-results
   checkmate::reportAssertions(checks)
-  
+
   # REMOVE CHARACTERS THAT MAKES THE EXCEL-FILE UNREADABLE
   # remove hexadecimal code for record separator and unit separator
   data[] <- lapply(data, function(y) gsub("\u001F|\u001E", "", y)) # include u001C and u001D?

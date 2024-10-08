@@ -37,7 +37,7 @@ Should headline be changed to standard labels. Defaults to \code{TRUE}.}
 Should defined standard column widths be used. Defaults to \code{TRUE}.}
 
 \item{standards}{[\code{data.frame}]\cr
-Tables with column_standards.}
+Tables with column_standards. Defaults to \code{NULL}.}
 
 \item{dbsource}{[\code{character(1)}]\cr
 Database source of data in column standards table. Defaults to name
@@ -45,7 +45,8 @@ of input data.}
 
 \item{FUN}{[\code{function}]\cr
 Function for additional formatting of the worksheet. Either
-predefined functions in this package or self made.}
+predefined functions in this package or self made. Defaults to
+\code{NULL}.}
 
 \item{\dots}{Other arguments to be passed to \code{FUN}.}
 }
