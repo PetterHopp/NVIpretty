@@ -13,6 +13,13 @@ palette_NVI_profile <- c("blue" = "#00a6eb", "green" = "#00a14a", "red" = "#de22
 # Save palette
 usethis::use_data(name = palette_NVI_profile, overwrite = TRUE, internal = FALSE)
 
+palette_NVI <- c("Jord" = "#59CD8B", "Luft" = "#D7F4FF", "Vann" = "#1C4FB9",
+                    "Hvit" = "#F7FDFF", "Svart" = "#091A3E",
+                    "Lys jord" = "#BCEED1", "Mørk luft" = "#95D9F3", "Lyst vann" = "#C7D9FF",
+                    "Mat" = "#FF5447", "Lys mat" = "#FFDAD4")
+                    
+# Save palette
+usethis::use_data(name = palette_NVI, overwrite = TRUE, internal = FALSE)
 
 
 # GENERATE PALETTE FOR TABLE (GREY) ----
@@ -48,3 +55,24 @@ palette_graph <- c("#6fb2d3", "#579e65", "#c4796d", "#aeafb2", "#5c92bf",
 
 # Save palette
 usethis::use_data(name = palette_graph, overwrite = TRUE, internal = FALSE)
+
+palette_graph2 <- c("Jord" = "#59CD8B", "Luft" = "#D7F4FF", "Vann" = "#1C4FB9",
+             "Svart" = "#091A3E",
+             "Lys jord" = "#BCEED1", "Mørk luft" = "#95D9F3", "Lyst vann" = "#C7D9FF",
+             "Mat" = "#FF5447", "Lys mat" = "#FFDAD4",
+             "Gul" = "#F5D34A", "Lys gul" = "#FBECB2", "Lilla" = "#9A55D2", "Lys lilla" = "#DEC2F5",
+             "Orange" = "#FCA446", "Lys orange" = "#F9D3A9")
+
+# Save palette
+usethis::use_data(name = palette_graph2, overwrite = TRUE, internal = FALSE)
+
+# palette with saturated colours
+palette_graph3 <- c("Jord" = "#27ff84", "Luft" = "#D7F4FF", "Vann" = "#0045d5",
+               "Svart" = "#001747",
+               "Lys jord" = "#abffce", "Mørk luft" = "#89deff", "Lyst vann" = "#C7D9FF",
+               "Mat" = "#FF5447", "Lys mat" = "#FFDAD4",
+               "Gul" = "#ffd940", "Lys gul" = "#ffeeae", "Lilla" = "#9f28ff", "Lys lilla" = "#dfb8ff",
+               "Orange" = "#ffa443", "Lys orange" = "#ffd3a3")
+# Save palette
+usethis::use_data(name = palette_graph3, overwrite = TRUE, internal = FALSE)
+
