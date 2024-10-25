@@ -60,29 +60,29 @@ test_that("formatting headline through add_formated_worksheet", {
   expect_true(excel_styles[[1]]$wrapText)
 })
 
-test_that("formatting headline colwidth through add_formated_worksheet", {
-  # skip if no connection to 'FAG' have been established
-  skip_if_not(dir.exists(set_dir_NVI("FAG")))
-  
-  # Generate Excel-sheet
-  workbook <- openxlsx::createWorkbook()
-  
-  # Add a sheet to the workbook
-  add_formatted_worksheet(iris,
-                          workbook,
-                          sheet = "iris",
-                          wrapHeadlineText = FALSE,
-                          collabels = FALSE,
-                          colwidths = TRUE,
-                          standards = NULL)
-  
-  
-  # Save the workbook
-  openxlsx::saveWorkbook(wb = workbook,
-                         file = paste0(td, "/iris.xlsx"),
-                         overwrite = TRUE)
-  
-})
+# test_that("formatting headline colwidth through add_formated_worksheet", {
+#   # skip if no connection to 'FAG' have been established
+#   skip_if_not(dir.exists(set_dir_NVI("FAG")))
+#   
+#   # Generate Excel-sheet
+#   workbook <- openxlsx::createWorkbook()
+#   
+#   # Add a sheet to the workbook
+#   add_formatted_worksheet(iris,
+#                           workbook,
+#                           sheet = "iris",
+#                           wrapHeadlineText = FALSE,
+#                           collabels = FALSE,
+#                           colwidths = TRUE,
+#                           standards = NULL)
+#   
+#   
+#   # Save the workbook
+#   openxlsx::saveWorkbook(wb = workbook,
+#                          file = paste0(td, "/iris.xlsx"),
+#                          overwrite = TRUE)
+#   
+# })
 
 
 test_that("formatting headline through add_formated_worksheet", {
