@@ -1,13 +1,8 @@
-# NVIpretty 0.4.0.9002 - (2024-##-##)
-
-## New features:
-
--
-
+# NVIpretty 0.4.1 - (2024-11-13)
 
 ## Bug fixes:
 
-- `add_formatted_worksheet` now removes hexadecimal and octal code for record separator and unit separator. These must be removed, else the Excel sheet cannot be read properly.
+- `add_formatted_worksheet` now removes hexadecimal and octal code for record separator and unit separator before writing to Excel. These have to be removed, else the Excel sheet cannot be read properly.
 
 
 ## Other changes:
@@ -15,11 +10,6 @@
 - Updated README including installation guide.
 
 - standardised help for all functions. 
-
-
-## BREAKING CHANGES:
-
--
 
 
 # NVIpretty 0.4.0 - (2022-12-02)
