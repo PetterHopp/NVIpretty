@@ -1,3 +1,25 @@
+# NVIpretty 0.4.1.9000 - (2024-##-##)
+
+## New features:
+
+-
+
+
+## Bug fixes:
+
+-
+
+
+## Other changes:
+
+-
+
+
+## BREAKING CHANGES:
+
+-
+
+
 # NVIpretty 0.4.1 - (2024-11-13)
 
 ## Bug fixes:
