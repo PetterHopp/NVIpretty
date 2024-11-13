@@ -18,11 +18,14 @@ add_formatted_worksheet(
 )
 }
 \arguments{
-\item{data}{The data frame to export to the Excel sheet.}
+\item{data}{[\code{data.frame}]\cr
+The data to export to the Excel sheet.}
 
-\item{workbook}{The workbook object.}
+\item{workbook}{[\code{work book object}]\cr
+The workbook object used to create the Excel workbook.}
 
-\item{sheet}{The Excel sheet name.}
+\item{sheet}{[\code{character(1)}]\cr
+The Excel sheet name.}
 
 \item{wrapHeadlineText}{[\code{logical(1)}]\cr
 Should headline allow wrapping of text. Defaults to \code{FALSE}.}
@@ -33,12 +36,17 @@ Should headline be changed to standard labels. Defaults to \code{TRUE}.}
 \item{colwidths}{[\code{logical(1)}] or \code{"auto"}\cr
 Should defined standard column widths be used. Defaults to \code{TRUE}.}
 
-\item{standards}{Tables with column_standards.}
+\item{standards}{[\code{data.frame}]\cr
+Tables with column_standards. Defaults to \code{NULL}.}
 
-\item{dbsource}{Database source of data in column standards table.}
+\item{dbsource}{[\code{character(1)}]\cr
+Database source of data in column standards table. Defaults to name
+of input data.}
 
-\item{FUN}{Function for additional formatting of the worksheet. Either
-predefined functions in this package or self made.}
+\item{FUN}{[\code{function}]\cr
+Function for additional formatting of the worksheet. Either
+predefined functions in this package or self made. Defaults to
+\code{NULL}.}
 
 \item{\dots}{Other arguments to be passed to \code{FUN}.}
 }
@@ -47,18 +55,23 @@ None. A new sheet with formatted headline is added to the workbook object.
 }
 \description{
 Add excel sheet with a header formatted with bold font, column
-    labels and column width. The function is a wrapper for \code{openxlsx::addWorksheet}
-    and are using \code{NVIdb::standardize_columns} to standardize columns.
+    labels and column width. The function is a wrapper for
+    \ifelse{html}{\code{\link[openxlsx:addWorksheet]{openxlsx::addWorksheet}}}{\code{openxlsx::addWorksheet}}
+    and are using
+    \ifelse{html}{\code{\link[NVIdb:standardize_columns]{NVIdb::standardize_columns}}}{\code{NVIdb::standardize_columns}}
+    to standardize columns.
 }
 \details{
 Add excel sheet with a formatted header. The header will be formatted
     with bold text.
 
     \code{collabels = TRUE} the column names are translated to column labels
-    in accord with the column standards table, see \code{standardize_columns}.
+    in accord with the column standards table, see
+    \ifelse{html}{\code{\link[NVIdb:standardize_columns]{NVIdb::standardize_columns}}}{\code{NVIdb::standardize_columns}}.
 
     \code{colwidths = TRUE} the column widths are given in accord with the
-    column standards table, see \code{standardize_columns}.
+    column standards table, see
+    \ifelse{html}{\code{\link[NVIdb:standardize_columns]{NVIdb::standardize_columns}}}{\code{NVIdb::standardize_columns}}.
 
     \code{colwidths = "auto"} the column widths are given automatic column
     width. This is not recommend for large tables.

@@ -14,21 +14,19 @@
 #'
 #'     This function is used in different add-functions before calling add_new_variable
 #'
-#' @param colname_vector A unnamed, partly named or fully named vector of character variables input in add-functions
+#' @param colname_vector [\code{character}]\cr
+#'     A unnamed, partly named or fully named vector of character variables input in add-functions
 
 #' @return A named vector where previously unnamed elements have been named with the element value as name.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
-#'
+#' @keywords internal
 #' @examples
 #' \dontrun{
 #' new_columns <- c("name11" = "column1", "name2" = "column2", "column3")
-#'   new_columns <- set_name_vector(new_columns)
+#' new_columns <- set_name_vector(new_columns)
 #' }
-#' @noRd
-
-# Function that ensure that all elements in a vector are named
-# For elements that aren't named, the vector value are used as name
+#'
 set_name_vector <- function(colname_vector) {
   # Existing names to the vector name
   name <- names(colname_vector)

@@ -1,7 +1,7 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's graphical profile
-Version: 0.4.0
-Date: 2022-12-02
+Version: 0.4.1
+Date: 2024-11-13
 Authors@R: 
   c(person(given = "Petter",
            family = "Hopp",
@@ -21,19 +21,21 @@ LazyData: true
 Imports: 
     checkmate (>= 2.1.0),
     ggplot2,
-    knitr,
     openxlsx,
-    rmarkdown,
     NVIcheckmate (>= 0.5.0),
-    NVIdb (>= 0.3.0),
-    NVIrpackages
+    NVIdb (>= 0.3.0)
 Suggests:
+    covr,
     datasets,
+    desc,
     devtools,
+    knitr,
     remotes,
+    rmarkdown,
     roxygen2,
     testthat (>= 3.0.0),
-    NVIpackager
+    NVIpackager,
+    NVIrpackages
 Remotes: 
     NorwegianVeterinaryInstitute/NVIcheckmate,
     NorwegianVeterinaryInstitute/NVIdb,
@@ -42,5 +44,5 @@ Remotes:
 VignetteBuilder: knitr
 Language: en-GB
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.1
 Config/testthat/edition: 3

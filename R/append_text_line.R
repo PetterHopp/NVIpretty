@@ -5,9 +5,12 @@
 #'
 #' @details Two rows are appended to the data frame, the first is empty, the second has the generated date in the first column. The
 #'
-#' @param data Data frame with data that should get new row with the text.
-#' @param text The text that should be appended.
-#' @param empty_rows Number of empty rows between the data and the text.
+#' @param data [\code{data.frame}]\cr
+#'     The data that should get a new row with the text.
+#' @param text [\code{character(1)}]\cr
+#'     The text that should be appended.
+#' @param empty_rows [\code{integer(1)}]\cr
+#'     Number of empty rows between the data and the text. Defaults to 0.
 #'
 #' @return A data frame with two more rows, one empty and one with generated data in the first column.
 #'
@@ -26,8 +29,8 @@ append_text_line <- function(data, text, empty_rows = 0) {
   checks <- checkmate::makeAssertCollection()
   # Perform checks
   checkmate::assert_data_frame(data, add = checks)
-  checkmate::assert_character(text, add = checks)
-  checkmate::assert_integerish(empty_rows, lower = 0, add = checks)
+  checkmate::assert_string(text, add = checks)
+  checkmate::assert_integerish(empty_rows, lower = 0, len = 1, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 
