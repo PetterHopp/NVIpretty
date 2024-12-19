@@ -1,23 +1,8 @@
-# NVIpretty 0.4.1.9000 - (2024-##-##)
+# NVIpretty 0.4.2 - (2024-12-19)
 
 ## New features:
 
--
-
-
-## Bug fixes:
-
--
-
-
-## Other changes:
-
--
-
-
-## BREAKING CHANGES:
-
--
+- `add_formatted_worksheet` now accepts `data.frame`, `list` and csv-file as input to the argument `standards`.
 
 
 # NVIpretty 0.4.1 - (2024-11-13)

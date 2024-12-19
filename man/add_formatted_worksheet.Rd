@@ -36,8 +36,10 @@ Should headline be changed to standard labels. Defaults to \code{TRUE}.}
 \item{colwidths}{[\code{logical(1)}] or \code{"auto"}\cr
 Should defined standard column widths be used. Defaults to \code{TRUE}.}
 
-\item{standards}{[\code{data.frame}]\cr
-Tables with column_standards. Defaults to \code{NULL}.}
+\item{standards}{[\code{data.frame} | \code{list} | \code{character(1)}]\cr
+The column standards to be used as input for
+    \ifelse{html}{\code{\link[NVIdb]{standardize_columns}}}{\code{NVIdb::standardize_columns}}
+    when formatting the Excel sheet columns, see details. Defaults to \code{NULL}.}
 
 \item{dbsource}{[\code{character(1)}]\cr
 Database source of data in column standards table. Defaults to name
@@ -80,12 +82,37 @@ Add excel sheet with a formatted header. The header will be formatted
     two or more lines. The parameter should be chosen in accord with what looks
     nice depending on column labels and column widths.
 
-    \code{standards} is the name of the table with column standards. If no
-    parameter is given, the columns_standards.csv is used. Column names are
-    translated to column labels in accord with the column standards table,
-    see \code{standardize_columns}.
+    \code{standards} is the name of the table or file with column standards.
+    If \code{standards} = \code{NULL} the file "columns_standards.csv" is used.
+    Column names are translated to column labels in accord with the column
+    standards table, see \code{standardize_columns}.
 
-    \code{dbsource} is the dbsource in the column standards table making it
+    It is also possible to give the standards as a \code{data.frame} or as a
+    \code{list}. The list input to column_standards must follow a specific
+    format. It is a \code{list} with at least three named vectors:
+\itemize{
+\item \code{colname}: a vector of all columns in in the source file that
+    should be included in the Excel report with the selection list.
+\item \code{collabel}: A vector with the labels that should be used in the
+    Excel report.
+\item \code{colwidth}: A vector with the column width that should be used
+    in the Excel report.
+}
+
+    In addition one may input:
+
+\itemize{
+\item \code{colorder}: the order of the columns to be used in the Excel report.
+    The default is to use the same order as they are entered in the vectors.
+\item \code{column_db}: input added as a possibility to keep on the same format
+    as \code{column_standards}. Not necessary to input.
+\item \code{table_db}: input added as a possibility to keep on the same format
+    as \code{column_standards}. Must be the same as \code{dbsource}. Not
+    necessary to input.
+}
+
+All vectors must have the same order and the same length.
+#'     \code{dbsource} is the dbsource in the column standards table making it
     possible to tailer the column labels and column widths per table.
 }
 \examples{
