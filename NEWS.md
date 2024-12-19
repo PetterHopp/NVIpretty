@@ -2,7 +2,7 @@
 
 ## New features:
 
--
+- `add_formatted_worksheet` now accepts `data.frame`, `list` and csv-file as input to the argument `standards`.
 
 
 ## Bug fixes:
