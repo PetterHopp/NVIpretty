@@ -24,12 +24,37 @@
 #'     two or more lines. The parameter should be chosen in accord with what looks
 #'     nice depending on column labels and column widths.
 #'
-#'     \code{standards} is the name of the table with column standards. If no
-#'     parameter is given, the columns_standards.csv is used. Column names are
-#'     translated to column labels in accord with the column standards table,
-#'     see \code{standardize_columns}.
+#'     \code{standards} is the name of the table or file with column standards.
+#'     If \code{standards} = \code{NULL} the file "columns_standards.csv" is used.
+#'     Column names are translated to column labels in accord with the column
+#'     standards table, see \code{standardize_columns}.
 #'
-#'     \code{dbsource} is the dbsource in the column standards table making it
+#'     It is also possible to give the standards as a \code{data.frame} or as a
+#'     \code{list}. The list input to column_standards must follow a specific
+#'     format. It is a \code{list} with at least three named vectors:
+#' \itemize{
+#' \item \code{colname}: a vector of all columns in in the source file that
+#'     should be included in the Excel report with the selection list.
+#' \item \code{collabel}: A vector with the labels that should be used in the
+#'     Excel report.
+#' \item \code{colwidth}: A vector with the column width that should be used
+#'     in the Excel report.
+#' }
+#'
+#'     In addition one may input:
+#'
+#' \itemize{
+#' \item \code{colorder}: the order of the columns to be used in the Excel report.
+#'     The default is to use the same order as they are entered in the vectors.
+#' \item \code{column_db}: input added as a possibility to keep on the same format
+#'     as \code{column_standards}. Not necessary to input.
+#' \item \code{table_db}: input added as a possibility to keep on the same format
+#'     as \code{column_standards}. Must be the same as \code{dbsource}. Not
+#'     necessary to input.
+#' }
+#'
+#' All vectors must have the same order and the same length.
+#' #'     \code{dbsource} is the dbsource in the column standards table making it
 #'     possible to tailer the column labels and column widths per table.
 #'
 #' @param data [\code{data.frame}]\cr
@@ -44,8 +69,10 @@
 #'     Should headline be changed to standard labels. Defaults to \code{TRUE}.
 #' @param colwidths [\code{logical(1)}] or \code{"auto"}\cr
 #'     Should defined standard column widths be used. Defaults to \code{TRUE}.
-#' @param standards [\code{data.frame}]\cr
-#'     Tables with column_standards. Defaults to \code{NULL}.
+#' @param standards [\code{data.frame} | \code{list} | \code{character(1)}]\cr
+#' The column standards to be used as input for
+#'     \ifelse{html}{\code{\link[NVIdb]{standardize_columns}}}{\code{NVIdb::standardize_columns}}
+#'     when formatting the Excel sheet columns, see details. Defaults to \code{NULL}.
 #' @param dbsource [\code{character(1)}]\cr
 #'     Database source of data in column standards table. Defaults to name
 #'     of input data.
@@ -96,6 +123,12 @@ add_formatted_worksheet <- function(data, workbook, sheet,
                                     FUN = NULL,
                                     ...) {
 
+  # PREPARE ARGUMENTS BEFORE CHECKING ----
+  if (is.null(standards)) {
+    standards <- file.path(NVIdb::set_dir_NVI("ProgrammeringR", slash = FALSE),
+                           "standardization", "colnames", "column_standards.csv")
+  }
+  
   if (!is.null(FUN)) {FUN = match.fun(FUN)}
 
   # ARGUMENT CHECKING ----
@@ -110,8 +143,30 @@ add_formatted_worksheet <- function(data, workbook, sheet,
                                  add = checks)
   checkmate::assert_logical(wrapHeadlineText, add = checks)
   checkmate::assert_logical(collabels, add = checks)
-  checkmate::assert_data_frame(standards, add = checks, null.ok = TRUE)
+  # standards
+  # checkmate::assert_data_frame(standards, add = checks, null.ok = TRUE)
+  checkmate::assert(checkmate::check_class(standards, classes = c("data.frame")),
+                    checkmate::check_class(standards, classes = c("list")),
+                    checkmate::check_class(standards, classes = c("character")),
+                    add = checks)
+  if (inherits(standards, what = "character")) {
+    checkmate::assert_file_exists(standards, add = checks)
+  }
+  if (inherits(standards, what = "list")) {
+    lengths_standard <- lengths(standards)
+    NVIcheckmate::assert_integer(lengths_standard, lower = lengths_standard[1], upper = lengths_standard[1],
+                                 min.len = 3, max.len = 6,
+                                 comment = "When input as a list, all elements must have the same length",
+                                 add = checks)
+    checkmate::assert_subset(names(standards), choices = c("table_db", "colname_db", "colname", "collabel", "colwidth", "colorder"),
+                             add = checks)
+  }
+  if (inherits(standards, what = "data.frame")) {
+    checkmate::assert_data_frame(standards, min.rows = 1, min.cols = 6, add = checks)
+  }
+  # dbsource
   checkmate::assert_character(dbsource, add = checks)
+  # colwidths
   NVIcheckmate::assert(checkmate::check_logical(colwidths),
                        checkmate::check_choice(colwidths, choices = "auto"),
                        combine = "or",
