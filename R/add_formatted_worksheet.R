@@ -128,7 +128,7 @@ add_formatted_worksheet <- function(data, workbook, sheet,
     standards <- file.path(NVIdb::set_dir_NVI("ProgrammeringR", slash = FALSE),
                            "standardization", "colnames", "column_standards.csv")
   }
-  
+
   if (!is.null(FUN)) {FUN = match.fun(FUN)}
 
   # ARGUMENT CHECKING ----
