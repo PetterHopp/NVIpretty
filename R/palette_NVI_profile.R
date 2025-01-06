@@ -1,7 +1,7 @@
 # Generate help for palettes in accord with NVI's profile
 #
 #' @md
-#' @title Palette with NVI's profile colours
+#' @title Old palette with NVI's profile colours for 2020-2024
 #'
 #' @description A vector with the hex values for NVI's profile colours.
 #'
@@ -9,7 +9,7 @@
 #'     where the cmyk value is used. There is not agreement between the hex and
 #'     cmyk values, but hex seem to give the most correct colour.
 #'
-#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes_2020.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -23,18 +23,18 @@
 #'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
 #'
-"palette_NVI_profile"
+"palette_NVI_profile_2020"
 #'
 #'
 #' @md
-#' @title Palette with colours for table with blue background
+#' @title Old palette with colours for table with blue background for 2020-2024
 #'
 #' @description A vector with the hex values for a table with blue background.
 #'
 #' @details The colour codes are based on the hex values in the Graphical profile handbook except for the body text where the cmyk value is used.
 #'     There is not agreement between the hex and cmyk values, but hex seem to give the most correct colour.
 #'
-#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes_2020.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -49,17 +49,17 @@
 #'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
 #'
-"palette_table_blue"
+"palette_table_blue_2020"
 #'
 #'
 #' @md
-#' @title Palette with colours for table with grey background
+#' @title Old palette with colours for table with grey background for 2020-2024
 #'
 #' @description A vector with the hex values for a table with grey background.
 #'
 #' @details The colour codes are based on the cmyk values in the Graphical profile handbook.
 #'
-#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes_2020.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -74,10 +74,10 @@
 #'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
 #'
-"palette_table_grey"
+"palette_table_grey_2020"
 #'
 #'
-#' @title Palette with colours for graphs
+#' @title Old palette with colours for graphs for 2020-2024
 #'
 #' @description A vector with the hex values for colours to be used in graphs.
 #'
@@ -86,7 +86,7 @@
 #'     not agreement between the hex and cmyk values, but hex seem to give the
 #'     most correct colour.
 #'
-#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
+#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes_2020.R".
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -95,4 +95,4 @@
 #'
 #' @source Grafisk profil for Veterinærinstituttet versjon 2020.
 #'
-"palette_graph"
+"palette_graph_2020"
