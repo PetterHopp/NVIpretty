@@ -67,7 +67,7 @@ In this example we have chosen to have 13 bins. Thereby, we can display all the 
 
 ```{r fig.width = 5} 
 ggplot(iris, aes(x = Sepal.Length)) +
-  geom_histogram(bins = 13, fill = palette_graph) +
+  geom_histogram(bins = 15, fill = palette_graph) +
   theme(legend.position = "right")
 ```
 
