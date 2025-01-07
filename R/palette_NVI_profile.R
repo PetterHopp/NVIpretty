@@ -97,3 +97,51 @@
 #'   NVI's intranet).
 #' @name palette_gradient
 "palette_gradient_green"
+
+#' @name palette_gradient
+"palette_gradient_red"
+
+#' @name palette_gradient
+"palette_gradient_air"
+
+#' @name palette_gradient
+"palette_gradient_darkblue"
+
+#' @name palette_gradient
+"palette_gradient_earth"
+
+#' @name palette_gradient
+"palette_gradient_food"
+
+#' @name palette_gradient
+"palette_gradient_graa"
+
+#' @name palette_gradient
+"palette_gradient_grey"
+
+#' @name palette_gradient
+"palette_gradient_gul"
+
+#' @name palette_gradient
+"palette_gradient_jord"
+
+#' @name palette_gradient
+"palette_gradient_lightblue"
+
+#' @name palette_gradient
+"palette_gradient_luft"
+
+#' @name palette_gradient
+"palette_gradient_mat"
+
+#' @name palette_gradient
+"palette_gradient_red"
+
+#' @name palette_gradient
+"palette_gradient_vann"
+
+#' @name palette_gradient
+"palette_gradient_water"
+
+#' @name palette_gradient
+"palette_gradient_yellow"

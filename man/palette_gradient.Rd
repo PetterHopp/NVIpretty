@@ -4,6 +4,21 @@
 \name{palette_gradient}
 \alias{palette_gradient}
 \alias{palette_gradient_green}
+\alias{palette_gradient_red}
+\alias{palette_gradient_air}
+\alias{palette_gradient_darkblue}
+\alias{palette_gradient_earth}
+\alias{palette_gradient_food}
+\alias{palette_gradient_graa}
+\alias{palette_gradient_grey}
+\alias{palette_gradient_gul}
+\alias{palette_gradient_jord}
+\alias{palette_gradient_lightblue}
+\alias{palette_gradient_luft}
+\alias{palette_gradient_mat}
+\alias{palette_gradient_vann}
+\alias{palette_gradient_water}
+\alias{palette_gradient_yellow}
 \title{Palettes with colour gradients for NVI for 2025 - today's date}
 \format{
 A vector with named colours:
@@ -27,6 +42,38 @@ A vector with named colours:
 }
 
 The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
+
+An object of class \code{character} of length 6.
 }
 \source{
 Grafisk profil for Veterinærinstituttet version 2024 (available on
@@ -34,6 +81,38 @@ Grafisk profil for Veterinærinstituttet version 2024 (available on
 }
 \usage{
 palette_gradient_green
+
+palette_gradient_red
+
+palette_gradient_air
+
+palette_gradient_darkblue
+
+palette_gradient_earth
+
+palette_gradient_food
+
+palette_gradient_graa
+
+palette_gradient_grey
+
+palette_gradient_gul
+
+palette_gradient_jord
+
+palette_gradient_lightblue
+
+palette_gradient_luft
+
+palette_gradient_mat
+
+palette_gradient_red
+
+palette_gradient_vann
+
+palette_gradient_water
+
+palette_gradient_yellow
 }
 \description{
 Colour gradients with six levels for six different base colours.
