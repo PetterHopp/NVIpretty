@@ -1,5 +1,5 @@
 # GENERATE PALETTES BASED ON NVI'S GRAPHICAL PROFILE
-# Source: Grafisk profil for Veterinærinstituttet versjon 2024 
+# Source: Grafisk profil for Veterinærinstituttet versjon 2024
 
 # GENERATE PALETTE WITH NVI'S PROFILE COLOURS ----
 palette_NVI <- c("Jord" = "#59CD8B", "Luft" = "#D7F4FF", "Vann" = "#1C4FB9",
