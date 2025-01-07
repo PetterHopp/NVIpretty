@@ -56,20 +56,20 @@
 #' NVI's intranet).
 #'
 "palette_graph"
-#' 
+#'
 #' @title Palettes with colour gradients for NVI for 2025 - today's date
 #' @description Colour gradients with six levels for six different base colours.
 #'     The colours in the NVI profile are used as base colours and the gradients
-#'     are developed from these. 
-#' @details The colour gradients are intended for choropleth maps, graphs and 
+#'     are developed from these.
+#' @details The colour gradients are intended for choropleth maps, graphs and
 #'     other figures where different gradients of one colour is wanted.
-#'     
-#' There are six different gradients, each with six colours. Each palette is 
-#'     given a name of the form "palette_gradient_xxxxxx" where xxxxxx is the 
+#'
+#' There are six different gradients, each with six colours. Each palette is
+#'     given a name of the form "palette_gradient_xxxxxx" where xxxxxx is the
 #'     name of the base colour. To make it easier to remember the gradient name,
-#'     each gradient is represented by several palettes, for example the green 
+#'     each gradient is represented by several palettes, for example the green
 #'     gradient based on the NVI colour "Jord" is represented by the palettes:
-#'     palette_gradient_jord, palette_gradient_earth, and palette_gradient_green. 
+#'     palette_gradient_jord, palette_gradient_earth, and palette_gradient_green.
 #'
 #' @format A vector with named colours:
 #' \describe{
@@ -94,5 +94,6 @@
 #' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
 #' @source Grafisk profil for Veterinærinstituttet version 2024 (available on
-#' NVI's intranet).
-"palette_gradient"
+#'   NVI's intranet).
+#' @name palette_gradient
+"palette_gradient_green"
