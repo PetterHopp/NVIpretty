@@ -1,0 +1,102 @@
+---
+title: "NVI colour palettes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Create graphs for NVI}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, echo = FALSE}
+library(ggplot2)
+
+set_name_vector <- function(x) {
+  new_names <- x
+  new_names[which(names(x) != "")] <- names(x[which(names(x) != "")])
+  x <- stats::setNames(x, new_names)
+  return(x)
+}
+
+display_palett <- function(palette, reverse_colours = FALSE, title = NULL) {
+  if (is.null(title)) {title = deparse(substitute(palette))}
+  if (isTRUE(reverse_colours)) {palette <- rev(palette)}
+  # Use colour codes as names if names are not given
+  palette <- set_name_vector(palette)
+  # create data set with the colour codes to plot
+  colorKey = data.frame(colorName=names(palette))
+  # plot with ggplot, use the clours in the palette
+  ggplot(data=colorKey, aes(x=1, y = 1:nrow(colorKey), fill=colorName, label=colorName)) +
+    geom_tile() +
+    scale_fill_manual(values = palette) +
+    theme_void()+
+    theme(legend.position="none") + 
+    geom_text() +
+    ggtitle(title) +
+    theme(plot.title = element_text(hjust = 0.5))
+}
+
+# Function for plotting colors side-by-side
+# display_palett <- function(palette, border = "light gray", ...){
+#   title <- deparse(substitute(palette))
+#   n <- length(palette)
+#   plot(0, 0, type="n", xlim = c(0, 1), ylim = c(0, 1),
+#        axes = FALSE, main=title, xlab = "", ylab = "", ...)
+#   rect(0, 0:(n-1)/n, 1, 1:n/n, col = palette, border = border)
+#   # rect(0:(n-1)/n, 0, 1:n/n, 1, col = palette, border = border)
+# }
+```
+
+The graphical profile for NVI is published on the NVI intranet. The different colour palettes in the NVI graphical profile is displayed below. The palettes are collected in the R-package NVIpretty.
+
+## The NVI profile colours
+
+The NVI profile colours are collected in the palette palette_NVI.
+
+```{r fig.width = 5, echo = FALSE}
+library(NVIpretty)
+
+display_palett(palette_NVI, reverse_colours = TRUE)
+```
+
+## The NVI colours for graphs
+
+The NVI profile has 15 different colours for use in graphs. These are collected in the palette: "palette_graph". The colours should be used in the order they are in the graph.
+
+```{r fig.width = 5, echo = FALSE}
+display_palett(palette_graph, reverse_colours = TRUE)
+```
+
+## The NVI colours for gradients
+
+There is developed 6 different colour gradients based on the NVI profile colours. There are 6 different colours within each gradient. These are intended for choropleth maps and can also be used in graphs.
+
+```{r fig.width = 8, echo = FALSE}
+library(gridExtra)
+plot_jord <- display_palett(palette_gradient_jord, 
+               reverse_colours = TRUE, 
+               title = paste("palette_gradient_jord", "palette_gradient_earth", "palette_gradient_green", sep = "\n"))
+plot_luft <- display_palett(palette_gradient_luft, 
+               reverse_colours = TRUE, 
+               title = paste("palette_gradient_luft", "palette_gradient_air", "palette_gradient_lightblue", sep = "\n"))
+plot_vann <- display_palett(palette_gradient_vann, 
+               reverse_colours = TRUE, 
+               title = paste("palette_gradient_vann", "palette_gradient_water", "palette_gradient_darkblue", sep = "\n"))
+plot_mat <- display_palett(palette_gradient_mat, 
+               reverse_colours = TRUE, 
+               title = paste("palette_gradient_mat", "palette_gradient_food", "palette_gradient_red", sep = "\n"))
+plot_gul <- display_palett(palette_gradient_gul, 
+               reverse_colours = TRUE, 
+               title = paste("", "palette_gradient_gul", "palette_gradient_yellow", sep = "\n"))
+plot_graa <- display_palett(palette_gradient_graa, 
+               reverse_colours = TRUE, 
+               title = paste("", "palette_gradient_graa", "palette_gradient_grey", sep = "\n"))
+grid.arrange(plot_jord, plot_luft, plot_vann, plot_mat, plot_gul, plot_graa, ncol = 3)
+```
+
