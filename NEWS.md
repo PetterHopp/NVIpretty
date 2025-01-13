@@ -1,4 +1,4 @@
-# NVIpretty 0.4.0.9002 - (2024-##-##)
+# NVIpretty 0.4.2.9000 - (2024-##-##)
 
 ## New features:
 
@@ -7,7 +7,31 @@
 
 ## Bug fixes:
 
-- `add_formatted_worksheet` now removes hexadecimal and octal code for record separator and unit separator. If these are included into the Excel sheet, the file cannot be read properly. 
+-
+
+
+## Other changes:
+
+-
+
+
+## BREAKING CHANGES:
+
+-
+
+
+# NVIpretty 0.4.2 - (2024-12-19)
+
+## New features:
+
+- `add_formatted_worksheet` now accepts `data.frame`, `list` and csv-file as input to the argument `standards`.
+
+
+# NVIpretty 0.4.1 - (2024-11-13)
+
+## Bug fixes:
+
+- `add_formatted_worksheet` now removes hexadecimal and octal code for record separator and unit separator before writing to Excel. These have to be removed, else the Excel sheet cannot be read properly.
 
 
 ## Other changes:
@@ -15,11 +39,6 @@
 - Updated README including installation guide.
 
 - standardised help for all functions. 
-
-
-## BREAKING CHANGES:
-
--
 
 
 # NVIpretty 0.4.0 - (2022-12-02)
