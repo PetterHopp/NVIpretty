@@ -2,7 +2,7 @@
 title: "NVI colour palettes"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Create graphs for NVI}
+  %\VignetteIndexEntry{NVI colour palettes}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -30,13 +30,13 @@ display_palett <- function(palette, reverse_colours = FALSE, title = NULL) {
   # Use colour codes as names if names are not given
   palette <- set_name_vector(palette)
   # create data set with the colour codes to plot
-  colorKey = data.frame(colorName=names(palette))
+  colorKey = data.frame(colorName = names(palette))
   # plot with ggplot, use the clours in the palette
-  ggplot(data=colorKey, aes(x=1, y = 1:nrow(colorKey), fill=colorName, label=colorName)) +
+  ggplot(data = colorKey, aes(x = 1, y = 1:nrow(colorKey), fill = colorName, label = colorName)) +
     geom_tile() +
     scale_fill_manual(values = palette) +
-    theme_void()+
-    theme(legend.position="none") + 
+    theme_void() +
+    theme(legend.position = "none") +
     geom_text() +
     ggtitle(title) +
     theme(plot.title = element_text(hjust = 0.5))
@@ -79,23 +79,23 @@ There is developed 6 different colour gradients based on the NVI profile colours
 
 ```{r fig.width = 8, echo = FALSE}
 library(gridExtra)
-plot_jord <- display_palett(palette_gradient_jord, 
-               reverse_colours = TRUE, 
+plot_jord <- display_palett(palette_gradient_jord,
+               reverse_colours = TRUE,
                title = paste("palette_gradient_jord", "palette_gradient_earth", "palette_gradient_green", sep = "\n"))
-plot_luft <- display_palett(palette_gradient_luft, 
-               reverse_colours = TRUE, 
+plot_luft <- display_palett(palette_gradient_luft,
+               reverse_colours = TRUE,
                title = paste("palette_gradient_luft", "palette_gradient_air", "palette_gradient_lightblue", sep = "\n"))
-plot_vann <- display_palett(palette_gradient_vann, 
-               reverse_colours = TRUE, 
+plot_vann <- display_palett(palette_gradient_vann,
+               reverse_colours = TRUE,
                title = paste("palette_gradient_vann", "palette_gradient_water", "palette_gradient_darkblue", sep = "\n"))
-plot_mat <- display_palett(palette_gradient_mat, 
-               reverse_colours = TRUE, 
+plot_mat <- display_palett(palette_gradient_mat,
+               reverse_colours = TRUE,
                title = paste("palette_gradient_mat", "palette_gradient_food", "palette_gradient_red", sep = "\n"))
-plot_gul <- display_palett(palette_gradient_gul, 
-               reverse_colours = TRUE, 
+plot_gul <- display_palett(palette_gradient_gul,
+               reverse_colours = TRUE,
                title = paste("", "palette_gradient_gul", "palette_gradient_yellow", sep = "\n"))
-plot_graa <- display_palett(palette_gradient_graa, 
-               reverse_colours = TRUE, 
+plot_graa <- display_palett(palette_gradient_graa,
+               reverse_colours = TRUE,
                title = paste("", "palette_gradient_graa", "palette_gradient_grey", sep = "\n"))
 grid.arrange(plot_jord, plot_luft, plot_vann, plot_mat, plot_gul, plot_graa, ncol = 3)
 ```
