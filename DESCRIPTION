@@ -29,6 +29,7 @@ Suggests:
     datasets,
     desc,
     devtools,
+    gridExtra,
     knitr,
     remotes,
     rmarkdown,
