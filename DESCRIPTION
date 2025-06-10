@@ -1,6 +1,6 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's graphical profile
-Version: 0.4.0.9002
+Version: 0.4.2.9000
 Date: 2024-##-##
 Authors@R: 
   c(person(given = "Petter",
@@ -14,16 +14,17 @@ Description: Provides tools for styling output from R in accord with NVI's graph
     tools to format and style output in Excel.
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIpretty
 BugReports: https://github.com/NorwegianVeterinaryInstitute/NVIpretty/issues
-Depends: R (>= 4.0.0)
+Depends: R (>= 4.1.0)
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
     checkmate (>= 2.1.0),
     ggplot2,
+    grid,
     openxlsx,
     NVIcheckmate (>= 0.5.0),
-    NVIdb (>= 0.3.0)
+    NVIdb (>= 0.13.1)
 Suggests:
     covr,
     datasets,
@@ -44,5 +45,5 @@ Remotes:
 VignetteBuilder: knitr
 Language: en-GB
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Config/testthat/edition: 3
