@@ -70,6 +70,9 @@ display_palett(palette_NVI, reverse_colours = TRUE)
 The NVI profile has 15 different colours for use in graphs. These are collected in the palette: "palette_graph". The colours should be used in the order they are in the graph.
 
 ```{r fig.width = 5, fig.height = 4, echo = FALSE}
+names(palette_graph) <- c("Jord", "Luft", "Vann", "Svart", "Lys_jord", 
+                          "Mørk_luft", "Lys_vann", "Mat", "Lys_mat", "Gul", 
+                          "Lys_gul", "Lilla", "Lys_lilla", "Orange", "Lys_orange")
 display_palett(palette_graph, reverse_colours = TRUE)
 ```
 
@@ -79,24 +82,34 @@ There are six different colour gradients based on the NVI profile colours. Withi
 
 ```{r fig.width = 7, fig.height = 5, echo = FALSE}
 library(grid)
+names(palette_gradient_jord)[3] <- "Jord"
 plot_jord <- display_palett(palette_gradient_jord,
-               reverse_colours = TRUE,
-               title = paste("palette_gradient_jord", "palette_gradient_earth", "palette_gradient_green", sep = "\n"))
+                            reverse_colours = TRUE,
+                            title = paste("palette_gradient_jord", "palette_gradient_earth", 
+                                          "palette_gradient_green", sep = "\n"))
+names(palette_gradient_luft)[1] <- "Luft"
 plot_luft <- display_palett(palette_gradient_luft,
-               reverse_colours = TRUE,
-               title = paste("palette_gradient_luft", "palette_gradient_air", "palette_gradient_lightblue", sep = "\n"))
+                            reverse_colours = TRUE,
+                            title = paste("palette_gradient_luft", "palette_gradient_air", 
+                                          "palette_gradient_lightblue", sep = "\n"))
+names(palette_gradient_vann)[5] <- "Vann"
 plot_vann <- display_palett(palette_gradient_vann,
-               reverse_colours = TRUE,
-               title = paste("palette_gradient_vann", "palette_gradient_water", "palette_gradient_darkblue", sep = "\n"))
+                            reverse_colours = TRUE,
+                            title = paste("palette_gradient_vann", "palette_gradient_water",
+                                          "palette_gradient_darkblue", sep = "\n"))
+names(palette_gradient_mat)[3] <- "Mat"
 plot_mat <- display_palett(palette_gradient_mat,
-               reverse_colours = TRUE,
-               title = paste("palette_gradient_mat", "palette_gradient_food", "palette_gradient_red", sep = "\n"))
+                           reverse_colours = TRUE,
+                           title = paste("palette_gradient_mat", "palette_gradient_food", 
+                                         "palette_gradient_red", sep = "\n"))
+names(palette_gradient_gul)[3] <- "Gul"
 plot_gul <- display_palett(palette_gradient_gul,
-               reverse_colours = TRUE,
-               title = paste("", "palette_gradient_gul", "palette_gradient_yellow", sep = "\n"))
+                           reverse_colours = TRUE,
+                           title = paste("", "palette_gradient_gul", "palette_gradient_yellow", sep = "\n"))
+names(palette_gradient_graa)[6] <- "Svart"
 plot_graa <- display_palett(palette_gradient_graa,
-               reverse_colours = TRUE,
-               title = paste("", "palette_gradient_graa", "palette_gradient_grey", sep = "\n"))
+                            reverse_colours = TRUE,
+                            title = paste("", "palette_gradient_graa", "palette_gradient_grey", sep = "\n"))
 pushViewport(viewport(layout = grid.layout(2, 3)))
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 print(plot_jord, vp = vplayout(1, 1))
