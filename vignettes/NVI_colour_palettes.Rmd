@@ -53,11 +53,11 @@ display_palett <- function(palette, reverse_colours = FALSE, title = NULL) {
 # }
 ```
 
-The graphical profile for NVI is published on the NVI intranet. The different colour palettes in the NVI graphical profile is displayed below. The palettes are collected in the R-package NVIpretty.
+The graphical profile for NVI is published on the NVI intranet. The different colour palettes in the NVI graphical profile is displayed below. The palettes are collected in the R-package NVIpretty. The palette colours are named.
 
 ## The NVI profile colours
 
-The NVI profile colours are collected in the palette palette_NVI.
+The NVI profile colours are collected in the palette: "palette_NVI".
 
 ```{r fig.width = 5, echo = FALSE}
 library(NVIpretty)
@@ -67,7 +67,7 @@ display_palett(palette_NVI, reverse_colours = TRUE)
 
 ## The NVI colours for graphs
 
-The NVI profile has 15 different colours for use in graphs. These are collected in the palette: "palette_graph". The colours should be used in the order they are in the graph.
+The NVI profile has 15 different colours for use in graphs. These are collected in the palette: "palette_graph". The colours should be used in the order they are in the palette. The palette colours are unnamed.
 
 ```{r fig.width = 5, fig.height = 4, echo = FALSE}
 names(palette_graph) <- c("Jord", "Luft", "Vann", "Svart", "Lys_jord",
@@ -78,7 +78,7 @@ display_palett(palette_graph, reverse_colours = TRUE)
 
 ## The NVI colours for gradients
 
-There are six different colour gradients based on the NVI profile colours. Within each gradient, there are six different colours. These are intended for choropleth maps and can also be used in graphs.
+There are six different colour gradients based on the NVI profile colours. Within each gradient, there are six different colours. These are intended for choropleth maps and can also be used in graphs. The palette colours are unnamed.
 
 ```{r fig.width = 7, fig.height = 5, echo = FALSE}
 library(grid)
