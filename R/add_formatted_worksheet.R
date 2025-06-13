@@ -27,7 +27,8 @@
 #'     \code{standards} is the name of the table or file with column standards.
 #'     If \code{standards} = \code{NULL} the file "columns_standards.csv" is used.
 #'     Column names are translated to column labels in accord with the column
-#'     standards table, see \code{standardize_columns}.
+#'     standards table, see
+#'     \ifelse{html}{\code{\link[NVIdb:standardize_columns]{NVIdb::standardize_columns}}}{\code{NVIdb::standardize_columns}}.
 #'
 #'     It is also possible to give the standards as a \code{data.frame} or as a
 #'     \code{list}. The list input to column_standards must follow a specific
