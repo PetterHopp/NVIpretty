@@ -5,7 +5,7 @@
 \alias{palette_graph}
 \title{Palette with NVI profile colours for 2025 - today's date}
 \format{
-A vector with 10 named colours:
+A vector with 10 unnamed colours:
 \describe{
   \item{Jord}{#59CD8B}
   \item{Luft}{#D7F4FF}
