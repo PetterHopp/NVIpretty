@@ -84,4 +84,3 @@ usethis::use_data(name = palette_gradient_graa, overwrite = TRUE, internal = FAL
 #                         "line2_fill" = "#D7F4FF",
 #                         "text" = "#091A3E", "headertext" = "#091A3E", "bodytext" = "#091A3E")
 # usethis::use_data(name = palette_table_blue, overwrite = TRUE, internal = FALSE)
-
