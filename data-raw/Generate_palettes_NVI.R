@@ -2,10 +2,14 @@
 # Source: Grafisk profil for Veterinærinstituttet versjon 2024
 
 # GENERATE PALETTE WITH NVI'S PROFILE COLOURS ----
-palette_NVI <- c("Jord" = "#59CD8B", "Luft" = "#D7F4FF", "Vann" = "#1C4FB9",
-                 "Hvit" = "#F7FDFF", "Svart" = "#091A3E",
-                 "Lys_jord" = "#BCEED1", "Mørk_luft" = "#95D9F3", "Lyst_vann" = "#C7D9FF",
-                 "Mat" = "#FF5447", "Lys_mat" = "#FFDAD4")
+# palette_NVI <- c("Jord" = "#59CD8B", "Luft" = "#D7F4FF", "Vann" = "#1C4FB9",
+#                  "Hvit" = "#F7FDFF", "Svart" = "#091A3E",
+#                  "Lys_jord" = "#BCEED1", "Mørk_luft" = "#95D9F3", "Lyst_vann" = "#C7D9FF",
+#                  "Mat" = "#FF5447", "Lys_mat" = "#FFDAD4")
+palette_NVI <- c("#59CD8B", "#D7F4FF", "#1C4FB9",
+                 "#F7FDFF", "#091A3E",
+                 "#BCEED1", "#95D9F3", "#C7D9FF",
+                 "#FF5447", "#FFDAD4")
 
 # Save palette
 usethis::use_data(name = palette_NVI, overwrite = TRUE, internal = FALSE)
@@ -72,3 +76,11 @@ palette_gradient_grey <- c("#DCDFE5", "#B9BFCB", "#969FB1", "#737F97", "#576175"
 usethis::use_data(name = palette_gradient_grey, overwrite = TRUE, internal = FALSE)
 palette_gradient_graa <- palette_gradient_grey
 usethis::use_data(name = palette_gradient_graa, overwrite = TRUE, internal = FALSE)
+
+# # GENERATE PALETTES FOR TABLES
+# # Blue
+# palette_table_blue <- c("header_fill" = "#95D9F3",
+#                         "line1_fill" = "#F7FDFF",
+#                         "line2_fill" = "#D7F4FF",
+#                         "text" = "#091A3E", "headertext" = "#091A3E", "bodytext" = "#091A3E")
+# usethis::use_data(name = palette_table_blue, overwrite = TRUE, internal = FALSE)

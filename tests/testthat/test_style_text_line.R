@@ -23,17 +23,17 @@ test_that("Style footnote in last row", {
                   text_decoration = "bold",
                   wrap_text = TRUE,
                   merge_cells = TRUE,
-                  heights = 24)    
-  
+                  heights = 24)
+
   saveWorkbook(wb, file = file.path(tempdir(), "test.xlsx"), overwrite = TRUE)
-  
+
   # Check format
-  # Load your Excel file 
+  # Load your Excel file
   wbtest <- loadWorkbook(file.path(tempdir(), "test.xlsx"))
-  
+
   # Get cell styles
   styles <- getStyles(wbtest)[[1]]
-  
+
   expect_equal(styles$fontDecoration, "BOLD")
   expect_true(styles$wrapText)
 })
@@ -45,7 +45,7 @@ test_that("Error testing of style_text_line", {
   wb <- createWorkbook()
   db <- as.data.frame(list("year" = c(2021:2025),
                            "number" = c(1:5)))
-  
+
   expect_error(style_text_line(workbook = "workbook",
                                sheet = "sheetname",
                                data = db,
@@ -67,7 +67,7 @@ test_that("Error testing of style_text_line", {
                                heights = NULL),
                regexp = "Remark that sheet names can be at most",
                fixed = TRUE)
-  
+
   expect_error(style_text_line(workbook = wb,
                                sheet = "sheetname",
                                data = "db",
@@ -78,7 +78,7 @@ test_that("Error testing of style_text_line", {
                                heights = NULL),
                regexp = "Variable 'data': Must be of type 'data.frame', not 'character'",
                fixed = TRUE)
-  
+
   expect_error(style_text_line(workbook = wb,
                                sheet = "sheetname",
                                data = db,
@@ -89,7 +89,7 @@ test_that("Error testing of style_text_line", {
                                heights = NULL),
                regexp = "Variable 'text': Must have length 1",
                fixed = TRUE)
-  
+
   expect_error(style_text_line(workbook = wb,
                                sheet = "sheetname",
                                data = db,
@@ -100,7 +100,7 @@ test_that("Error testing of style_text_line", {
                                heights = NULL),
                regexp = "'bold','strikeout','italic','underline','underline2'",
                fixed = TRUE)
-  
+
   expect_error(style_text_line(workbook = wb,
                                sheet = "sheetname",
                                data = db,
@@ -111,7 +111,7 @@ test_that("Error testing of style_text_line", {
                                heights = NULL),
                regexp = "Variable 'wrap_text': Must be of type 'logical flag'",
                fixed = TRUE)
-  
+
   expect_error(style_text_line(workbook = wb,
                                sheet = "sheetname",
                                data = db,
@@ -122,7 +122,7 @@ test_that("Error testing of style_text_line", {
                                heights = NULL),
                regexp = "Variable 'merge_cells': Must be of type 'logical flag'",
                fixed = TRUE)
-  
+
   expect_error(style_text_line(workbook = wb,
                                sheet = "sheetname",
                                data = db,
@@ -133,6 +133,6 @@ test_that("Error testing of style_text_line", {
                                heights = 1.5),
                regexp = "Variable 'heights': Must be of type 'integerish'",
                fixed = TRUE)
-  
+
   options(width = unlist(linewidth))
 })
