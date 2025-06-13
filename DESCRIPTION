@@ -1,7 +1,7 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's graphical profile
-Version: 0.4.2
-Date: 2024-12-19
+Version: 0.4.2.9000
+Date: 2024-##-##
 Authors@R: 
   c(person(given = "Petter",
            family = "Hopp",
@@ -21,6 +21,7 @@ LazyData: true
 Imports: 
     checkmate (>= 2.1.0),
     ggplot2,
+    grid,
     openxlsx,
     NVIcheckmate (>= 0.5.0),
     NVIdb (>= 0.13.1)
@@ -44,5 +45,5 @@ Remotes:
 VignetteBuilder: knitr
 Language: en-GB
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Config/testthat/edition: 3

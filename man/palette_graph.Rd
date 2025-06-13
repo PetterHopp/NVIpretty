@@ -3,27 +3,41 @@
 \docType{data}
 \name{palette_graph}
 \alias{palette_graph}
-\title{Palette with colours for graphs}
+\title{Palette with colours for graphs for 2025 - today's date}
 \format{
-A vector with named colours:
+A vector with 15 named colours:
 \describe{
-  \item{colours}{13 different colours}
+  \item{Jord}{#59CD8B}
+  \item{Luft}{#D7F4FF}
+  \item{Vann}{#1C4FB9}
+  \item{Svart}{#091A3E}
+  \item{Lys jord}{#BCEED1}
+  \item{Mørk luft}{#95D9F3}
+  \item{Lyst vann}{#C7D9FF}
+  \item{Mat}{#FF5447}
+  \item{Lys mat}{#FFDAD4}
+  \item{Gul}{#F5D34A}
+  \item{Lys gul}{#FBECB2}
+  \item{Lilla}{#9A55D2}
+  \item{Lys lilla}{#DEC2F5}
+  \item{Orange}{#FCA446}
+  \item{Lys orange}{#F9D3A9}
 }
 }
 \source{
-Grafisk profil for Veterinærinstituttet versjon 2020.
+Grafisk profil for Veterinærinstituttet version 2024 (available on
+NVI's intranet).
 }
 \usage{
 palette_graph
 }
 \description{
-A vector with the hex values for colours to be used in graphs.
+A vector with the hex values for colours to be used in graphs. The
+    order of the colours are as they should be used in the graphs.
 }
 \details{
 The colour codes are based on the hex values in the Graphical profile
-    handbook except for the body text where the cmyk value is used. There is
-    not agreement between the hex and cmyk values, but hex seem to give the
-    most correct colour.
+    handbook (available at NVI's intranet).
 
 The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 }

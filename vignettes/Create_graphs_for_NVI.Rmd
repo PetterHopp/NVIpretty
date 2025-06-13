@@ -63,11 +63,11 @@ ggplot(iris, aes(Species, Sepal.Length)) +
 ```
 
 ## Histogram in accord with NVI's graphical profile  
-In this example we have chosen to have 13 bins. Thereby, we can display all the colours in the palette.
+In this example we have chosen to have 15 bins. Thereby, we can display all the colours in the palette.
 
 ```{r fig.width = 5} 
 ggplot(iris, aes(x = Sepal.Length)) +
-  geom_histogram(bins = 13, fill = palette_graph) +
+  geom_histogram(bins = 15, fill = palette_graph) +
   theme(legend.position = "right")
 ```
 

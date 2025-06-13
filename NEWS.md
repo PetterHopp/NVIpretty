@@ -1,3 +1,25 @@
+# NVIpretty 0.4.2.9000 - (2024-##-##)
+
+## New features:
+
+- Created the palettes palette_NVI, palette_graph, and six palettes with gradients within one colour in accordance with the new graphical profile. 
+
+
+## Bug fixes:
+
+-
+
+
+## Other changes:
+
+- Created the vignette "NVI_colour_palettes" that displays the new colour palettes.
+
+
+## BREAKING CHANGES:
+
+-
+
+
 # NVIpretty 0.4.2 - (2024-12-19)
 
 ## New features:
