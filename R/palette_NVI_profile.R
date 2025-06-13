@@ -33,7 +33,7 @@
 #'
 #' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
-#' @format A vector with 10 named colours:
+#' @format A vector with 10 unnamed colours:
 #' \describe{
 #'   \item{Jord}{#59CD8B}
 #'   \item{Luft}{#D7F4FF}
