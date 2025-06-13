@@ -62,6 +62,8 @@ The NVI profile colours are collected in the palette: "palette_NVI".
 ```{r fig.width = 5, echo = FALSE}
 library(NVIpretty)
 
+names(palette_NVI) <- c("Jord", "Luft", "Vann", "Hvit", "Svart", "Lys_jord",
+                          "Mørk_luft", "Lys_vann", "Mat", "Lys_mat")
 display_palett(palette_NVI, reverse_colours = TRUE)
 ```
 
