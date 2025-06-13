@@ -1,7 +1,7 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's graphical profile
-Version: 0.4.2.9000
-Date: 2024-##-##
+Version: 0.5.0
+Date: 2025-06-13
 Authors@R: 
   c(person(given = "Petter",
            family = "Hopp",
@@ -36,13 +36,14 @@ Suggests:
     roxygen2,
     testthat (>= 3.0.0),
     NVIpackager,
-    NVIrpackages
+    NVIrpackages,
+    R.rsp
 Remotes: 
     NorwegianVeterinaryInstitute/NVIcheckmate,
     NorwegianVeterinaryInstitute/NVIdb,
     NorwegianVeterinaryInstitute/NVIpackager,
     NorwegianVeterinaryInstitute/NVIrpackages
-VignetteBuilder: knitr
+VignetteBuilder: knitr, R.rsp
 Language: en-GB
 Roxygen: list(markdown = FALSE)
 RoxygenNote: 7.3.2
