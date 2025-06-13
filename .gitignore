@@ -4,3 +4,5 @@
 .Ruserdata
 *.Rcheck
 inst/doc
+!vignettes/NVIpretty.pdf
+
