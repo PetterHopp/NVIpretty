@@ -23,12 +23,15 @@ usethis::use_data(name = palette_NVI, overwrite = TRUE, internal = FALSE)
 #                    "Mat" = "#FF5447", "Lys mat" = "#FFDAD4",
 #                    "Gul" = "#F5D34A", "Lys gul" = "#FBECB2", "Lilla" = "#9A55D2", "Lys lilla" = "#DEC2F5",
 #                    "Orange" = "#FCA446", "Lys orange" = "#F9D3A9")
-palette_graph <- c("#59CD8B", "#D7F4FF", "#1C4FB9",
-                   "#091A3E",
-                   "#BCEED1", "#95D9F3", "#C7D9FF",
-                   "#FF5447", "#FFDAD4",
-                   "#F5D34A", "#FBECB2", "#9A55D2", "#DEC2F5",
-                   "#FCA446", "#F9D3A9")
+# palette_graph <- c("#59CD8B", "#D7F4FF", "#1C4FB9",
+#                    "#091A3E",
+#                    "#BCEED1", "#95D9F3", "#C7D9FF",
+#                    "#FF5447", "#FFDAD4",
+#                    "#F5D34A", "#FBECB2", "#9A55D2", "#DEC2F5",
+#                    "#FCA446", "#F9D3A9")
+# New palette for graphs from autumn 2025
+palette_graph <- c("#143985", "#9EB8F0", "#CC0E00", "#FF8D85", "#836A00", "#F2C512", 
+                   "#1A5634", "#36B46C", "#C0ECD3", "#5CD1FF", "#737F97", "#B9BFCB")
 # Save palette
 usethis::use_data(name = palette_graph, overwrite = TRUE, internal = FALSE)
 
