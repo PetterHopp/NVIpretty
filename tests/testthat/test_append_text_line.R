@@ -5,9 +5,9 @@ test_that("Append text in last row", {
 
 
 # Make example data
-x <- as.data.frame(cbind("År" = 2021, "Rapport" = "Brucellose hos geit, utvalgsliste",
+x <- as.data.frame(cbind("\u00C5r" = 2021, "Rapport" = "Brucellose hos geit, utvalgsliste",
                          "MT regionnr" = "M21000", "MT region" = "Region Stor-Oslo", "MT avdelingsnr" = "M21150", "MT avdeling" = "Romerike",
-                         "Produsentnr" = "30303030", "Foretak" = "XXX XXXXX", "Postnr" = "0468", "Poststed" = "OSLO", "Antall prøver" = 26))
+                         "Produsentnr" = "30303030", "Foretak" = "XXX XXXXX", "Postnr" = "0468", "Poststed" = "OSLO", "Antall pr\u00F8ver" = 26))
 
 # Include row with generated text
 y <- append_text_line(data = x, text = paste("Datauttrekket er gjort", format(Sys.Date(), "%d/%m/%Y")), empty_rows = 0)
