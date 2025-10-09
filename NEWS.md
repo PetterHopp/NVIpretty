@@ -1,3 +1,25 @@
+# NVIpretty 0.5.0.9000 - (2025-##-##)
+
+## New features:
+
+-
+
+
+## Bug fixes:
+
+-
+
+
+## Other changes:
+
+-
+
+
+## BREAKING CHANGES:
+
+-
+
+
 # NVIpretty 0.5.0 - (2025-06-13)
 
 ## New features:
