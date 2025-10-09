@@ -1,8 +1,15 @@
+# NVIpretty 0.5.0.9000 - (2025-##-##)
+
+## New features:
+
+- `palette_graph` is updated with new colours more suited for graphs.
+
+
 # NVIpretty 0.5.0 - (2025-06-13)
 
 ## New features:
 
-- Created the palettes palette_NVI, palette_graph, and six palettes with gradients within one colour in accordance with the new graphical profile. 
+- Created the palettes: palette_NVI, palette_graph, and six palettes with gradients within one colour in accordance with the new graphical profile. 
 
 
 ## Other changes:
