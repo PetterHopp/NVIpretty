@@ -1,4 +1,4 @@
-# NVIpretty 0.5.0.9000 - (2025-##-##)
+# NVIpretty 0.5.1 - (2025-10-13)
 
 ## New features:
 
