@@ -9,81 +9,39 @@
 #'
 #' @format A vector with named colours:
 #' \describe{
-#'   \item{Jord}{The green colour that signifies NVI's core area "Terestrial animals".}
-#'   \item{Luft}{A light blue colour".}
-#'   \item{Vann}{The blue colour that signifies NVI's core area "Aquatic animals".}
-#'   \item{Hvit}{Whitish. It is used in headings with a coloured or black background.}
-#'   \item{Svart}{Blackish for use in body text in reports etc. It can also be used in headings.}
-#'   \item{Lys jord}{Used in graphs.}
-#'   \item{Mørk luft}{Used in graphs.}
-#'   \item{Lyst vann}{Used in graphs.}
-#'   \item{Mat}{The red colour that signifies NVI's core area "Food and feed safety".}
-#'   \item{Lys mat}{Used in graphs.}
+#'   \item{Jord}{#59CD8B}{The green colour that signifies NVI's core area "Terestrial animals".}
+#'   \item{Luft}{#D7F4FF}{A light blue colour".}
+#'   \item{Vann}{#1C4FB9}{The blue colour that signifies NVI's core area "Aquatic animals".}
+#'   \item{Hvit}{#F7FDFF}{Whitish. It is used in headings with a coloured or black background.}
+#'   \item{Svart}{#091A3E}{Blackish for use in body text in reports etc. It can also be used in headings.}
+#'   \item{Lys jord}{#BCEED1}{Used in graphs.}
+#'   \item{M&#U00F8rk luft}{#95D9F3}{Used in graphs.}
+#'   \item{Lyst vann}{#C7D9FF}{Used in graphs.}
+#'   \item{Mat}{#FF5447}{The red colour that signifies NVI's core area "Food and feed safety".}
+#'   \item{Lys mat}{#FFDAD4}{Used in graphs.}
 #' }
 #'
-#' @source Grafisk profil for Veterinærinstituttet version 2024 (available on
+#' @source Grafisk profil for Veterin<U+00E6>rinstituttet version 2024 (available on
 #' NVI's intranet).
 "palette_NVI"
 #'
-#' @title Palette with NVI profile colours for 2025 - today's date
-#' @description A vector with the hex values for NVI profile colours.
-#' @details The colour codes are based on the hex values in the Graphical profile
-#'     handbook (available at NVI's intranet). The colours are displayed in the
-#'     vignette "NVI colour palettes".
+#' @title Palette with colours for graphs for 2025 - today's date
+#' @description A vector with the hex values for colours to be used in graphs.
+#'     The order of the colours are as they should be used in the graphs.
+#' @details The colours are displayed in the vignette "NVI colour palettes".
+#'     Remark that the colours #F2C512 and #C0ECD3 should not be used for line
+#'     graphs.
+#'
+#' A vector with 12 unnamed colours:
+#'    c(#143985, #9EB8F0, #CC0E00, #FF8D85, #836A00, #F2C512, #1A5634,
+#'     #36B46C, #C0ECD3, #5CD1FF, #737F97, #B9BFCB)
 #'
 #' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
-#' @format A vector with 10 unnamed colours:
-#' \describe{
-#'   \item{Jord}{#59CD8B}
-#'   \item{Luft}{#D7F4FF}
-#'   \item{Vann}{#1C4FB9}
-#'   \item{Hvit}{#F7FDFF}
-#'   \item{Svart}{#091A3E}
-#'   \item{Lys_jord}{#BCEED1}
-#'   \item{Mørk_luft}{#95D9F3}
-#'   \item{Lyst_vann}{#C7D9FF}
-#'   \item{Mat}{#FF5447}
-#'   \item{Lys_mat}{#FFDAD4}
-#' }
-#'
-#' @source Grafisk profil for Veterinærinstituttet version 2024 (available on
+#' @source Grafisk profil for Veterin<U+00E6>rinstituttet version 2024 (available on
 #' NVI's intranet).
 #'
 "palette_graph"
-#'
-#' @title Palette with colours for graphs for 2025 - today's date
-#' @description A vector with the hex values for colours to be used in graphs. The
-#'     order of the colours are as they should be used in the graphs.
-#' @details The colour codes are based on the hex values in the Graphical profile
-#'     handbook (available at NVI's intranet). The colours are displayed in the
-#'     vignette "NVI colour palettes".
-#'
-#' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
-#'
-#' @format A vector with 15 unnamed colours:
-#' \describe{
-#'   \item{Jord}{#59CD8B}
-#'   \item{Luft}{#D7F4FF}
-#'   \item{Vann}{#1C4FB9}
-#'   \item{Svart}{#091A3E}
-#'   \item{Lys jord}{#BCEED1}
-#'   \item{Mørk luft}{#95D9F3}
-#'   \item{Lyst vann}{#C7D9FF}
-#'   \item{Mat}{#FF5447}
-#'   \item{Lys mat}{#FFDAD4}
-#'   \item{Gul}{#F5D34A}
-#'   \item{Lys gul}{#FBECB2}
-#'   \item{Lilla}{#9A55D2}
-#'   \item{Lys lilla}{#DEC2F5}
-#'   \item{Orange}{#FCA446}
-#'   \item{Lys orange}{#F9D3A9}
-#' }
-#'
-#' @source Grafisk profil for Veterinærinstituttet version 2024 (available on
-#' NVI's intranet).
-#'
-"palette_gradient_green"
 #'
 #' @title Palettes with colour gradients for NVI for 2025 - today's date
 #' @description Colour gradients with six levels for six different base colours.
@@ -123,8 +81,11 @@
 #'
 #' The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
 #'
-#' @source Grafisk profil for Veterinærinstituttet version 2024 (available on
+#' @source Grafisk profil for Veterin<U+00E6>rinstituttet version 2024 (available on
 #'   NVI's intranet).
+#'
+"palette_gradient_green"
+#'
 
 #' @name palette_gradient_green
 "palette_gradient_red"
