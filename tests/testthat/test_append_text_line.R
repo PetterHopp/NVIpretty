@@ -1,4 +1,4 @@
-library(NVIpretty)
+# library(NVIpretty)
 library(testthat)
 
 test_that("Append text in last row", {
