@@ -7,20 +7,20 @@
 \format{
 A vector with named colours:
 \describe{
-\item{Jord}{The green colour that signifies NVI's core area "Terestrial animals".}
-\item{Luft}{A light blue colour".}
-\item{Vann}{The blue colour that signifies NVI's core area "Aquatic animals".}
-\item{Hvit}{Whitish. It is used in headings with a coloured or black background.}
-\item{Svart}{Blackish for use in body text in reports etc. It can also be used in headings.}
-\item{Lys jord}{Used in graphs.}
-\item{Mørk luft}{Used in graphs.}
-\item{Lyst vann}{Used in graphs.}
-\item{Mat}{The red colour that signifies NVI's core area "Food and feed safety".}
-\item{Lys mat}{Used in graphs.}
+\item{Jord}{#59CD8B}{The green colour that signifies NVI's core area "Terestrial animals".}
+\item{Luft}{#D7F4FF}{A light blue colour".}
+\item{Vann}{#1C4FB9}{The blue colour that signifies NVI's core area "Aquatic animals".}
+\item{Hvit}{#F7FDFF}{Whitish. It is used in headings with a coloured or black background.}
+\item{Svart}{#091A3E}{Blackish for use in body text in reports etc. It can also be used in headings.}
+\item{Lys jord}{#BCEED1}{Used in graphs.}
+\item{M&#U00F8rk luft}{#95D9F3}{Used in graphs.}
+\item{Lyst vann}{#C7D9FF}{Used in graphs.}
+\item{Mat}{#FF5447}{The red colour that signifies NVI's core area "Food and feed safety".}
+\item{Lys mat}{#FFDAD4}{Used in graphs.}
 }
 }
 \source{
-Grafisk profil for Veterinærinstituttet version 2024 (available on
+Grafisk profil for Veterin<U+00E6>rinstituttet version 2024 (available on
 NVI's intranet).
 }
 \usage{
