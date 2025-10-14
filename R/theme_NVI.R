@@ -54,7 +54,7 @@ theme_NVI <- function(base_size = 11, base_family = "",
                                                 linetype = 1,
                                                 lineend = "butt"),
 
-                   rect = ggplot2::element_rect(fill = "#F7FDFF",
+                   rect = ggplot2::element_rect(fill = "#FFFFFF",
                                                 colour = "#091A3E",
                                                 size = base_rect_size,
                                                 linetype = 1),
