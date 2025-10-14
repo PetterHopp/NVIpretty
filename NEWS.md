@@ -2,7 +2,7 @@
 
 ## New features:
 
--
+- Updated theme_NVI with official definition for horizontal gridlines.
 
 
 ## Bug fixes:
