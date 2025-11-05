@@ -71,6 +71,20 @@ display_palett(palette_NVI, reverse_colours = TRUE)
 
 ## The NVI colours for graphs
 
+The NVI profile has 15 different colours for use in graphs. These are collected 
+in the palette: "palette_graph". The palette colours are unnamed, but are based 
+on the NVI profile colours. The colours should be used in the order they are in 
+the palette. 
+
+```{r fig.width = 5, fig.height = 4, echo = FALSE}
+names(palette_graph) <- c("Jord", "Luft", "Vann", "Svart", "Lys jord",
+                          "Mørk luft", "Lys vann", "Mat", "Lys mat", "Gul",
+                          "Lys gul", "Lilla", "Lys lilla", "Orange", "Lys orange")
+display_palett(palette_graph, reverse_colours = TRUE)
+```
+
+## The NVI colours for graphs used in the fish health report and animal health report
+
 The NVI profile has 12 different colours for use in graphs. These are collected 
 in the palette: "palette_graph". The palette colours are unnamed. The colours 
 should be used in the order they are in the palette. For line graphs, the colours 
@@ -81,7 +95,7 @@ should be used in the order they are in the palette. For line graphs, the colour
 # names(palette_graph) <- c("Jord", "Luft", "Vann", "Svart", "Lys jord",
 #                           "Mørk luft", "Lys vann", "Mat", "Lys mat", "Gul",
 #                           "Lys gul", "Lilla", "Lys lilla", "Orange", "Lys orange")
-display_palett(palette_graph, reverse_colours = TRUE)
+display_palett(palette_graph_report, reverse_colours = TRUE)
 ```
 
 ## The NVI colours for gradients
