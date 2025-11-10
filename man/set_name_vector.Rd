@@ -2,19 +2,21 @@
 % Please edit documentation in R/utils.R
 \name{set_name_vector}
 \alias{set_name_vector}
-\title{set_name_vector}
+\title{Ensures that all elements in a vector are named}
 \usage{
 set_name_vector(x)
 }
 \arguments{
 \item{x}{[\code{character}]\cr
-A unnamed, partly named or fully named vector of character variables input in add-functions}
+A vector of character variables.}
 }
 \value{
-A named vector where previously unnamed elements have been named with the element value as name.
+A named vector where previously unnamed elements have been named with
+    the element value as name.
 }
 \description{
-Ensures that all elements in a vector are named.
+Keeps names for named elements in a vector and gives names to
+    unnamed elements in a vector.
 }
 \details{
 Used to name all elements in vectors with column names that should
@@ -24,7 +26,8 @@ Used to name all elements in vectors with column names that should
     function. This is considered easier for the user to understand than
     inputting two vectors.
 
-    This function is used in different add-functions before calling add_new_variable
+    This function is used in different add-functions before calling
+    add_new_variable.
 }
 \examples{
 new_columns <- c("name11" = "column1", "name2" = "column2", "column3")

@@ -1,12 +1,14 @@
 #### UTILITY FUNCTIONS ----
-# The utility functions are functions reused within the package to avoid rewriting of code. They are not intended for use in the R-scripts,
-# and are therefore not exported to Namespace.
+# The utility functions are functions reused within the package to avoid
+# rewriting of code. They are not intended for use in the R-scripts,
+# and are therefore not exported to NAMESPACE.
 #
 
 
 ### set_name_vector ----
-#' @title set_name_vector
-#' @description Ensures that all elements in a vector are named.
+#' @title Ensures that all elements in a vector are named
+#' @description Keeps names for named elements in a vector and gives names to
+#'     unnamed elements in a vector.
 #' @details Used to name all elements in vectors with column names that should
 #'     be added to data frames. Thereby it can easily be differentiated between
 #'     standard column names (vector elements) and wanted column names in the
@@ -14,12 +16,14 @@
 #'     function. This is considered easier for the user to understand than
 #'     inputting two vectors.
 #'
-#'     This function is used in different add-functions before calling add_new_variable
+#'     This function is used in different add-functions before calling
+#'     add_new_variable.
 #'
 #' @param x [\code{character}]\cr
-#'     A unnamed, partly named or fully named vector of character variables input in add-functions
+#'     A vector of character variables.
 
-#' @return A named vector where previously unnamed elements have been named with the element value as name.
+#' @return A named vector where previously unnamed elements have been named with
+#'     the element value as name.
 #'
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @keywords internal
