@@ -5,7 +5,7 @@
 \alias{palette_graph}
 \title{Palette with colours for graphs for 2025 - today's date}
 \format{
-An object of class \code{character} of length 12.
+An object of class \code{character} of length 15.
 }
 \source{
 Grafisk profil for Veterin<U+00E6>rinstituttet version 2024 (available on
