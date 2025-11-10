@@ -7,11 +7,11 @@
 ### set_name_vector ----
 #' @title set_name_vector
 #' @description Ensures that all elements in a vector are named.
-#' @details Used to name all elements in vectors with column names that should 
-#'     be added to data frames. Thereby it can easily be differentiated between 
-#'     standard column names (vector elements) and wanted column names in the 
-#'     generated tables (names). The user can input a named vector to the 
-#'     function. This is considered easier for the user to understand than 
+#' @details Used to name all elements in vectors with column names that should
+#'     be added to data frames. Thereby it can easily be differentiated between
+#'     standard column names (vector elements) and wanted column names in the
+#'     generated tables (names). The user can input a named vector to the
+#'     function. This is considered easier for the user to understand than
 #'     inputting two vectors.
 #'
 #'     This function is used in different add-functions before calling add_new_variable
@@ -37,19 +37,19 @@ set_name_vector <- function(x) {
 # set_name_vector <- function(colname_vector) {
 #   # Existing names to the vector name
 #   name <- names(colname_vector)
-# 
+#
 #   # vector values to unnamed vector
 #   column <- unname(colname_vector)
-# 
+#
 #   # Check if any elements are named
 #   if (!is.null(name)) {
 #     # if some elements are named, move element value to unnamed elements
 #     for (i in 1:length(name)) {
 #       if (name[i] == "") {name[i] <- column[i]}
 #     }
-# 
+#
 #     # if no elements are named, set element values as names
 #   } else {name <- column }
-# 
+#
 #   return(stats::setNames(colname_vector, name))
 # }
