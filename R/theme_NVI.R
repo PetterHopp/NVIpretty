@@ -39,41 +39,49 @@
 #' @export
 
 
-theme_NVI <- function(base_size = 11, base_family = "",
+theme_NVI <- function(base_size = 11, 
+                      base_family = "",
                       base_line_size = base_size / 22,
-                      base_rect_size = base_size / 22) {
+                      base_rect_size = base_size / 22,
+                      legend.position = 'bottom',
+                      ink = "black",
+                      paper = "white") {
   # Starts with theme_grey and then modify some parts
   ggplot2::theme_grey(
     base_size = base_size,
     base_family = base_family,
     base_line_size = base_line_size,
-    base_rect_size = base_rect_size
+    base_rect_size = base_rect_size,
+    ink = ink,
+    paper = paper
   ) %+replace%
-    ggplot2::theme(line = ggplot2::element_line(colour = "#091A3E",
+    ggplot2::theme(line = ggplot2::element_line(colour = ink,
                                                 size = base_line_size,
                                                 linetype = 1,
                                                 lineend = "butt"),
 
-                   rect = ggplot2::element_rect(fill = "#FFFFFF",
-                                                colour = "#091A3E",
+                   rect = ggplot2::element_rect(fill = paper, 
+                                                colour = ink,
                                                 size = base_rect_size,
                                                 linetype = 1),
 
                    text = ggplot2::element_text(family = base_family,
                                                 face = "plain",
-                                                colour = "#091A3E",
+                                                colour = ink,
                                                 size = base_size,
                                                 lineheight = 0.9, hjust = 0.5, vjust = 0.5, angle = 0,
                                                 margin = ggplot2::margin(),
                                                 debug = FALSE),
 
-                   axis.ticks = ggplot2::element_blank(),
+                   # axis.ticks = ggplot2::element_blank(),
                    legend.background = ggplot2::element_blank(),
                    legend.key = ggplot2::element_blank(),
-                   panel.background = ggplot2::element_blank(),
-                   panel.border = ggplot2::element_blank(),
+                   legend.position = legend.position,
+                   legend.title = element_blank(),
+                   # panel.background = ggplot2::element_blank(),
+                   panel.border = ggplot2::element_rect(fill = NA),
                    strip.background = ggplot2::element_blank(),
-                   plot.background = ggplot2::element_blank(),
+                   # plot.background = ggplot2::element_blank(),
                    panel.grid.major.y = ggplot2::element_line(color = "#d9d9d9", size = 0.25),
                    panel.grid.major.x = ggplot2::element_blank(),
                    panel.grid.minor = ggplot2::element_blank(),
@@ -81,3 +89,6 @@ theme_NVI <- function(base_size = 11, base_family = "",
                    complete = TRUE
     )
 }
+
+
+
