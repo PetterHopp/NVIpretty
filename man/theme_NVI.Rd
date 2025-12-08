@@ -9,7 +9,7 @@ theme_NVI(
   base_family = "",
   base_line_size = base_size/22,
   base_rect_size = base_size/22,
-  legend.position = "bottom",
+  legend_position = "bottom",
   ink = "black",
   paper = "white"
 )
@@ -27,24 +27,24 @@ Base size for line elements. Defaults to `base_size` / 22.}
 \item{base_rect_size}{[\code{numeric(1)}]\cr
 Base size for rectangular elements. Defaults to `base_size` / 22.}
 
+\item{legend_position}{[\code{character(1)}]\cr
+Position of legend. Must be one of c("none", "left", "right", "bottom",
+"top", "inside"). In official reports it should be "bottom". Defaults to
+"bottom".}
+
 \item{ink}{[\code{character(1)}]\cr
 Foreground colour. Defaults to "black".}
 
 \item{paper}{[\code{character(1)}]\cr
 Foreground colour. Defaults to "white".}
-
-\item{legend_position}{[\code{character(1)}]\cr
-Position of legend. Must be one of c("none", "left", "right", "bottom",
-"top", "inside"). In official reports it should be "bottom". Defaults to
-"bottom".}
 }
 \description{
 A complete ggplot2 theme in accord with NVI's graphical profile.
     The theme control all non-data display.
 }
 \details{
-The NVI theme without background for plot and legend, light grey horizontal support
-    lines and dark grey axis' marks.
+The NVI theme with white background for plot and legend, light grey
+    horizontal support lines and dark grey axis' marks.
 }
 \examples{
 library(ggplot2)
