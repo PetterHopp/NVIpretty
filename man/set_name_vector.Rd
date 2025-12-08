@@ -31,7 +31,7 @@ Used to name all elements in vectors with column names that should
 }
 \examples{
 new_columns <- c("name11" = "column1", "name2" = "column2", "column3")
-new_columns <- set_name_vector(new_columns)
+new_columns <- NVIpretty:::set_name_vector(new_columns)
 
 }
 \author{

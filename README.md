@@ -36,7 +36,9 @@ package is highly appreciated.
 # Installation
 
 `NVIpretty` is available in package manager for workbench and at
-[GitHub](https://github.com/NorwegianVeterinaryInstitute).
+[GitHub](https://github.com/NorwegianVeterinaryInstitute). If needed,
+you can install the development version from the dev-branch at the
+GitHub repo, see below.
 
 #### Workbench
 
@@ -44,11 +46,16 @@ To install `NVIpretty` on workbench, run the following code:
 
     install.packages("NVIpretty")
 
+If you need changes that only are available in the development version,
+please make contact to the developers so that a new release can be
+published on Workbench.
+
 #### At personal computer
 
 You may install the package with or without vignettes. Although it will
 be easier to install without vignettes, it is recommended to install
-with vignettes for all packages except `c("NVIrpackages", "NVIconfig")`.
+with vignettes for all `NVIverse` packages except
+`c("NVIrpackages", "NVIconfig")`.
 
 To install `NVIpretty` you will need:
 
@@ -61,24 +68,33 @@ First install and attach the `remotes` package.
     install.packages("remotes")
     library(remotes)
 
-To install (or update) the `NVIpretty` package without vignettes, run
-the following code:
+To install (or update) `NVIpretty` without vignettes, run the following
+code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpretty",
         upgrade = FALSE,
         build = TRUE,
         build_vignettes = FALSE)
 
-To install (or update) the `NVIpretty` package with vignettes, you will
-need to first install some additional R-packages needed to build the
-vignettes. Check README below in the section [Vignettes](#vignettes) to
-see which vignettes are available. To install the package with the
-vignettes, first install the packages: `knitr`, `rmarkdown`, `R.rsp`,
-and `NVIrpackages` (from GitHub) if they are missing. If you don’t use
+To install (or update) `NVIpretty` with vignettes, you will need to
+first install some additional R-packages needed to build the vignettes.
+Check README below in the section [Vignettes](#vignettes) to see the
+vignettes that are available. To install the package with the vignettes,
+first install the packages: `knitr`, `rmarkdown`, `R.rsp`, and
+`NVIrpackages` (from GitHub) if they are missing. If you don’t use
 R-studio, you will also need to install Pandoc. Then run the following
 code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIpretty",
+        upgrade = FALSE,
+        build = TRUE,
+        build_vignettes = TRUE)
+
+To install (or update) the development version (dev-branch) of
+`NVIpretty` (with vignettes), run the following code:
+
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIpretty",
+        ref = "dev",
         upgrade = FALSE,
         build = TRUE,
         build_vignettes = TRUE)

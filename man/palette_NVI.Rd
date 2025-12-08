@@ -7,16 +7,16 @@
 \format{
 A vector with named colours:
 \describe{
-\item{Jord}{#59CD8B}{The green colour that signifies NVI's core area "Terestrial animals".}
-\item{Luft}{#D7F4FF}{A light blue colour".}
-\item{Vann}{#1C4FB9}{The blue colour that signifies NVI's core area "Aquatic animals".}
-\item{Hvit}{#F7FDFF}{Whitish. It is used in headings with a coloured or black background.}
-\item{Svart}{#091A3E}{Blackish for use in body text in reports etc. It can also be used in headings.}
-\item{Lys jord}{#BCEED1}{Used in graphs.}
-\item{M&#U00F8rk luft}{#95D9F3}{Used in graphs.}
-\item{Lyst vann}{#C7D9FF}{Used in graphs.}
-\item{Mat}{#FF5447}{The red colour that signifies NVI's core area "Food and feed safety".}
-\item{Lys mat}{#FFDAD4}{Used in graphs.}
+\item{#59CD8B: Jord}{The green colour that signifies NVI's core area "Terestrial animals".}
+\item{#D7F4FF: Luft}{A light blue colour".}
+\item{#1C4FB9: Vann}{The blue colour that signifies NVI's core area "Aquatic animals".}
+\item{#F7FDFF: Hvit}{Whitish. It is used in headings with a coloured or black background.}
+\item{#091A3E: Svart}{Blackish for use in body text in reports etc. It can also be used in headings.}
+\item{#BCEED1: Lys jord}{Used in graphs.}
+\item{#95D9F3: M&#U00F8rk luft}{Used in graphs.}
+\item{#C7D9FF: Lyst vann}{Used in graphs.}
+\item{#FF5447: Mat}{The red colour that signifies NVI's core area "Food and feed safety".}
+\item{#FFDAD4: Lys mat}{Used in graphs.}
 }
 }
 \source{

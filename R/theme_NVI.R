@@ -2,8 +2,8 @@
 #' @description A complete ggplot2 theme in accord with NVI's graphical profile.
 #'     The theme control all non-data display.
 #'
-#' @details The NVI theme without background for plot and legend, light grey horizontal support
-#'     lines and dark grey axis' marks.
+#' @details The NVI theme with white background for plot and legend, light grey
+#'     horizontal support lines and dark grey axis' marks.
 #'
 #' @param base_size [\code{numeric(1)}]\cr
 #'     Base font size, given in pts. Defaults to 11.
@@ -13,6 +13,14 @@
 #'     Base size for line elements. Defaults to `base_size` / 22.
 #' @param base_rect_size [\code{numeric(1)}]\cr
 #'     Base size for rectangular elements. Defaults to `base_size` / 22.
+#' @param ink [\code{character(1)}]\cr
+#'     Foreground colour. Defaults to "black".
+#' @param paper [\code{character(1)}]\cr
+#'     Foreground colour. Defaults to "white".
+#' @param legend_position [\code{character(1)}]\cr
+#'     Position of legend. Must be one of c("none", "left", "right", "bottom",
+#'     "top", "inside"). In official reports it should be "bottom". Defaults to
+#'     "bottom".
 #'
 #' @importFrom ggplot2 %+replace%
 #'
@@ -39,11 +47,11 @@
 #' @export
 
 
-theme_NVI <- function(base_size = 11, 
+theme_NVI <- function(base_size = 11,
                       base_family = "",
                       base_line_size = base_size / 22,
                       base_rect_size = base_size / 22,
-                      legend.position = 'bottom',
+                      legend_position = 'bottom',
                       ink = "black",
                       paper = "white") {
   # Starts with theme_grey and then modify some parts
@@ -56,13 +64,13 @@ theme_NVI <- function(base_size = 11,
     paper = paper
   ) %+replace%
     ggplot2::theme(line = ggplot2::element_line(colour = ink,
-                                                size = base_line_size,
+                                                linewidth = base_line_size,
                                                 linetype = 1,
                                                 lineend = "butt"),
 
-                   rect = ggplot2::element_rect(fill = paper, 
+                   rect = ggplot2::element_rect(fill = paper,
                                                 colour = ink,
-                                                size = base_rect_size,
+                                                linewidth = base_rect_size,
                                                 linetype = 1),
 
                    text = ggplot2::element_text(family = base_family,
@@ -76,19 +84,22 @@ theme_NVI <- function(base_size = 11,
                    # axis.ticks = ggplot2::element_blank(),
                    legend.background = ggplot2::element_blank(),
                    legend.key = ggplot2::element_blank(),
-                   legend.position = legend.position,
-                   legend.title = element_blank(),
-                   # panel.background = ggplot2::element_blank(),
+                   legend.position = legend_position,
+                   legend.title = ggplot2::element_blank(),
+                   panel.background = ggplot2::element_rect(fill = paper,
+                                                            colour = ink,
+                                                            linewidth = base_rect_size,
+                                                            linetype = 1),
                    panel.border = ggplot2::element_rect(fill = NA),
                    strip.background = ggplot2::element_blank(),
-                   # plot.background = ggplot2::element_blank(),
-                   panel.grid.major.y = ggplot2::element_line(color = "#d9d9d9", size = 0.25),
+                   plot.background = ggplot2::element_rect(fill = paper,
+                                                           colour = ink,
+                                                           linewidth = base_rect_size,
+                                                           linetype = 1),
+                   panel.grid.major.y = ggplot2::element_line(color = "#d9d9d9", linewidth = 0.25),
                    panel.grid.major.x = ggplot2::element_blank(),
                    panel.grid.minor = ggplot2::element_blank(),
 
                    complete = TRUE
     )
 }
-
-
-
