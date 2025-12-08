@@ -8,7 +8,10 @@ theme_NVI(
   base_size = 11,
   base_family = "",
   base_line_size = base_size/22,
-  base_rect_size = base_size/22
+  base_rect_size = base_size/22,
+  legend.position = "bottom",
+  ink = "black",
+  paper = "white"
 )
 }
 \arguments{
@@ -23,6 +26,17 @@ Base size for line elements. Defaults to `base_size` / 22.}
 
 \item{base_rect_size}{[\code{numeric(1)}]\cr
 Base size for rectangular elements. Defaults to `base_size` / 22.}
+
+\item{ink}{[\code{character(1)}]\cr
+Foreground colour. Defaults to "black".}
+
+\item{paper}{[\code{character(1)}]\cr
+Foreground colour. Defaults to "white".}
+
+\item{legend_position}{[\code{character(1)}]\cr
+Position of legend. Must be one of c("none", "left", "right", "bottom",
+"top", "inside"). In official reports it should be "bottom". Defaults to
+"bottom".}
 }
 \description{
 A complete ggplot2 theme in accord with NVI's graphical profile.
