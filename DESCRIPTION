@@ -1,7 +1,7 @@
 Package: NVIpretty
 Title: Tools for making R-output pretty in accord with NVI's graphical profile
-Version: 0.5.1
-Date: 2025-10-13
+Version: 0.6.0
+Date: 2025-12-08
 Authors@R: 
   c(person(given = "Petter",
            family = "Hopp",
@@ -46,5 +46,5 @@ Remotes:
 VignetteBuilder: knitr, R.rsp
 Language: en-GB
 Roxygen: list(markdown = FALSE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Config/testthat/edition: 3
