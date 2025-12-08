@@ -11,13 +11,13 @@ theme_NVI_report(
   base_rect_size = 0.5,
   ink = "black",
   paper = "white",
-  axis_text_x = element_text(family = "calibri-light", face = "plain", size = 6, angle =
-    0),
-  axis_text_y = element_text(family = "calibri-light", face = "plain", size = 6),
-  axis_title_x_family = element_blank(),
-  axis_title_y = element_text(family = "calibri", face = "plain", size = 8),
+  axis_text_x = ggplot2::element_text(family = "calibri-light", face = "plain", size = 6,
+    angle = 0),
+  axis_text_y = ggplot2::element_text(family = "calibri-light", face = "plain", size = 6),
+  axis_title_x_family = ggplot2::element_blank(),
+  axis_title_y = ggplot2::element_text(family = "calibri", face = "plain", size = 8),
   legend_position = "bottom",
-  legend_text = element_text(family = "calibri-light", face = "plain", size = 6)
+  legend_text = ggplot2::element_text(family = "calibri-light", face = "plain", size = 6)
 )
 }
 \arguments{
@@ -68,14 +68,14 @@ A complete ggplot2 theme in accord with NVI's graphical profile.
     with the palette palette_graph_report.
 }
 \details{
-theme_NVI_report is a modification of theme_NVI where additional
-    specifications are given. In short the theme defines the font, legend
-    position, axis's, grid lines with colours for lines and background.
+\code{theme_NVI_report} is a modification of \code{theme_NVI} where
+    additional specifications are given. In short the theme defines the font,
+    legend position, axis's, grid lines with colours for lines and background.
 
 The background colour is white and the foreground is black.
 
-The font is Calibri and Calibri light. These are fonts that first be added
-    to the font families available for R. On Windows, run:
+The font is Calibri and Calibri light. These are fonts that first must be added
+    added to the font families available for R. On Windows, run:
 \preformatted{
 sysfonts::font_add(
       family = "calibri",
