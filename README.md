@@ -78,8 +78,8 @@ code:
 
 To install (or update) `NVIpretty` with vignettes, you will need to
 first install some additional R-packages needed to build the vignettes.
-Check README below in the section [Vignettes](#vignettes) to see which
-vignettes are available. To install the package with the vignettes,
+Check README below in the section [Vignettes](#vignettes) to see the
+vignettes that are available. To install the package with the vignettes,
 first install the packages: `knitr`, `rmarkdown`, `R.rsp`, and
 `NVIrpackages` (from GitHub) if they are missing. If you don’t use
 R-studio, you will also need to install Pandoc. Then run the following
