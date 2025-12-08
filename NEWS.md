@@ -2,19 +2,19 @@
 
 ## New features:
 
-- Updated theme_NVI in accordance with the new graphical profile. 
+- Updated `theme_NVI` in accordance with the new graphical profile. 
 
-- Created theme_NVI_report with the more strict graphical profile for major reports.
+- Created `theme_NVI_report` with the more strict graphical profile for major reports.
 
-- palette_graph is reset to the colours in palette_graph in NVIpretty v0.5.0.
+- `palette_graph` is reset to the colours in `palette_graph` in NVIpretty v0.5.0.
 
-- Created palette_graph_report with the colours in palette_graph in NVIpretty v0.5.1.
+- Created `palette_graph_report` with the colours in `palette_graph` in NVIpretty v0.5.1.
 
 
 ## BREAKING CHANGES:
 
 - Replaced colours in palette_graph with those of NVIpretty v0.5.0. Created the 
-palette palette_graph_report with the colours from palette_graph in NVIpretty v0.5.1.  
+palette `palette_graph_report` with the colours from `palette_graph` in NVIpretty v0.5.1.  
 
 
 # NVIpretty 0.5.1 - (2025-10-13)
