@@ -8,25 +8,27 @@
 An object of class \code{character} of length 15.
 }
 \source{
-Grafisk profil for Veterin<U+00E6>rinstituttet version 2024 (available on
+Grafisk profil for Veterinærinstituttet version 2024 (available on
 NVI's intranet).
 }
 \usage{
 palette_graph
 }
 \description{
-A vector with the hex values for colours to be used in graphs.
-    The order of the colours are as they should be used in the graphs.
+A vector with the hex values for colours to be used in graphs. The
+    order of the colours are as they should be used in the graphs.
 }
 \details{
-The colours are displayed in the vignette "NVI colour palettes".
-    Remark that the colours #F2C512 and #C0ECD3 should not be used for line
-    graphs.
-
-A vector with 12 unnamed colours:
-   c(#143985, #9EB8F0, #CC0E00, #FF8D85, #836A00, #F2C512, #1A5634,
-    #36B46C, #C0ECD3, #5CD1FF, #737F97, #B9BFCB)
+The colour codes are based on the hex values in the Graphical profile
+    handbook (available at NVI's intranet). The colours are displayed in the
+    vignette "NVI colour palettes".
 
 The script for preparing the palette is given in "./data-raw/generate_NVI_palettes.R".
+
+A vector with 15 unnamed colours:
+  #59CD8B (Jord), #D7F4FF (Luft), #1C4FB9 (Vann), #091A3E (Svart),
+  #BCEED1 (Lys jord), #95D9F3 (Mørk luft), #C7D9FF (Lyst vann),
+  #FF5447 (Mat), #FFDAD4 (Lys mat), #F5D34A (Gul), #FBECB2 (Lys gul),
+  #9A55D2 (Lilla), #DEC2F5 (Lys lilla), #FCA446 (Orange), #F9D3A9 (Lys orange).
 }
 \keyword{datasets}
